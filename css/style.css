@@ -1,0 +1,58 @@
+/* ---------------------------------------
+    |   Navigation bar item
+    |------------------------------------- */
+.logo {
+    width: 60% !important;
+    height: 100%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.nav-link {
+    font-size: 18px !important;
+    font-weight: 500;
+    color: black;
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+/* ---------------------------------------
+    |   Search bar
+    |------------------------------------- */
+.search-bar {
+    border: 2px solid orangered !important;
+}
+
+.btn-search {
+    font-size: 18px !important;
+    background-color: orangered;
+    font-weight: 500;
+    color: white;
+}
+
+/* ---------------------------------------
+    |   Product card
+    |------------------------------------- */
+.card-img-top {
+    width: 100% !important;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 15%;
+}
+
+.card:hover {
+    .card-img-top {
+        scale: 110% !important;
+    }
+
+    background-color: rgb(255, 226, 216) !important;
+    color: black;
+}
+
+.btn-view {
+    width: 90% !important;
+    font-size: 18px;
+    font-weight: 500;
+    border: 2px solid orangered;
+    color: orangered;
+}
