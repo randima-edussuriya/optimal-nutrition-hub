@@ -1,0 +1,17 @@
+/* ---------------------------------------
+    |   Navigation bar item
+    |------------------------------------- */
+    .logo {
+        width: 60% !important;
+        height: 100%;
+        padding: 0%;
+        margin: 0%;
+    }
+    
+    .nav-link {
+        font-size: 18px !important;
+        font-weight: 500;
+        color: black;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
