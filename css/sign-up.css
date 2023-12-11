@@ -8,7 +8,7 @@
 body {
     justify-content: center;
     align-items: center;
-    background: rgb(149, 197, 255);
+    background: rgb(255, 224, 213);
 }
 
 .logo {
@@ -26,8 +26,8 @@ body {
     margin-right: 7px;
 }
 
-.wrapper{
-    width: 500px ;
+.wrapper {
+    width: 500px;
     background: rgb(22, 21, 21);
     color: aliceblue;
     border-radius: 20px;
@@ -37,36 +37,36 @@ body {
     margin-bottom: 3%;
 }
 
-.wrapper h2{
+.wrapper h2 {
     font-size: 35px;
     text-align: center;
 
 }
 
-.wrapper .input-box{
+.wrapper .input-box {
     width: 100%;
     height: 50px;
     margin: 15px 0;
 }
 
-.input-box input{
+.input-box input {
     width: 100%;
     height: 100%;
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255,255, 255);
+    border: 2px solid rgba(255, 255, 255);
     border-radius: 50px;
     font-size: 18px;
     color: #fff;
     padding: 20px 40px 20px 20px;
 }
 
-.input-box input ::placeholder{
+.input-box input ::placeholder {
     color: #fff;
 }
 
-.wrapper .remember-frogot{
+.wrapper .remember-frogot {
     display: flex;
     justify-content: space-between;
     font-size: 15px;
@@ -74,46 +74,47 @@ body {
 
 }
 
-.remember-frogot label input{
+.remember-frogot label input {
     accent-color: white;
     margin-right: 3px;
 }
 
-.remember-frogot a{
+.remember-frogot a {
     color: #fff;
     text-decoration: none;
 }
 
-.remember-frogot a:hover{
+.remember-frogot a:hover {
     text-decoration: underline;
 }
 
-.wrapper .btn{
+.wrapper .btn {
     width: 50%;
     text-align: center;
     height: 50px;
-    background: lightblue;
+    background: orangered;
     border: none;
     outline: none;
     border-radius: 40px;
     box-shadow: #333;
     font-weight: 600;
     margin-left: 110px;
+    color: white;
 }
 
-.wrapper .register-link{
+.wrapper .register-link {
     font-size: 15px;
     text-align: center;
     margin: 20px 0 10px;
 }
 
-.register-link p a{
+.register-link p a {
     color: #fff;
     text-decoration: none;
     font-weight: 600;
 }
 
-.register-link p a:hover{
+.register-link p a:hover {
     text-decoration: underline;
 
 }
