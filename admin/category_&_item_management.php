@@ -47,10 +47,10 @@
         <!-- Navigation bar end -->
         <!-- Manage Details section start -->
         <div class="bg-body-tertiary">
-            <h3 class="text-center p-2">Manage Details</h3>
+            <h3 class="text-center p-2">Manage Category & Item Details</h3>
         </div>
         <!-- Manage Details section end -->
-        <!-- Admin panel section start -->
+        <!-- Category & Item Details section start -->
         <div class="row">
             <div class="col-md-12 bg-body-tertiary p-1 d-flex align-items-center">
                 <div class="p-3">
@@ -58,22 +58,24 @@
                     <p class="text-center">Admin Name</p>
                 </div>
                 <div class="button text-center">
-                    <button class="my-2"><a href="" class="nav-link text-light bg-info my-1">Customer Management</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Staff Management</a></button>
-                    <button><a href="category_&_item_management.php" class="nav-link text-light bg-info my-1">Category & Item Management</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Cart & Checkout Handling</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Delivery Handling</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Reorder Handling</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Order Cancellation</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Inquiry Management</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">News & Notification Management</a></button>
-                    <button><a href="" class="nav-link text-light bg-info my-1">Feedback Management</a></button>
+                    <button class="my-2"><a href="category_&_item_management.php?create_category" class="nav-link text-light bg-info my-1">Create Category</a></button>
+                    <button><a href="" class="nav-link text-light bg-info my-1">View Category</a></button>
+                    <button><a href="" class="nav-link text-light bg-info my-1">Create Item</a></button>
+                    <button><a href="" class="nav-link text-light bg-info my-1">View Item</a></button>
                 </div>
             </div>
         </div>
-        <!-- Admin panel section end -->
-
-
+        <!-- Category & Item Details section end -->
+        <!-- Create Category section start -->
+        <div class="container my-5">
+            <?php
+        if(isset($_GET['create_category'])){
+            include('create_category.php');
+        }
+        ?>
+        </div>
+        <!-- Create Category section end -->
+ 
         <!--Bootstrap JS link -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
