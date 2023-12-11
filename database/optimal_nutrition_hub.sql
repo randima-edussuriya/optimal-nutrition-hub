@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2023 at 04:12 AM
+-- Generation Time: Dec 11, 2023 at 05:04 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -57,17 +57,6 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `category`
---
-
-INSERT INTO `category` (`category_id`, `category_name`) VALUES
-(2000, 'cat1'),
-(2001, 'cat2'),
-(2002, 'cat3'),
-(2003, 'cat4'),
-(2004, 'cat5');
 
 -- --------------------------------------------------------
 
