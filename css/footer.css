@@ -97,12 +97,13 @@
 }
 
 .bettle a {
-    font-size: 10px;
+    font-size: 11px;
     text-align: center;
     margin: 20px 0 10px;
-    color: #e67f3b;
+    color: orangered;
     text-decoration: none;
     font-weight: 300;
+    font-weight: bold;
 }
 
 .bettle a:hover {
