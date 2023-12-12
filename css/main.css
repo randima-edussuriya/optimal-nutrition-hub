@@ -15,12 +15,3 @@
     margin-left: 7px;
     margin-right: 7px;
 }
-
-/* ---------------------------------------
-    |   Admin Panel Module
-    |------------------------------------- */
-.btn-module {
-    margin: 10px 5px !important;
-    padding: 0% !important;
-    width: 300px;
-}
