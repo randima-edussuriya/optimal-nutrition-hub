@@ -79,9 +79,19 @@ mysqli_close($con);
     <!-- Category add form section end -->
 
     <!-- Footer section start -->
-    <?php
-    include('admin-footer.php');
-    ?>
+    <div class="fixed-bottom ">
+        <footer class="bettle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
+                            <a href="#"> BattleShip</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
     <!-- Footer section end -->
 
     <!--Bootstrap JS link -->
