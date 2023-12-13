@@ -34,7 +34,6 @@
             <input type="password" placeholder="Password" required>
           </div>
           <div class="remember-frogot">
-            <label for=""> <input type="checkbox"> Remember me </label>
             <a href="#"> Fogot password?</a>
           </div>
 
