@@ -2,7 +2,7 @@
 // Include the database configuration file
 include('database/config.php');
 
-$categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
+$categorySelectQuery = "SELECT category_name FROM category ORDER BY category_name;";
 // Execute the query and store the result
 $result = mysqli_query($con, $categorySelectQuery);
 // Close the database connection
