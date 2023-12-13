@@ -43,8 +43,18 @@ body {
     padding: 20px 40px 20px 20px;
 }
 
-.input-box input::placeholder{
+.input-box input::placeholder {
     color: #fff;
+}
+
+label {
+    font-size: 18px;
+    color: #fff;
+}
+
+.input-box input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    font-size: 25px;
 }
 
 .wrapper .remember-frogot {
