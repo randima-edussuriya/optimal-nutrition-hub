@@ -152,7 +152,7 @@ mysqli_close($con);
 
   <!-- Footer section start -->
   <?php
-  include('footer.php');
+  include('footer.html');
   ?>
   <!-- Footer section end -->
 
