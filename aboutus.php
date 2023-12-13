@@ -1,3 +1,12 @@
+<?php
+// Include the database configuration file
+include('database/config.php');
+
+$categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
+$result = mysqli_query($con, $categorySelectQuery);
+mysqli_close($con);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,8 +14,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Bootstrap CSS link -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/home.css">
   <link rel="stylesheet" href="css/footer.css">
@@ -23,8 +31,7 @@
         <a class="navbar-brand ms-5 me-auto " href="index.html">
           <img src="Images/logo.svg" alt="logo" class="logo ">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -34,13 +41,21 @@
               <a class="nav-link" href="index.html">Product</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Category
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <?php
+                // Fetch Category names from database
+                if (mysqli_num_rows($result) > 0) {
+                  while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<li><a class='dropdown-item' href='#'>{$row['category_name']}</a></li>";
+                  }
+                } else {
+                  // display Not Available Category
+                  echo "<li><a class='dropdown-item'>Not Available Category</a></li>";
+                }
+                ?>
               </ul>
             </li>
             <li class="nav-item">
@@ -160,15 +175,12 @@
             <div class="col-sm-1 col-md-6">
               <h6> SOCIAL LINKS </h6>
               <ul class="social-icons">
-                <li><a class="facebook" href="facebook"><img src="Icons/facebook-circle-fill.svg" alt=""
-                      style="width: 32px;"></a></li>
+                <li><a class="facebook" href="facebook"><img src="Icons/facebook-circle-fill.svg" alt="" style="width: 32px;"></a></li>
                 <li><a class="twitter" href="twitter"><img src="Icons/twitter-fill.svg" alt="" style="width: 32px;"></a>
                 </li>
-                <li><a class="whatsapp" href="whatsapp"><img src="Icons/whatsapp-line.svg" alt=""
-                      style="width: 32px;"></a>
+                <li><a class="whatsapp" href="whatsapp"><img src="Icons/whatsapp-line.svg" alt="" style="width: 32px;"></a>
                 </li>
-                <li><a class="linkedin" href="linkedin"><img src="Icons/linkedin-box-fill.svg" alt=""
-                      style="width: 32px;"></a></li>
+                <li><a class="linkedin" href="linkedin"><img src="Icons/linkedin-box-fill.svg" alt="" style="width: 32px;"></a></li>
               </ul>
             </div>
           </div>
@@ -190,9 +202,7 @@
     <!-- Footer section end -->
 
     <!--Bootstrap JS link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   </body>
 
 </html>
