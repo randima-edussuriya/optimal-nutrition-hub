@@ -1,20 +1,23 @@
 <?php
+// Include the database configuration file
 include('../database/config.php');
-// check submit
+// Check if the form is submitted
 if (isset($_POST['categoryAdd'])) {
     $categoryName = $_POST['categoryName'];
 
-    // check empty condition
+    // Check if the category name is empty
     if ($categoryName == '') {
         echo "<script>alert('Please fill the Category Name')</script>";
     } else {
         $categoryInsertQuery = "INSERT INTO category(category_name) VALUES('$categoryName');";
         // execute query
         if (mysqli_query($con, $categoryInsertQuery)) {
+            // Display alert
             echo "<script>alert('New Category added Successfully')</script>";
         }
     }
 }
+// Close the database connection
 mysqli_close($con);
 ?>
 
