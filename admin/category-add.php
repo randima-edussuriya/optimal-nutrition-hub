@@ -34,7 +34,7 @@ mysqli_close($con);
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/sign-up.css">
 
-    <title>Category add form-Optimal Nutrition Hub</title>
+    <title>Category Add Form-Optimal Nutrition Hub</title>
 </head>
 
 <body style="background-color: lightgray;">
