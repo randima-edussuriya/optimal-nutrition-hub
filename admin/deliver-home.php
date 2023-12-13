@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/admin-home.css">
 
-    <title>Cashier Home-Optimal Nutrition Hub</title>
+    <title>Deliver Home-Optimal Nutrition Hub</title>
 </head>
 
 <body>
     <!-- Navigation bar start -->
     <nav class="navbar navbar-expand-lg bg-body-secondary  sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand ms-5 me-auto " href="cashier-home.html">
+            <a class="navbar-brand ms-5 me-auto " href="deliver-home.html">
                 <img src="../Images/logo.svg" alt="logo" class="logo ">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -43,12 +43,12 @@
     </nav>
     <!-- Navigation bar end -->
 
-    <!-- Cashier panel section start -->
+    <!-- Deliver panel section start -->
     <div class="container-fluid text-center my-5  p-0">
         <div class="m-auto mb-3 ">
-            <h2>Cashier Panel</h2>
+            <h2>Deliver Person Panel</h2>
         </div>
-        <div class="row align-items-center  mx-auto bg-body-secondary   justify-content-center py-3  ">
+        <div class="row align-items-center  mx-auto bg-body-secondary   justify-content-center py-5  ">
             <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">group_add</i></div>
@@ -57,21 +57,8 @@
             </a>
             <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
                 <div class="module-content">
-                    <div><i class="material-icons" style="font-size: 40px;color:white;">category</i></div>
-                    <div>Category Management</div>
-                </div>
-            </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
-                <div class="module-content">
-                    <div><i class="material-icons" style="font-size: 40px;color:white;">inventory_2</i></div>
-                    <div>Item Management</div>
-                </div>
-            </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
-                <div class="module-content">
-                    <div><i class="material-icons" style="font-size: 40px;color:white;">shopping_cart_checkout</i>
-                    </div>
-                    <div>Cart & Checkout Handling</div>
+                    <div><i class="material-icons" style="font-size: 40px;color:white;">local_shipping</i></div>
+                    <div>Delivery Handling</div>
                 </div>
             </a>
             <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
@@ -84,22 +71,12 @@
 
         </div>
     </div>
-    <!-- Cashier panel section start -->
+    <!-- Deliver panel section start -->
 
     <!-- Footer section start -->
-    <div>
-        <footer class="bettle fixed-bottom ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
-                            <a href="#"> BattleShip</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </div>
+    <?php
+    include('admin-footer.php');
+    ?>
     <!-- Footer section end -->
 
     <!--Bootstrap JS link -->
