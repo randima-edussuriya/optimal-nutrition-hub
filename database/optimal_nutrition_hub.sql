@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2023 at 08:57 AM
+-- Generation Time: Dec 13, 2023 at 08:44 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -57,6 +57,17 @@ CREATE TABLE `category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_name`) VALUES
+(2005, 'PRE WORKOUT'),
+(2006, 'PROTEIN'),
+(2007, 'MASS GAINERS'),
+(2008, 'CREATINE'),
+(2009, 'FAT BURNERS');
 
 -- --------------------------------------------------------
 
@@ -235,6 +246,16 @@ CREATE TABLE `staff_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `staff_type`
+--
+
+INSERT INTO `staff_type` (`staff_type_id`, `staff_type_name`) VALUES
+(1000, 'Admin'),
+(1001, 'Cashier'),
+(1002, 'Inventory Manager'),
+(1003, 'Deliver Person');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -360,7 +381,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2000;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2020;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -426,7 +447,7 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `staff_type`
 --
 ALTER TABLE `staff_type`
-  MODIFY `staff_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000;
+  MODIFY `staff_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
 
 --
 -- Constraints for dumped tables
