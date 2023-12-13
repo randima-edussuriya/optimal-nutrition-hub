@@ -1,14 +1,3 @@
-<?php
-// Include the database configuration file
-include('database/config.php');
-
-$categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
-// Execute the query and store the result
-$result = mysqli_query($con, $categorySelectQuery);
-// Close the database connection
-mysqli_close($con);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
