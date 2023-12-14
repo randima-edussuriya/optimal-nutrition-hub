@@ -51,7 +51,7 @@
 
     <!-- Footer section start -->
     <?php
-    include('footer.html');
+    include('footer.php');
     ?>
     <!-- Footer section end -->
 
