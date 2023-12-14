@@ -64,6 +64,7 @@ mysqli_close($con);
     <!-- Navigation bar end -->
 
     <!-- Staff Register form section start -->
+    
     <!-- Staff Register form section end -->
 
     <!-- Footer section start -->
