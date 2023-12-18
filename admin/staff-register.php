@@ -8,35 +8,8 @@ $staffTypeSelectQuery = "SELECT * FROM staff_type;";
 $resultStaffType = mysqli_query($con, $staffTypeSelectQuery);
 // Fetch staff types from database
 
-// Check if the form is submitted
-if (isset($_POST['staffRegister'])) {
-    // remove spaces and sanitize
-    $fName = filter_var(trim($_POST['fName']), FILTER_SANITIZE_STRING);
-    $lName = filter_var(trim($_POST['lName']), FILTER_SANITIZE_STRING);
-    $userName = filter_var(trim($_POST['userName']), FILTER_SANITIZE_STRING);
-    $password = filter_var(trim($_POST['password']), FILTER_SANITIZE_STRING);
-    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
-    $contactNo = filter_var(trim($_POST['contactNo']), FILTER_SANITIZE_STRING);
-    $hireDate = $_POST['hireDate'];
-    $nic = filter_var(trim($_POST['nic']), FILTER_SANITIZE_STRING);
-    $addressLine1 = filter_var(trim($_POST['addressLine1']), FILTER_SANITIZE_STRING);
-    $addressLine2 = filter_var(trim($_POST['addressLine2']), FILTER_SANITIZE_STRING);
-    $addressLine3 = filter_var(trim($_POST['addressLine3']), FILTER_SANITIZE_STRING);
-    $addressLine4 = filter_var(trim($_POST['addressLine4']), FILTER_SANITIZE_STRING);
-    $staffTypeId = filter_var(trim($_POST['staffType']), FILTER_SANITIZE_NUMBER_INT);
+// Check if the form is submitt
 
-    // Check if the category name is empty
-    if ($fName == '' or $lName == '' or $userName == '' or $password == '' or $email == '' or $contactNo == '' or $hireDate == '' or $nic == '' or $addressLine1 == '' or $addressLine2 == '' or $addressLine3 == '' or $staffTypeId == 0) {
-        echo "<script>alert('Please fill the All the fields')</script>";
-    } else {
-        $staffInsertQuery = "INSERT INTO staff (staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id) VALUES ('$fName', '$lName', '$userName', '$password', '$email', '$contactNo', '$hireDate', '$nic', '$addressLine1', '$addressLine2', '$addressLine3', '$addressLine4', $staffTypeId);";
-        // execute query
-        if (mysqli_query($con, $staffInsertQuery)) {
-            // Display alert
-            echo "<script>alert('New Staff is registered Successfully')</script>";
-        }
-    }
-}
 // Close the database connection
 mysqli_close($con);
 ?>
@@ -64,7 +37,7 @@ mysqli_close($con);
     <!-- Navigation bar end -->
 
     <!-- Staff Register form section start -->
-    
+
     <!-- Staff Register form section end -->
 
     <!-- Footer section start -->
