@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
 
+    <style>
+        .selet-form {
+            background-color: black;
+            color: white;
+            padding: 1rem;
+        }
+
+        select {
+            background-color: black;
+            color: white;
+            border-radius: 50px;
+            border: 2px solid rgba(255, 255, 255);
+
+        }
+    </style>
+
     <title>Test-Backend-Interface</title>
 </head>
 
@@ -41,7 +57,18 @@
     <!-- Navigation bar end -->
 
     <!-- Testin section start -->
-
+    <div>
+        <form action="#" method="post">
+            <div class="selet-form">
+                <select name="staffType">
+                    <option value="" selected disabled>select staff type</option>
+                    <option value="1">admin</option>
+                    <option value="2">cashier</option>
+                    <option value="3">deliver</option>
+                </select>
+            </div>
+        </form>
+    </div>
     <!-- Testin section end -->
 
     <!-- Footer section start -->
