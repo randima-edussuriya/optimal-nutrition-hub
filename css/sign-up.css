@@ -57,28 +57,6 @@ label {
     font-size: 25px;
 }
 
-.wrapper .remember-frogot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 15px;
-    margin: -15px 0 15px;
-
-}
-
-.remember-frogot label input {
-    accent-color: white;
-    margin-right: 3px;
-}
-
-.remember-frogot a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.remember-frogot a:hover {
-    text-decoration: underline;
-}
-
 .wrapper .btn {
     width: 50%;
     text-align: center;
