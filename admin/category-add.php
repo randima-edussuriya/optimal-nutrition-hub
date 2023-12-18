@@ -7,14 +7,12 @@ if (isset($_POST['categoryAdd'])) {
     $categoryName = filter_var(trim($_POST['categoryName']), FILTER_SANITIZE_STRING);
 
     // Check if the category name is empty
-    if ($categoryName == '') {
-        echo "<script>alert('Please fill the Category Name')</script>";
-    } else {
+    if (!empty($categoryName)) {
         $categoryInsertQuery = "INSERT INTO category(category_name) VALUES('$categoryName');";
         // execute query
         if (mysqli_query($con, $categoryInsertQuery)) {
             // Display alert
-            echo "<script>alert('New Category added Successfully')</script>";
+            echo "<script>alert('New Category is added Successfully')</script>";
         }
     }
 }
