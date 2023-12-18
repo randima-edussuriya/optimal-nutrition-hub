@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 08:44 AM
+-- Generation Time: Dec 18, 2023 at 02:35 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -63,11 +63,11 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
-(2005, 'PRE WORKOUT'),
 (2006, 'PROTEIN'),
 (2007, 'MASS GAINERS'),
 (2008, 'CREATINE'),
-(2009, 'FAT BURNERS');
+(2020, 'PRE WORKOUT'),
+(2022, 'FAT BURNERS');
 
 -- --------------------------------------------------------
 
@@ -170,6 +170,20 @@ CREATE TABLE `item` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `news_id` int(11) NOT NULL,
+  `news_title` varchar(255) DEFAULT NULL,
+  `news_content` text DEFAULT NULL,
+  `news_date` datetime DEFAULT NULL,
+  `fk_staff_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `notification`
 --
 
@@ -225,7 +239,7 @@ CREATE TABLE `staff` (
   `staff_email` varchar(100) DEFAULT NULL,
   `staff_is_active` tinyint(1) DEFAULT 1,
   `staff_phone` varchar(15) DEFAULT NULL,
-  `staff_hire_date` datetime DEFAULT NULL,
+  `staff_hire_date` date DEFAULT NULL,
   `staff_nic` varchar(15) DEFAULT NULL,
   `staff_add_line1` varchar(255) DEFAULT NULL,
   `staff_add_line2` varchar(255) DEFAULT NULL,
@@ -233,6 +247,14 @@ CREATE TABLE `staff` (
   `staff_add_line4` varchar(255) DEFAULT NULL,
   `fk_staff_type_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`staff_id`, `staff_fname`, `staff_lname`, `staff_username`, `staff_pwd`, `staff_email`, `staff_is_active`, `staff_phone`, `staff_hire_date`, `staff_nic`, `staff_add_line1`, `staff_add_line2`, `staff_add_line3`, `staff_add_line4`, `fk_staff_type_id`) VALUES
+(1500, 'dinuka', 'randima', '$randima', '1234', 'myemail', 1, '0712179255', '2023-12-13', '200065655v', 'addressLine1', 'addressLine2', 'addressLine3', 'addressLine4', 1000),
+(1501, 'Dinuka', 'Edussuriya', 'dinuka', '1234', 'drandi27@gmail.com', 1, '077-2178778', '2023-12-13', '657342076V', 'No 86', 'Panagoda', 'Galpatha', '', 1001);
 
 -- --------------------------------------------------------
 
@@ -326,6 +348,13 @@ ALTER TABLE `item`
   ADD KEY `fk_category_id` (`fk_category_id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`news_id`),
+  ADD KEY `fk_staff_id` (`fk_staff_id`);
+
+--
 -- Indexes for table `notification`
 --
 ALTER TABLE `notification`
@@ -381,7 +410,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2020;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2024;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -420,6 +449,12 @@ ALTER TABLE `item`
   MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2500;
 
 --
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8000;
+
+--
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
@@ -441,7 +476,7 @@ ALTER TABLE `order_table`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1500;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1502;
 
 --
 -- AUTO_INCREMENT for table `staff_type`
@@ -499,6 +534,12 @@ ALTER TABLE `inquiry`
 --
 ALTER TABLE `item`
   ADD CONSTRAINT `item_ibfk_1` FOREIGN KEY (`fk_category_id`) REFERENCES `category` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `news`
+--
+ALTER TABLE `news`
+  ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`fk_staff_id`) REFERENCES `staff` (`staff_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `notification`
