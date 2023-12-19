@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-3  col-md-5">
                     <h5>WHO WE ARE</h5>
-                    <p class="text-justify">
+                    <p>
                         As the leading sports nutrition distributor in Sri Lanka,
                         Optimal Nutrition Hub acts as your gateway to a transformational
                         journey.We offer a selection of products designed to enhance your
@@ -51,16 +51,12 @@
                 <div class="col-sm-1 col-md-6">
                     <h6> SOCIAL LINKS </h6>
                     <ul class="social-icons">
-                        <li><a class="facebook" href="facebook"><img src="Icons/facebook-circle-fill.svg" alt=""
-                                    style="width: 32px;"></a></li>
-                        <li><a class="twitter" href="twitter"><img src="Icons/twitter-fill.svg" alt=""
-                                    style="width: 32px;"></a>
+                        <li><a class="facebook" href="facebook"><img src="Icons/facebook-circle-fill.svg" alt="" style="width: 32px;"></a></li>
+                        <li><a class="twitter" href="twitter"><img src="Icons/twitter-fill.svg" alt="" style="width: 32px;"></a>
                         </li>
-                        <li><a class="whatsapp" href="whatsapp"><img src="Icons/whatsapp-line.svg" alt=""
-                                    style="width: 32px;"></a>
+                        <li><a class="whatsapp" href="whatsapp"><img src="Icons/whatsapp-line.svg" alt="" style="width: 32px;"></a>
                         </li>
-                        <li><a class="linkedin" href="linkedin"><img src="Icons/linkedin-box-fill.svg" alt=""
-                                    style="width: 32px;"></a></li>
+                        <li><a class="linkedin" href="linkedin"><img src="Icons/linkedin-box-fill.svg" alt="" style="width: 32px;"></a></li>
                     </ul>
                 </div>
             </div>
