@@ -68,7 +68,7 @@
 
         <button type="submit" class="btn"> Sign Up</button>
 
-        <div class="register-link">
+        <div class="login-link">
           <p> have an account? <a href="Login.php"> Login </a></p>
         </div>
       </form>
