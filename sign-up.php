@@ -21,8 +21,8 @@
   <!-- Navigation bar end -->
 
   <!-- Sign up section start -->
-  <div class="container row my-5 mx-auto ">
-    <div class="wrapper col-md-6">
+  <div class="container row my-5 mx-auto">
+    <div class="wrapper col-md-6 mx-auto">
       <form action="#" method="post">
         <h2>Sign up-Optimal Nutrition Hub</h2>
 
