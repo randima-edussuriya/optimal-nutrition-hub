@@ -1,14 +1,12 @@
-
-/* footer section */
-
+/* --------------------------------------
+    |   footer section
+    |------------------------------------ */
 .site-footer {
     background-color: #5f6061;
     color: #fff;
     line-height: 24px;
     padding-top: 45px;
 }
-
-
 
 .site-footer p {
     text-align: justify;
@@ -31,7 +29,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
+/* --------------------------------------
+    |   footer section QUICK LINKS
+    |------------------------------------ */
 .footer-links li {
     display: block
 }
@@ -43,7 +43,6 @@
     color: #fff;
     text-decoration: none;
     font-weight: 100;
-
 }
 
 .footer-links a:hover {
@@ -51,6 +50,9 @@
     color: #7375f1;
 }
 
+/* --------------------------------------
+    |   footer section social-icons
+    |------------------------------------ */
 .social-icons li {
     display: inline-block;
     margin-bottom: 4px
@@ -85,10 +87,9 @@
     background-color: #42c068
 }
 
-
-/* low footer section */
-
-
+/* --------------------------------------
+    |   low footer section
+    |------------------------------------ */
 .bettle {
     font-size: 12px;
     background-color: #dfe5eb;
