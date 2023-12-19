@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/login.css?v=<?php echo time(); ?>">
 
     <title>Admin Home-Optimal Nutrition Hub</title>
 </head>
@@ -24,24 +24,21 @@
 
     <!-- Admin login section start -->
     <div class="container row my-5 mx-auto ">
-        <div class="col-md-6 mx-auto">
+        <div class="wrapper col-md-6 mx-auto">
+            <form action="#" method="post">
+                <h1>Login-Optimal Nutrition Hub</h1>
+                <div class="input-box">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="remember-frogot">
+                    <a href="#"> Fogot password?</a>
+                </div>
 
-            <div class="wrapper">
-                <form action="post" style="margin: 4%;">
-                    <h1>Login-Optimal Nutrition Hub</h1>
-                    <div class="input-box">
-                        <input type="text" placeholder="Username" required>
-                    </div>
-                    <div class="input-box">
-                        <input type="password" placeholder="Password" required>
-                    </div>
-                    <div class="remember-frogot">
-                        <a href="#"> Fogot password?</a>
-                    </div>
-
-                    <button type="submit" class="btn btn-light text-bg-secondary"> Login</button>
-                </form>
-            </div>
+                <button type="submit" class="btn btn-light text-bg-secondary"> Login</button>
+            </form>
         </div>
     </div>
     <!-- Admin login section end -->
