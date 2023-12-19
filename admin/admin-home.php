@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/admin-home.css">
+    <link rel="stylesheet" href="../css/admin-home.css?v=<?php echo time(); ?>">
 
     <title>Admin Home-Optimal Nutrition Hub</title>
 </head>
@@ -27,7 +27,7 @@
         <div class="m-auto mb-3 ">
             <h2>Admin Panel</h2>
         </div>
-        <div class="row align-items-center  mx-auto bg-body-secondary   justify-content-center py-3  ">
+        <div class="row align-items-center justify-content-center py-3 mx-auto bg-body-secondary     ">
             <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">group_add</i></div>
