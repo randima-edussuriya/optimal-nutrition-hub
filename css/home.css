@@ -38,3 +38,10 @@
     border: 2px solid orangered;
     color: orangered;
 }
+
+.product-name {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
