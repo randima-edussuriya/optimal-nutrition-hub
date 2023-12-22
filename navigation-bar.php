@@ -2,7 +2,7 @@
 // Include the database configuration file
 include('database/config.php');
 
-$categorySelectQuery = "SELECT category_name FROM category ORDER BY category_name;";
+$categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
 // Execute the query and store the result
 $result = mysqli_query($con, $categorySelectQuery);
 // Close the database connection
@@ -29,10 +29,20 @@ mysqli_close($con);
                     </a>
                     <ul class="dropdown-menu">
                         <?php
+                        $textBgDark = "";   // Initialize a variable for background class
+
                         // Fetch Category names from database
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo "<li><a class='dropdown-item' href='#'>{$row['category_name']}</a></li>";
+                                // Apply background class if the category is selected
+                                if (isset($_GET['categoryId'])) {
+                                    if ($_GET['categoryId'] == $row['category_id']) {
+                                        $textBgDark = 'text-bg-dark';
+                                    }
+                                }
+                                // Display category
+                                echo "<li><a class='dropdown-item $textBgDark' href='index.php?categoryId={$row['category_id']}'>{$row['category_name']}</a></li>";
+                                $textBgDark = "";   // Reset the background class
                             }
                         } else {
                             // display Not Available Category
