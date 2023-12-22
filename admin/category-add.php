@@ -8,11 +8,17 @@ if (isset($_POST['categoryAdd'])) {
 
     // Check if the category name is empty
     if (!empty($categoryName)) {
-        $categoryInsertQuery = "INSERT INTO category(category_name) VALUES('$categoryName');";
-        // execute query
-        if (mysqli_query($con, $categoryInsertQuery)) {
-            // Display alert
-            echo "<script>alert('New Category is added Successfully')</script>";
+        // Check if the category exists
+        $categorySelectQuery = "SELECT * FROM category WHERE category_name='$categoryName'";
+        $result = mysqli_query($con, $categorySelectQuery);
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script>alert('{$categoryName} already exists');</script>";
+        } else {
+            // Insert new category to database
+            $categoryInsertQuery = "INSERT INTO category(category_name) VALUES('$categoryName')";
+            if (mysqli_query($con, $categoryInsertQuery)) {
+                echo "<script>alert('New Category is added Successfully')</script>";
+            }
         }
     }
 }
