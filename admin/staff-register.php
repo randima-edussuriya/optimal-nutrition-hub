@@ -39,66 +39,57 @@ mysqli_close($con);
     <!-- Staff Register form section start -->
 
     <!-- Staff Register form section end -->
-    <div class="container  row my-3 mx-auto">
-        <div class="col-md-6 mx-auto">
-            <div class="wrapper">
-                <form action="#" method="post">
-                    <h2>Register Staff</h2>
-                    <div class="input-box">
-                        <input type="text" name="fName" id="fName" placeholder="First Name">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="lName" id="lName" placeholder="Last Name">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="userName" id="userName" placeholder="Username">
-                    </div>
-                    <div class="input-box">
-                        <input type="password" name="password" id="password" placeholder="Password">
-                    </div>
-                    <div class="">
-                        <select name="staffType">
-                            <option selected disabled value=''>Select Staff Type</option>
-                            <?php
-                            // if (mysqli_num_rows($resultStaffType) > 0) {
-                            //     while ($row = mysqli_fetch_assoc($resultStaffType)) {
-                            //         echo "<option value='{$row['staff_type_id']}'>{$row['staff_type_name']}</option>";
-                            //     }
-                            // }
-                            ?>
-                            <option value="1">One</option>
-                        </select>
-                    </div>
+    <div class="container  row my-5 mx-auto">
+        <div class="wrapper col-md-6 mx-auto">
+            <form action="#" method="post">
+                <h2>Register Staff</h2>
 
-
-                    <div class="input-box">
-                        <input type="text" name="email" id="email" placeholder="E-mail">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="contactNo" id="contactNo" placeholder="Contact No">
-                    </div>
-                    <div class="input-box">
-                        <input type="date" name="hireDate" id="hireDate" class="w-50 ">
-                        <label for="hireDate">Hire Date</label>
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="nic" id="nic" placeholder="NIC">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="addressLine1" id="addressLine1" placeholder="Address Line-1">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="addressLine2" id="addressLine2" placeholder="Address Line-2">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="addressLine3" id="addressLine3" placeholder="Address Line-3">
-                    </div>
-                    <div class="input-box">
-                        <input type="text" name="addressLine4" id="addressLine4" placeholder="Address Line-4">
-                    </div>
-                    <button type="submit" class="btn btn-light" name="staffRegister">Register</button>
-                </form>
-            </div>
+                <div class="input-box">
+                    <input type="text" name="fName" id="fName" placeholder="First Name">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="lName" id="lName" placeholder="Last Name">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="userName" id="userName" placeholder="Username">
+                </div>
+                <div class="input-box">
+                    <input type="password" name="password" id="password" placeholder="Password">
+                </div>
+                <div>
+                    <select name="staffType">
+                        <option selected disabled value=''>Select Staff Type</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="email" id="email" placeholder="E-mail">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="contactNo" id="contactNo" placeholder="Contact No">
+                </div>
+                <div class="input-box text-start">
+                    <input type="date" name="hireDate" id="hireDate" class="w-50  ">
+                    <label for="hireDate">Hire Date</label>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="nic" id="nic" placeholder="NIC">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="addressLine1" id="addressLine1" placeholder="Address Line-1">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="addressLine2" id="addressLine2" placeholder="Address Line-2">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="addressLine3" id="addressLine3" placeholder="Address Line-3">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="addressLine4" id="addressLine4" placeholder="Address Line-4">
+                </div>
+                <button type="submit" class="btn btn-light" name="staffRegister">Register</button>
+            </form>
         </div>
     </div>
     <!-- Footer section start -->
