@@ -5,7 +5,7 @@
 }
 
 /* -------------------------------------------
-    |   Sign up form
+    |   Form
     |----------------------------------------- */
 .wrapper {
     width: 525px;
@@ -17,22 +17,24 @@
 }
 
 /* -------------------------------------------
-    |   Sign up form header
+    |   Form header
     |----------------------------------------- */
 .wrapper h2 {
     font-size: 35px;
 }
 
 /* -------------------------------------------
-    |   Sign up form input fields
+    |   Form input field
     |----------------------------------------- */
-.wrapper .input-box {
+.wrapper .input-box,
+.wrapper .input-file-box {
     width: 100%;
     height: 50px;
     margin: 15px 0;
 }
 
-.input-box input {
+.input-box input,
+textarea {
     width: 100%;
     height: 100%;
     background: transparent;
@@ -43,12 +45,50 @@
     padding: 20px;
 }
 
-.input-box input::placeholder {
+.input-box input::placeholder,
+textarea::placeholder {
     color: #fff;
 }
 
 /* -------------------------------------------
-    |   Select staff type
+    |   Date icon
+    |----------------------------------------- */
+.input-box input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    font-size: 25px;
+}
+
+/* -------------------------------------------
+    |   Form input file field
+    |----------------------------------------- */
+.input-file-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255);
+    border-radius: 50px;
+    color: #fff;
+    padding-right: 5px;
+}
+
+/* -------------------------------------------
+    |   Form input file Choose File button
+    |----------------------------------------- */
+.input-file-box input[type="file"]::-webkit-file-upload-button {
+    height: 100%;
+    background: rgb(59, 57, 57);
+    color: #fff;
+    border: 0;
+    padding: 0 5px 0 20px;
+}
+
+label {
+    font-size: 18px;
+    text-align: end !important;
+}
+
+/* -------------------------------------------
+    |   Select option field
     |----------------------------------------- */
 select {
     width: 100%;
@@ -62,15 +102,7 @@ select {
 }
 
 /* -------------------------------------------
-    |   Date icon
-    |----------------------------------------- */
-.input-box input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-    font-size: 25px;
-}
-
-/* -------------------------------------------
-    |   Sign Up button styles
+    |   Submit button styles
     |----------------------------------------- */
 .wrapper .btn {
     width: 50%;
