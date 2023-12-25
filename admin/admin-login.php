@@ -44,19 +44,17 @@
     <!-- Admin login section end -->
 
     <!-- Footer section start -->
-    <div>
-        <footer class="bettle">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
-                            <a href="#"> BattleShip</a>
-                        </p>
-                    </div>
+    <footer class="bettle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
+                        <a href="#"> BattleShip</a>
+                    </p>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <!-- Footer section end -->
 
     <!--Bootstrap JS link -->

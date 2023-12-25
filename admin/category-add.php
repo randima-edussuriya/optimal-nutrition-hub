@@ -52,36 +52,32 @@ mysqli_close($con);
     <!-- Navigation bar end -->
 
     <!-- Category add form section start -->
-    <div class="container  row my-5 mx-auto p-5 ">
-        <div class="col-md-6 mx-auto">
-            <div class="wrapper">
-                <form action="#" method="post" id="categoryAddForm">
-                    <h2>Add Category</h2>
+    <div class="container row my-5 mx-auto py-5 ">
+        <div class="wrapper col-md-6 mx-auto">
+            <form action="#" method="post" id="categoryAddForm">
+                <h2>Add Category</h2>
 
-                    <div class="input-box">
-                        <input type="text" name="categoryName" id="categoryName" placeholder="Category Name">
-                    </div>
-                    <button type="submit" class="btn btn-light" name="categoryAdd">Add</button>
-                </form>
-            </div>
+                <div class="input-box">
+                    <input type="text" name="categoryName" id="categoryName" placeholder="Category Name">
+                </div>
+                <button type="submit" class="btn btn-light" name="categoryAdd">Add</button>
+            </form>
         </div>
     </div>
     <!-- Category add form section end -->
 
     <!-- Footer section start -->
-    <div class="fixed-bottom ">
-        <footer class="bettle">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
-                            <a href="#"> BattleShip</a>
-                        </p>
-                    </div>
+    <footer class="bettle fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
+                        <a href="#"> BattleShip</a>
+                    </p>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <!-- Footer section end -->
 
     <!--Bootstrap JS link -->

@@ -24,23 +24,68 @@
     <!-- Navigation bar end -->
 
     <!-- item add form section start -->
-    
+    <div class="container  row my-5 mx-auto">
+        <div class="wrapper col-md-6 mx-auto">
+            <form action="#" method="post" enctypr="multipart/form-data">
+                <h2>Add Item</h2>
+
+
+                <div class="input-box">
+                    <input type="text" name="name" id="name" placeholder="Name" required>
+                </div>
+                <label class="" for="image1">Upload Image</label>
+                <div class="input-file-box mt-0 ">
+                    <input class="" type="file" name="image1" id="image1" required>
+                </div>
+                <label class="" for="image2">Upload Image</label>
+                <div class="input-file-box mt-0 ">
+                    <input class="" type="file" name="image2" id="image2" required>
+                </div>
+                <div>
+                    <select name="categoty" required>
+                        <option selected disabled value=''>Select Category</option>
+                        <option value="1">cat1</option>
+                        <option value="2">cat2</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="brand" id="brand" placeholder="Brand">
+                </div>
+                <textarea class="" name="description" id="description" placeholder="Description" rows="3"></textarea>
+                <div class="input-box mt-2">
+                    <input type="text" name="costPrice" id="costPrice" placeholder="Cost Price" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="sellPrice" id="sellPrice" placeholder="Sell Price" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="discount" id="discount" placeholder="Discount">
+                </div>
+                <div class="input-box">
+                    <input type="text" name="stockQty" id="stockQty" placeholder="Stock Quantity" required>
+                </div>
+                <div class="input-box text-start">
+                    <input type="date" name="dateAdded" id="dateAdded" class="w-50" required>
+                    <label for="dateAdded">Added Date</label>
+                </div>
+                <button type="submit" class="btn btn-light" name="itemAdd">Add</button>
+            </form>
+        </div>
+    </div>
     <!-- item add form section end -->
 
     <!-- Footer section start -->
-    <div class="fixed-bottom ">
-        <footer class="bettle">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-sm-6 col-xs-12">
-                        <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
-                            <a href="#"> BattleShip</a>
-                        </p>
-                    </div>
+    <footer class="bettle">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6 col-xs-12">
+                    <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
+                        <a href="#"> BattleShip</a>
+                    </p>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <!-- Footer section end -->
 
     <!--Bootstrap JS link -->
