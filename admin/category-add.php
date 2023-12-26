@@ -37,7 +37,7 @@ mysqli_close($con);
     <!-- CSS link -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/sign-up.css">
+    <link rel="stylesheet" href="../css/sign-up.css?v=<?php echo time(); ?>">
     <!-- JS link -->
     <script src="formValidationScript.js" defer></script>
 
@@ -60,7 +60,7 @@ mysqli_close($con);
                 <div class="input-box">
                     <input type="text" name="categoryName" id="categoryName" placeholder="Category Name">
                 </div>
-                <button type="submit" class="btn btn-light" name="categoryAdd">Add</button>
+                <button type="submit" class="btn text-bg-secondary" name="categoryAdd">Add</button>
             </form>
         </div>
     </div>

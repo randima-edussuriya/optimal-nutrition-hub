@@ -68,7 +68,7 @@
                     <input type="date" name="dateAdded" id="dateAdded" class="w-50" required>
                     <label for="dateAdded">Added Date</label>
                 </div>
-                <button type="submit" class="btn btn-light" name="itemAdd">Add</button>
+                <button type="submit" class="btn text-bg-secondary" name="itemAdd">Add</button>
             </form>
         </div>
     </div>

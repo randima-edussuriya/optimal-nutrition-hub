@@ -79,7 +79,7 @@ body {
 .wrapper .btn {
     width: 50%;
     height: 50px;
-    background: orangered;
+    background-color: orangered;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -87,6 +87,11 @@ body {
     font-weight: 600;
     color: white;
     font-size: 18px;
+}
+
+.wrapper .btn:hover {
+    border: 2px solid white;
+    font-size: 19px;
 }
 
 /* -------------------------------------------

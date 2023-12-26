@@ -88,7 +88,7 @@ mysqli_close($con);
                 <div class="input-box">
                     <input type="text" name="addressLine4" id="addressLine4" placeholder="Address Line-4">
                 </div>
-                <button type="submit" class="btn btn-light" name="staffRegister">Register</button>
+                <button type="submit" class="btn text-bg-secondary" name="staffRegister">Register</button>
             </form>
         </div>
     </div>

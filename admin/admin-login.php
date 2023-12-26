@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/login.css?v=<?php echo time(); ?>">
-
+    
     <title>Admin Home-Optimal Nutrition Hub</title>
 </head>
 
@@ -37,7 +37,7 @@
                     <a href="#"> Fogot password?</a>
                 </div>
 
-                <button type="submit" class="btn btn-light text-bg-secondary"> Login</button>
+                <button type="submit" class="btn text-bg-secondary"> Login</button>
             </form>
         </div>
     </div>
