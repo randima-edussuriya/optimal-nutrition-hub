@@ -17,7 +17,7 @@ body {
     background: rgb(22, 21, 21);
     color: aliceblue;
     border-radius: 20px;
-    padding: 30px 30px;
+    padding: 14px 30px;
     text-align: center;
 }
 
@@ -25,7 +25,7 @@ body {
     |   Login form header
     |----------------------------------------- */
 .wrapper h1 {
-    font-size: 40px;
+    font-size: 38px;
 }
 
 /* -------------------------------------------
