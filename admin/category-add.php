@@ -3,8 +3,8 @@
 include('../database/config.php');
 // Check if the form is submitted
 if (isset($_POST['categoryAdd'])) {
-    // remove spaces and sanitize
-    $categoryName = filter_var(trim($_POST['categoryName']), FILTER_SANITIZE_STRING);
+    // remove spaces and escape special characters
+    $categoryName = mysqli_real_escape_string($con, trim($_POST['categoryName']));
 
     // Check if the category name is empty
     if (!empty($categoryName)) {
@@ -56,7 +56,7 @@ mysqli_close($con);
         <div class="wrapper col-md-6 mx-auto">
             <form action="#" method="post" id="categoryAddForm">
                 <h2>Add Category</h2>
-
+                <!-- Category name -->
                 <div class="input-box">
                     <input type="text" name="categoryName" id="categoryName" placeholder="Category Name">
                 </div>
