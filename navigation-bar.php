@@ -1,6 +1,6 @@
 <?php
-// Include the database connection file
-include('database/db_connection.php');
+// Include the database configuration file
+include('database/config.php');
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-secondary  sticky-top">
