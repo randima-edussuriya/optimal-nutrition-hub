@@ -25,7 +25,7 @@
     <!-- Admin login section start -->
     <div class="container row my-5 mx-auto ">
         <div class="wrapper col-md-6 mx-auto">
-            <form action="#" method="post">
+            <form action="#" method="post" style="margin: 4%;">
                 <h1>Login-Optimal Nutrition Hub</h1>
                 <div class="input-box">
                     <input type="text" placeholder="Username" required>

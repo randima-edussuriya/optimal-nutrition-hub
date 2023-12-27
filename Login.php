@@ -22,25 +22,27 @@
 
   <!-- Login section start -->
   <div class="container row my-5 mx-auto ">
-    <div class="wrapper col-md-6 mx-auto">
-      <form action="#" method="post">
-        <h1>Login-Optimal Nutrition Hub</h1>
-        <div class="input-box">
-          <input type="text" placeholder="Username" required>
-        </div>
-        <div class="input-box">
-          <input type="password" placeholder="Password" required>
-        </div>
-        <div class="remember-frogot">
-          <a href="#"> Fogot password?</a>
-        </div>
+    <div class="col-md-6 mx-auto">
+      <div class="wrapper">
+        <form action="#" method="post" style="margin: 4%;">
+          <h1>Login-Optimal Nutrition Hub</h1>
+          <div class="input-box">
+            <input type="text" placeholder="Username" required>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Password" required>
+          </div>
+          <div class="remember-frogot">
+            <a href="#"> Fogot password?</a>
+          </div>
 
-        <button type="submit" class="btn"> Login</button>
+          <button type="submit" class="btn"> Login</button>
 
-        <div class="register-link">
-          <p> Don't have an account? <a href="sign-up.php"> Sign-up </a></p>
-        </div>
-      </form>
+          <div class="register-link">
+            <p> Don't have an account? <a href="sign-up.php"> Sign-up </a></p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <!-- Login section end -->

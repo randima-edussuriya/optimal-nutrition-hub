@@ -22,56 +22,58 @@
 
   <!-- Sign up section start -->
   <div class="container row my-5 mx-auto">
-    <div class="wrapper col-md-6 mx-auto">
-      <form action="#" method="post">
-        <h2>Sign up-Optimal Nutrition Hub</h2>
+    <div class="col-md-6 mx-auto">
+      <div class="wrapper">
+        <form action="#" method="post">
+          <h2>Sign up-Optimal Nutrition Hub</h2>
 
-        <div class="input-box">
-          <input type="email" placeholder="@Email" required>
-        </div>
+          <div class="input-box">
+            <input type="email" placeholder="@Email" required>
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="First Name" required>
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="First Name" required>
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="Last Name" required>
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="Last Name" required>
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="Phone Number" required>
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="Phone Number" required>
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="Address Line 1" required>
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="Address Line 1" required>
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="Address Line 2">
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="Address Line 2">
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="Address Line 3">
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="Address Line 3">
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="City">
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="City">
+          </div>
 
-        <div class="input-box">
-          <input type="text" placeholder="Username" required>
-        </div>
+          <div class="input-box">
+            <input type="text" placeholder="Username" required>
+          </div>
 
-        <div class="input-box">
-          <input type="password" placeholder="Password" required>
-        </div>
+          <div class="input-box">
+            <input type="password" placeholder="Password" required>
+          </div>
 
-        <button type="submit" class="btn"> Sign Up</button>
+          <button type="submit" class="btn"> Sign Up</button>
 
-        <div class="login-link">
-          <p> have an account? <a href="Login.php"> Login </a></p>
-        </div>
-      </form>
+          <div class="login-link">
+            <p> have an account? <a href="Login.php"> Login </a></p>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <!-- Sign up section end -->
