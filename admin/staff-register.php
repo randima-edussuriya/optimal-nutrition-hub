@@ -1,6 +1,6 @@
 <?php
-// Include the database configuration file
-include('../database/config.php');
+// Include the database connection file
+include('database/db_connection.php');
 
 // Fetch select staff type drop down list
 $staffTypeSelectQuery = "SELECT * FROM staff_type;";

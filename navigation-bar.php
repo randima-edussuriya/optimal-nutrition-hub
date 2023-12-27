@@ -1,12 +1,6 @@
 <?php
-// Include the database configuration file
-include('database/config.php');
-
-$categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
-// Execute the query and store the result
-$result = mysqli_query($con, $categorySelectQuery);
-// Close the database connection
-mysqli_close($con);
+// Include the database connection file
+include('database/db_connection.php');
 ?>
 
 <nav class="navbar navbar-expand-lg bg-body-secondary  sticky-top">
@@ -30,6 +24,12 @@ mysqli_close($con);
                     <ul class="dropdown-menu">
                         <?php
                         $textBgDark = "";   // Initialize a variable for background class
+
+                        $categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
+                        // Execute the query and store the result
+                        $result = mysqli_query($con, $categorySelectQuery);
+                        // Close the database connection
+                        mysqli_close($con);
 
                         // Fetch Category names from database
                         if (mysqli_num_rows($result) > 0) {

@@ -1,6 +1,6 @@
 <?php
-// Include the database configuration file
-include('../database/config.php');
+// Include the database connection file
+include('database/db_connection.php');
 // Check if the form is submitted
 if (isset($_POST['categoryAdd'])) {
     // remove spaces and escape special characters
