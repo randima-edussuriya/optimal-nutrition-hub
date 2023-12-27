@@ -28,10 +28,8 @@ include('database/config.php');
                         $categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
                         // Execute the query and store the result
                         $result = mysqli_query($con, $categorySelectQuery);
-                        // Close the database connection
-                        mysqli_close($con);
 
-                        // Fetch Category names from database
+                        // Fetch Category from database
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
                                 // Apply background class if the category is selected
@@ -48,6 +46,8 @@ include('database/config.php');
                             // display Not Available Category
                             echo "<li><a class='dropdown-item'>Not Available Category</a></li>";
                         }
+                        // Close the database connection
+                        mysqli_close($con);
                         ?>
                     </ul>
                 </li>
