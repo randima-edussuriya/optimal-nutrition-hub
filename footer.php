@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-sm-3  col-md-5">
                     <h5>WHO WE ARE</h5>
-                    <p>
+                    <p class="text-justify">
                         As the leading sports nutrition distributor in Sri Lanka,
                         Optimal Nutrition Hub acts as your gateway to a transformational
                         journey.We offer a selection of products designed to enhance your
