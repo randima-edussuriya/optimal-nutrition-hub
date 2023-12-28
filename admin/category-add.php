@@ -7,7 +7,7 @@ if (isset($_POST['categoryAdd'])) {
     // remove spaces and escape special characters
     $categoryName = mysqli_real_escape_string($con, trim($_POST['categoryName']));
 
-    // Check if the category name is empty
+    // Check if the category name is not empty
     if ($categoryName != '') {
         // Check if the category exists
         $categorySelectQuery = "SELECT * FROM category WHERE category_name='$categoryName'";
