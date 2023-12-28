@@ -4,15 +4,15 @@ include('../database/config.php');
 
 // Check if form is submitted
 if (isset($_POST['itemAdd'])) {
-    // Assign user input
-    $itemName = $_POST['itemName'];
+    // remove spaces and escape special characters
+    $itemName = mysqli_real_escape_string($con, trim($_POST['itemName']));
     $categoryId = $_POST['category'];
-    $brand = $_POST['brand'];
-    $description = $_POST['description'];
-    $costPrice = $_POST['costPrice'];
-    $sellPrice = $_POST['sellPrice'];
-    $discount = $_POST['discount'];
-    $stockQty = $_POST['stockQty'];
+    $brand = mysqli_real_escape_string($con, trim($_POST['brand']));
+    $description = mysqli_real_escape_string($con, trim($_POST['description']));
+    $costPrice = mysqli_real_escape_string($con, trim($_POST['costPrice']));
+    $sellPrice = mysqli_real_escape_string($con, trim($_POST['sellPrice']));
+    $discount = mysqli_real_escape_string($con, trim($_POST['discount']));
+    $stockQty = mysqli_real_escape_string($con, trim($_POST['stockQty']));
 
     // Access image name
     $image1 = $_FILES['image1']['name'];
@@ -91,6 +91,9 @@ if (isset($_POST['itemAdd'])) {
                                 // Display category
                                 echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
                             }
+                        } else {
+                            // display Not available Category
+                            echo "<option value=''>Not available Category</option>";
                         }
                         ?>
                     </select>
