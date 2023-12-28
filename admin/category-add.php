@@ -8,7 +8,7 @@ if (isset($_POST['categoryAdd'])) {
     $categoryName = mysqli_real_escape_string($con, trim($_POST['categoryName']));
 
     // Check if the category name is empty
-    if (!empty($categoryName)) {
+    if ($categoryName != '') {
         // Check if the category exists
         $categorySelectQuery = "SELECT * FROM category WHERE category_name='$categoryName'";
         $result = mysqli_query($con, $categorySelectQuery);
