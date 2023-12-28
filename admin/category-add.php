@@ -5,7 +5,7 @@ include('../database/config.php');
 // Check if the form is submitted
 if (isset($_POST['categoryAdd'])) {
     // remove spaces and escape special characters
-    $categoryName = mysqli_real_escape_string($con, trim($_POST['categoryName']));
+    $categoryName = $_POST['categoryName'];
 
     // Check if the category name is not empty
     if ($categoryName != '') {
