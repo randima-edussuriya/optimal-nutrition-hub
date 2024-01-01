@@ -17,12 +17,11 @@ if (isset($_POST['customersing'])) {
   $city = $_POST['city'];
   $username = $_POST['username'];
   $password = $_POST['password'];
-  $customerStatus = 'true';
 
   //check field not empty
-  if ($email != '' and $firstName != '' and $lastName != '' and $phoneNumber != '' and $addressLine1 != '' and $city != '' and $username != '' and $password != '') {
+  if ($email != '' and $firstName != '' and $lastName != '' and $phoneNumber != '' and $addressLine1 != '' and $addressLine2 != '' and $city != '' and $username != '' and $password != '') {
 
-    $customerInsertQuiry = " INSERT INTO customer(cust_fname, cust_lname, cust_username, cust_pwd, cust_email, cust_is_active, cust_phone, cust_add_line1, cust_add_line2, cust_add_line3, cust_add_line4) VALUES ('$firstName' , '$lastName' , '$username' , '$password' , '$email' , '$customerStatus' , '$phoneNumber' , '$addressLine1' , '$addressLine2' , '$addressLine3' , '$city' ) ";
+    $customerInsertQuiry = " INSERT INTO customer(cust_fname, cust_lname, cust_username, cust_pwd, cust_email, cust_phone, cust_add_line1, cust_add_line2, cust_add_line3, cust_add_line4) VALUES ('$firstName' , '$lastName' , '$username' , '$password' , '$email', '$phoneNumber' , '$addressLine1' , '$addressLine2' , '$addressLine3' , '$city' ) ";
 
     //insert user details into database 
     if (mysqli_query($con, $customerInsertQuiry)) {
