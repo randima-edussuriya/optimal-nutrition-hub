@@ -17,7 +17,7 @@ if (isset($_POST['custom_login'])) {
   $row_data = mysqli_fetch_assoc($result);
   if ($row_count > 0) {
     //check user input password and DB store password are maching or not 
-    if ($password == $row_data['cust_pwd'] ){
+    if ($password == $row_data['cust_pwd']) {
       echo "<script>alert('Login succefully');</script>";
     } else {
       echo "<script>alert('Invalid Password');</script>";
