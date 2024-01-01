@@ -40,7 +40,7 @@ mysqli_close($con);
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/sign-up.css?v=<?php echo time(); ?>">
     <!-- JS link -->
-    <script src="formValidationScript.js" defer></script>
+    <script src="../scripts/formValidationScript.js" defer></script>
 
     <title>Category Add Form-Optimal Nutrition Hub</title>
 </head>
