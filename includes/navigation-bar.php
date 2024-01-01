@@ -37,7 +37,7 @@
                                     }
                                 }
                                 // Display category
-                                echo "<li><a class='dropdown-item $textBgDark' href='index.php?categoryId={$row['category_id']}'>{$row['category_name']}</a></li>";
+                                echo "<li><a class='dropdown-item $textBgDark' href='product.php?category={$row['category_id']}&categoryName={$row['category_name']}'>{$row['category_name']}</a></li>";
                             }
                         } else {
                             // display Not Available Category
