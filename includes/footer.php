@@ -51,12 +51,12 @@
                 <div class="col-sm-1 col-md-6">
                     <h6> SOCIAL LINKS </h6>
                     <ul class="social-icons">
-                        <li><a class="facebook" href="facebook"><img src="Icons/facebook-circle-fill.svg" alt="" style="width: 32px;"></a></li>
-                        <li><a class="twitter" href="twitter"><img src="Icons/twitter-fill.svg" alt="" style="width: 32px;"></a>
+                        <li><a class="facebook" href="facebook"><img src="icons/facebook-circle-fill.svg" alt="" style="width: 32px;"></a></li>
+                        <li><a class="twitter" href="twitter"><img src="icons/twitter-fill.svg" alt="" style="width: 32px;"></a>
                         </li>
-                        <li><a class="whatsapp" href="whatsapp"><img src="Icons/whatsapp-line.svg" alt="" style="width: 32px;"></a>
+                        <li><a class="whatsapp" href="whatsapp"><img src="icons/whatsapp-line.svg" alt="" style="width: 32px;"></a>
                         </li>
-                        <li><a class="linkedin" href="linkedin"><img src="Icons/linkedin-box-fill.svg" alt="" style="width: 32px;"></a></li>
+                        <li><a class="linkedin" href="linkedin"><img src="icons/linkedin-box-fill.svg" alt="" style="width: 32px;"></a></li>
                     </ul>
                 </div>
             </div>

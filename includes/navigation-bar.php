@@ -66,14 +66,14 @@
                     <a class="nav-link" href="Login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link position-relative " href="#"><img src="Icons/cart-2-line.svg" alt="" style="width: 32px;">
+                    <a class="nav-link position-relative " href="#"><img src="icons/cart-2-line.svg" alt="" style="width: 32px;">
                         <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             0
                         </span> -->
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="Icons/profile-line.svg" alt="" style="width: 32px;"></a>
+                    <a class="nav-link" href="#"><img src="icons/profile-line.svg" alt="" style="width: 32px;"></a>
                 </li>
             </ul>
             <!-- Right item end -->
