@@ -44,7 +44,7 @@ include('functions/common-function.php');
         <div class="row">
           <?php
           $itemSelectQuery = "SELECT * FROM item ORDER BY rand()";
-          getItemCard($itemSelectQuery);
+          getItemCard($itemSelectQuery); //call function
           ?>
         </div>
     <?php }
@@ -62,7 +62,7 @@ include('functions/common-function.php');
       <div class="row">
         <?php
         $itemSelectQuery = "SELECT * FROM item WHERE fk_category_id = $categoryId";
-        getItemCard($itemSelectQuery);
+        getItemCard($itemSelectQuery); //call function
         ?>
       </div>
     <?php }
@@ -79,7 +79,7 @@ include('functions/common-function.php');
       <div class="row">
         <?php
         $itemSelectQuery = "SELECT * FROM item WHERE item_name LIKE '%$itemName%'";
-        getItemCard($itemSelectQuery);
+        getItemCard($itemSelectQuery); //call function
         ?>
       </div>
     <?php }
