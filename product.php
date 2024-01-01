@@ -101,5 +101,5 @@ include('functions/common-function.php');
 </html>
 <?php
 // Close the database connection
-// mysqli_close($con);
+mysqli_close($con);
 ?>
