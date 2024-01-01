@@ -3,11 +3,28 @@
 include('database/config.php');
 
 //check if the form is subbmited or not
-if(isset($_POST['custom_login'])){
+if (isset($_POST['custom_login'])) {
 
   //add user inputs
   $username = $_POST['username'];
   $password = $_POST['password'];
+
+  //verifi if password store in DB in corect username
+  $select_quirey = " SELECT * FROM customer WHERE cust_username= '$username'";
+
+  $result = mysqli_query($con, $select_quirey);
+  $row_count = mysqli_num_rows($result);
+  $row_data = mysqli_fetch_assoc($result);
+  if ($row_count > 0) {
+    //check user input password and DB store password are maching or not 
+    if ($password == $row_data['cust_pwd'] ){
+      echo "<script>alert('Login succefully');</script>";
+    } else {
+      echo "<script>alert('Invalid Password');</script>";
+    }
+  } else {
+    echo "<script>alert('Invalid Credentials');</script>";
+  }
 }
 ?>
 
@@ -49,7 +66,7 @@ if(isset($_POST['custom_login'])){
             <a href="#"> Fogot password?</a>
           </div>
 
-          <button type="submit" class="btn"> Login</button>
+          <button type="submit" class="btn" name="custom_login"> Login</button>
 
           <div class="register-link">
             <p> Don't have an account? <a href="sign-up.php"> Sign-up </a></p>
