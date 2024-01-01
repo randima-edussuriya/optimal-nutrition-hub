@@ -1,8 +1,3 @@
-<?php
-// Include the database configuration file
-include('database/config.php');
-?>
-
 <nav class="navbar navbar-expand-lg bg-body-secondary  sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand ms-5 me-auto " href="index.php">
@@ -15,7 +10,7 @@ include('database/config.php');
             <!-- Left item start -->
             <ul class="navbar-nav me-auto ">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php">Product</a>
+                    <a class="nav-link" href="product.php">Product</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -23,7 +18,6 @@ include('database/config.php');
                     </a>
                     <ul class="dropdown-menu">
                         <?php
-                        $textBgDark = "";   // Initialize a variable for background class
 
                         $categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
                         // Execute the query and store the result
@@ -31,23 +25,24 @@ include('database/config.php');
 
                         // Fetch Category from database
                         if (mysqli_num_rows($result) > 0) {
+                            $textBgDark = "";
                             while ($row = mysqli_fetch_assoc($result)) {
+
                                 // Apply background class if the category is selected
                                 if (isset($_GET['categoryId'])) {
                                     if ($_GET['categoryId'] == $row['category_id']) {
                                         $textBgDark = 'text-bg-dark';
+                                    } else {
+                                        $textBgDark = "";   // remove background class
                                     }
                                 }
                                 // Display category
                                 echo "<li><a class='dropdown-item $textBgDark' href='index.php?categoryId={$row['category_id']}'>{$row['category_name']}</a></li>";
-                                $textBgDark = "";   // Reset the background class
                             }
                         } else {
                             // display Not Available Category
                             echo "<li><a class='dropdown-item'>Not Available Category</a></li>";
                         }
-                        // Close the database connection
-                        mysqli_close($con);
                         ?>
                     </ul>
                 </li>
