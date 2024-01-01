@@ -4,32 +4,31 @@ include('database/config.php');
 
 
 //check if the form is submited
-if(isset($_POST['customersing'])) {
-    // add user inputs
+if (isset($_POST['customersing'])) {
+  // add user inputs
 
-    $email = $_POST['email'];
-    $firstName =$_POST['firstName'];
-    $lastName =$_POST['lastName'];
-    $phoneNumber =$_POST['phoneNumber'];
-    $addressLine1 =$_POST['addressLine1'];
-    $addressLine2 =$_POST['addressLine2'];
-    $addressLine3 =$_POST['addressLine3'];
-    $city =$_POST['city'];
-    $username =$_POST['username'];
-    $password =$_POST['password'];
-    $customerStatus ='true';
+  $email = $_POST['email'];
+  $firstName = $_POST['firstName'];
+  $lastName = $_POST['lastName'];
+  $phoneNumber = $_POST['phoneNumber'];
+  $addressLine1 = $_POST['addressLine1'];
+  $addressLine2 = $_POST['addressLine2'];
+  $addressLine3 = $_POST['addressLine3'];
+  $city = $_POST['city'];
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+  $customerStatus = 'true';
 
-    //check field not empty
-    if($email != '' and $firstName != '' and $lastName != '' and $phoneNumber != '' and $addressLine1 != '' and $city != '' and $username != '' and $password != '' ){
-      
-      $customerInsertQuiry = " INSERT INTO customer(cust_fname, cust_lname, cust_username, cust_pwd, cust_email, cust_is_active, cust_phone, cust_add_line1, cust_add_line2, cust_add_line3, cust_add_line4) VALUES ('$firstName' , '$lastName' , '$username' , '$password' , '$email' , '$customerStatus' , '$phoneNumber' , '$addressLine1' , '$addressLine2' , '$addressLine3' , '$city' ) ";
+  //check field not empty
+  if ($email != '' and $firstName != '' and $lastName != '' and $phoneNumber != '' and $addressLine1 != '' and $city != '' and $username != '' and $password != '') {
 
-      //insert user details into database 
-      if (mysqli_query($con, $customerInsertQuiry)) {
-        echo "<script>alert('sign-UP is succefully');</script>";
+    $customerInsertQuiry = " INSERT INTO customer(cust_fname, cust_lname, cust_username, cust_pwd, cust_email, cust_is_active, cust_phone, cust_add_line1, cust_add_line2, cust_add_line3, cust_add_line4) VALUES ('$firstName' , '$lastName' , '$username' , '$password' , '$email' , '$customerStatus' , '$phoneNumber' , '$addressLine1' , '$addressLine2' , '$addressLine3' , '$city' ) ";
+
+    //insert user details into database 
+    if (mysqli_query($con, $customerInsertQuiry)) {
+      echo "<script>alert('sign-UP is succefully');</script>";
     }
-    
-    }
+  }
 }
 ?>
 
@@ -83,7 +82,7 @@ if(isset($_POST['customersing'])) {
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="Address Line 2" name="addressLine2">
+            <input type="text" placeholder="Address Line 2" name="addressLine2" required>
           </div>
 
           <div class="input-box">
@@ -105,7 +104,7 @@ if(isset($_POST['customersing'])) {
           <button type="submit" class="btn" name="customersing"> Sign Up</button>
 
           <div class="login-link">
-            <p> have an account? <a href="Login.php" > Login </a></p>
+            <p> have an account? <a href="Login.php"> Login </a></p>
           </div>
         </form>
       </div>
