@@ -61,43 +61,43 @@ if (isset($_POST['customersing'])) {
           <h2>Sign up-Optimal Nutrition Hub</h2>
 
           <div class="input-box">
-            <input type="email" placeholder="@Email" name="email" required>
+            <input type="email" placeholder="@Email" name="email" id="email" required>
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="First Name" name="firstName" required>
+            <input type="text" placeholder="First Name" name="firstName" id="firstName" required>
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="Last Name" name="lastName" required>
+            <input type="text" placeholder="Last Name" name="lastName" id="lastName" required>
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="Phone Number" name="phoneNumber" required>
+            <input type="text" placeholder="Phone Number" name="phoneNumber" id="phoneNumber" required>
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="Address Line 1" name="addressLine1" required>
+            <input type="text" placeholder="Address Line 1" name="addressLine1" id="addressLine1" required>
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="Address Line 2" name="addressLine2" required>
+            <input type="text" placeholder="Address Line 2" name="addressLine2" id="addressLine2" required>
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="Address Line 3" name="addressLine3">
+            <input type="text" placeholder="Address Line 3" name="addressLine3" id="addressLine3">
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="City" name="city" required>
+            <input type="text" placeholder="City" name="city" id="city" required>
           </div>
 
           <div class="input-box">
-            <input type="text" placeholder="Username" name="username" required>
+            <input type="text" placeholder="Username" name="username" id="username" required>
           </div>
 
           <div class="input-box">
-            <input type="password" placeholder="Password" name="password" required>
+            <input type="password" placeholder="Password" name="password" id="password" required>
           </div>
 
           <button type="submit" class="btn" name="customersing"> Sign Up</button>
