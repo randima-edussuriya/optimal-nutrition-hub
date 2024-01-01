@@ -32,10 +32,10 @@ include('database/config.php');
         <form action="#" method="post" style="margin: 4%;">
           <h1>Login-Optimal Nutrition Hub</h1>
           <div class="input-box">
-            <input type="text" placeholder="Username" required>
+            <input type="text" name="username" id="username" placeholder="Username" required>
           </div>
           <div class="input-box">
-            <input type="password" placeholder="Password" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
           </div>
           <div class="remember-frogot">
             <a href="#"> Fogot password?</a>
