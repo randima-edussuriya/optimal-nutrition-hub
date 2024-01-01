@@ -1,6 +1,14 @@
 <?php
 // Include the database configuration file
 include('database/config.php');
+
+//check if the form is subbmited or not
+if(isset($_POST['custom_login'])){
+
+  //add user inputs
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+}
 ?>
 
 <!DOCTYPE html>
