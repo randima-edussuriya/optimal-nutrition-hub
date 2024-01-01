@@ -37,7 +37,7 @@ include('database/config.php');
   <div class="carousel slide">
     <div class="carousel-inner">
       <div class="carousel-item active ">
-        <img src="Images/home.jpg" class="d-block w-100" alt="...">
+        <img src="images/home.jpg" class="d-block w-100" alt="...">
       </div>
     </div>
   </div>
@@ -51,7 +51,7 @@ include('database/config.php');
     <div class="row">
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -66,7 +66,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -81,7 +81,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -96,7 +96,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -111,7 +111,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -126,7 +126,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -141,7 +141,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -156,7 +156,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -181,7 +181,7 @@ include('database/config.php');
     <div class="row">
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -196,7 +196,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -211,7 +211,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -226,7 +226,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -241,7 +241,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -256,7 +256,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -271,7 +271,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
@@ -286,7 +286,7 @@ include('database/config.php');
       </div>
       <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
         <div class="card border-0 bg-light">
-          <img src="Images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
+          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
           <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
             -12%
           </span>
