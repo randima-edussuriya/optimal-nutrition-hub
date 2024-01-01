@@ -32,7 +32,7 @@ mysqli_close($con);
 <body style="background-color: lightgray;">
     <!-- Navigation bar start -->
     <?php
-    include('admin-navigation-bar.php');
+    include('../includes/admin-navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
 
