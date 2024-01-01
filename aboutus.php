@@ -23,7 +23,7 @@ include('database/config.php');
   <body>
     <!-- Navigation bar start -->
     <?php
-    include('navigation-bar.php');
+    include('includes/navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
 
@@ -61,7 +61,7 @@ include('database/config.php');
 
     <!-- Footer section start -->
     <?php
-    include('footer.php');
+    include('includes/footer.php');
     ?>
     <!-- Footer section end -->
 
