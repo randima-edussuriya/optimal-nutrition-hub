@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2024 at 08:57 AM
+-- Generation Time: Jan 01, 2024 at 10:34 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -89,6 +89,14 @@ CREATE TABLE `customer` (
   `cust_add_line3` varchar(255) DEFAULT NULL,
   `cust_add_line4` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`cust_id`, `cust_fname`, `cust_lname`, `cust_username`, `cust_pwd`, `cust_email`, `cust_is_active`, `cust_phone`, `cust_add_line1`, `cust_add_line2`, `cust_add_line3`, `cust_add_line4`) VALUES
+(3001, 'Dilakshna', 'Malindu', 'dila', 'dila123', 'dilakshna@gmail.com', 1, '071-2574852', 'No 12', 'Galpatha', '', 'Kalutara'),
+(3002, 'Amesh', 'Silva', 'amesh', 'amesh123', 'amesh@gmail.com', 1, '076-7554812', 'No 45', 'Batagoda', 'Balapitiya', 'Galle');
 
 -- --------------------------------------------------------
 
@@ -264,14 +272,6 @@ CREATE TABLE `staff` (
   `fk_staff_type_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `staff`
---
-
-INSERT INTO `staff` (`staff_id`, `staff_fname`, `staff_lname`, `staff_username`, `staff_pwd`, `staff_email`, `staff_is_active`, `staff_phone`, `staff_hire_date`, `staff_nic`, `staff_add_line1`, `staff_add_line2`, `staff_add_line3`, `staff_add_line4`, `fk_staff_type_id`) VALUES
-(1500, 'dinuka', 'randima', '$randima', '1234', 'myemail', 1, '0712179255', '2023-12-13', '200065655v', 'addressLine1', 'addressLine2', 'addressLine3', 'addressLine4', 1000),
-(1501, 'Dinuka', 'Edussuriya', 'dinuka', '1234', 'drandi27@gmail.com', 1, '077-2178778', '2023-12-13', '657342076V', 'No 86', 'Panagoda', 'Galpatha', '', 1001);
-
 -- --------------------------------------------------------
 
 --
@@ -432,7 +432,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3000;
+  MODIFY `cust_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3003;
 
 --
 -- AUTO_INCREMENT for table `customer_notification`
