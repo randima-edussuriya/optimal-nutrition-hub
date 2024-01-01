@@ -29,8 +29,8 @@
                             while ($row = mysqli_fetch_assoc($result)) {
 
                                 // Apply background class if the category is selected
-                                if (isset($_GET['categoryId'])) {
-                                    if ($_GET['categoryId'] == $row['category_id']) {
+                                if (isset($_GET['category'])) {
+                                    if ($_GET['category'] == $row['category_id']) {
                                         $textBgDark = 'text-bg-dark';
                                     } else {
                                         $textBgDark = "";   // remove background class
