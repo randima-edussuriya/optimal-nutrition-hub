@@ -44,50 +44,59 @@ mysqli_close($con);
             <form action="#" method="post">
                 <h2>Register Staff</h2>
 
+                <!-- First name -->
                 <div class="input-box">
-                    <input type="text" name="fName" id="fName" placeholder="First Name">
+                    <input type="text" name="fName" id="fName" placeholder="First Name" required>
                 </div>
+                <!-- Last name -->
                 <div class="input-box">
-                    <input type="text" name="lName" id="lName" placeholder="Last Name">
+                    <input type="text" name="lName" id="lName" placeholder="Last Name" required>
                 </div>
+                <!-- Username -->
                 <div class="input-box">
-                    <input type="text" name="userName" id="userName" placeholder="Username">
+                    <input type="text" name="userName" id="userName" placeholder="Username" required>
                 </div>
+                <!-- Password -->
                 <div class="input-box">
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                 </div>
+                <!-- staff type dropdown -->
                 <div>
-                    <select name="staffType">
+                    <select name="staffType" required>
                         <option selected disabled value=''>Select Staff Type</option>
                         <option value="1">One</option>
                         <option value="2">Two</option>
                     </select>
                 </div>
+                <!-- E-mail -->
                 <div class="input-box">
-                    <input type="text" name="email" id="email" placeholder="E-mail">
+                    <input type="text" name="email" id="email" placeholder="E-mail" required>
                 </div>
+                <!-- Contact no -->
                 <div class="input-box">
-                    <input type="text" name="contactNo" id="contactNo" placeholder="Contact No">
+                    <input type="text" name="contactNo" id="contactNo" placeholder="Contact No" required>
                 </div>
-                <div class="input-box text-start">
-                    <input type="date" name="hireDate" id="hireDate" class="w-50  ">
-                    <label for="hireDate">Hire Date</label>
-                </div>
+                <!-- NIC -->
                 <div class="input-box">
-                    <input type="text" name="nic" id="nic" placeholder="NIC">
+                    <input type="text" name="nic" id="nic" placeholder="NIC" required>
                 </div>
+                <!-- Address line1 -->
                 <div class="input-box">
-                    <input type="text" name="addressLine1" id="addressLine1" placeholder="Address Line-1">
+                    <input type="text" name="addressLine1" id="addressLine1" placeholder="Address Line-1" required>
                 </div>
+                <!-- Address line2 -->
                 <div class="input-box">
-                    <input type="text" name="addressLine2" id="addressLine2" placeholder="Address Line-2">
+                    <input type="text" name="addressLine2" id="addressLine2" placeholder="Address Line-2" required>
                 </div>
+                <!-- Address line3 -->
                 <div class="input-box">
                     <input type="text" name="addressLine3" id="addressLine3" placeholder="Address Line-3">
                 </div>
+                <!-- City  -->
                 <div class="input-box">
-                    <input type="text" name="addressLine4" id="addressLine4" placeholder="Address Line-4">
+                    <input type="text" name="city" id="city" placeholder="City" required>
                 </div>
+                <!-- Register button -->
                 <button type="submit" class="btn text-bg-secondary" name="staffRegister">Register</button>
             </form>
         </div>
