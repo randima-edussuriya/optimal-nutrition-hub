@@ -36,7 +36,7 @@ function getItemCard($itemSelectQuery)
             -$item_discount%
           </span>
           <div class='card-body p-0 pb-2'>
-          <h6 class='product-name' class='product-name'>{$itemRow['item_name']}</h6>
+          <h6 class='product-name'>{$itemRow['item_name']}</h6>
             <h6 class='$displayNone text-decoration-line-through d-inline text-body-tertiary'>Rs. $discountedPrice</h6>
             <h6 class='d-inline'>Rs. $item_sell_price</h6>
             <h6 class='$AvailabiliyColor fw-bold '>$availabiliy</h6>
