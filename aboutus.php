@@ -1,3 +1,8 @@
+<?php
+// Include the database configuration file
+include('database/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
