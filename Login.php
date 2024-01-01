@@ -63,3 +63,7 @@ include('database/config.php');
 </body>
 
 </html>
+<?php
+// Close the database connection
+mysqli_close($con);
+?>
