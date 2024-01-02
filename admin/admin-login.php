@@ -1,30 +1,30 @@
 <?php
 // Include the database configuration file
-include('database/config.php');
+include('../database/config.php');
 
 //check if the form is subbmited or not
 if (isset($_POST['staff_login'])) {
 
-  //add user inputs
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+    //add user inputs
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-  //verifi if password store in DB in corect username
-  $select_quirey = " SELECT * FROM staff WHERE staff_username= '$username'";
+    //verifi if password store in DB in corect username
+    $select_quirey = " SELECT * FROM staff WHERE staff_username= '$username'";
 
-  $result = mysqli_query($con, $select_quirey);
-  $row_count = mysqli_num_rows($result);
-  $row_data = mysqli_fetch_assoc($result);
-  if ($row_count > 0) {
-    //check user input password and DB store password are maching or not 
-    if ($password == $row_data['staff_pwd']) {
-      echo "<script>alert('Login succefully');</script>";
+    $result = mysqli_query($con, $select_quirey);
+    $row_count = mysqli_num_rows($result);
+    $row_data = mysqli_fetch_assoc($result);
+    if ($row_count > 0) {
+        //check user input password and DB store password are maching or not 
+        if ($password == $row_data['staff_pwd']) {
+            echo "<script>alert('Login succefully');</script>";
+        } else {
+            echo "<script>alert('Invalid Password');</script>";
+        }
     } else {
-      echo "<script>alert('Invalid Password');</script>";
+        echo "<script>alert('Invalid Credentials');</script>";
     }
-  } else {
-    echo "<script>alert('Invalid Credentials');</script>";
-  }
 }
 ?>
 
@@ -41,7 +41,7 @@ if (isset($_POST['staff_login'])) {
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/login.css?v=<?php echo time(); ?>">
-    
+
     <title>Admin Home-Optimal Nutrition Hub</title>
 </head>
 
