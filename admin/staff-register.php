@@ -2,23 +2,15 @@
 // Include the database configuration file
 include('../database/config.php');
 
-// Fetch select staff type drop down list
-$staffTypeSelectQuery = "SELECT * FROM staff_type;";
-// Execute the query and store the result
-$resultStaffType = mysqli_query($con, $staffTypeSelectQuery);
-// Fetch staff types from database
-
 // Check if the form is submitt
 if (isset($_POST['staffRegister'])) {
     // add user inputs
-  
+
     $fName = $_POST['fName'];
     $lName = $_POST['lName'];
     $userName = $_POST['userName'];
     $password = $_POST['password'];
-
-    $staffType = $_POST['resultStaffType'];
-
+    $staffType = $_POST['staffType'];
     $email = $_POST['email'];
     $contactNo = $_POST['contactNo'];
     $nic = $_POST['nic'];
@@ -26,21 +18,18 @@ if (isset($_POST['staffRegister'])) {
     $addressLine2 = $_POST['addressLine2'];
     $addressLine3 = $_POST['addressLine3'];
     $city = $_POST['city'];
-  
-    //check field not empty
-    if ($fName != '' and $lName != '' and $userName != '' and $password != '' and $staffType != '' and $email != '' and $contactNo != '' and $nic != '' and $addressLine1 != '' and $addressLine2 != '' and $addressLine3 != '' and $city != '') {
-  
-      $staffInsertQuiry = " INSERT INTO staff(staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_is_active, staff_phone, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4) VALUES ('$fName' , '$lName' , '$userName' , '$password' , '$email' , '$staffType' , '$contactNo' , '$nic' , '$addressLine1' , '$addressLine2' , '$addressLine3' , '$city' ) ";
-  
-      //insert user details into database 
-      if (mysqli_query($con, $staffInsertQuiry)) {
-        echo "<script>alert('Staff Registration is succefully');</script>";
-      }
-    }
-  }
 
-// Close the database connection
-mysqli_close($con);
+    //check field not empty
+    if ($fName != '' and $lName != '' and $userName != '' and $password != '' and $staffType != '' and $email != '' and $contactNo != '' and $nic != '' and $addressLine1 != '' and $addressLine2 != '' and $city != '') {
+
+        $staffInsertQuiry = " INSERT INTO staff (staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id) VALUES ('$fName', '$lName', '$userName', '$password', '$email', '$contactNo', CURDATE(), '$nic', '$addressLine1', '$addressLine2', '$addressLine3', '$city', $staffType ) ";
+
+        //insert user details into database 
+        if (mysqli_query($con, $staffInsertQuiry)) {
+            echo "<script>alert('Staff Registration is succefully');</script>";
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +55,6 @@ mysqli_close($con);
     <!-- Navigation bar end -->
 
     <!-- Staff Register form section start -->
-
-    <!-- Staff Register form section end -->
     <div class="container  row my-5 mx-auto">
         <div class="wrapper col-md-6 mx-auto">
             <form action="#" method="post">
@@ -92,9 +79,17 @@ mysqli_close($con);
                 <!-- staff type dropdown -->
                 <div>
                     <select name="staffType" required>
-                        <option selected disabled value=''>Select Staff Type</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
+                        <option selected value=''>Select Staff Type</option>
+                        <?php
+                        $staffTypeSelectQuery = "SELECT * FROM staff_type";
+                        // Execute the query and store the result
+                        $staffTypeResult = mysqli_query($con, $staffTypeSelectQuery);
+                        // fetch staff types
+                        while ($staffTypeRow = mysqli_fetch_assoc($staffTypeResult)) {
+                            // display staff types
+                            echo "<option value='{$staffTypeRow['staff_type_id']}'>{$staffTypeRow['staff_type_name']}</option>";
+                        }
+                        ?>
                     </select>
                 </div>
                 <!-- E-mail -->
@@ -130,6 +125,8 @@ mysqli_close($con);
             </form>
         </div>
     </div>
+    <!-- Staff Register form section end -->
+
     <!-- Footer section start -->
     <footer class="bettle">
         <div class="container">
@@ -149,3 +146,7 @@ mysqli_close($con);
 </body>
 
 </html>
+<?php
+// Close the database connection
+mysqli_close($con);
+?>
