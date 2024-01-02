@@ -10,7 +10,7 @@ if (isset($_POST['staff_login'])) {
     $password = $_POST['password'];
 
     //verifi if password store in DB in corect username
-    $select_quirey = " SELECT * FROM staff WHERE staff_username= '$username'";
+    $select_quirey = "SELECT * FROM staff WHERE staff_username = '$username'";
 
     $result = mysqli_query($con, $select_quirey);
     $row_count = mysqli_num_rows($result);
@@ -40,7 +40,7 @@ if (isset($_POST['staff_login'])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/login.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../css/login.css">
 
     <title>Admin Home-Optimal Nutrition Hub</title>
 </head>
@@ -61,7 +61,7 @@ if (isset($_POST['staff_login'])) {
                     <input type="text" name="username" id="username" placeholder="Username" required>
                 </div>
                 <div class="input-box">
-                    <input type="password" name="username" id="username" placeholder="Password" required>
+                    <input type="password" name="password" id="password" placeholder="Password" required>
                 </div>
                 <div class="remember-frogot">
                     <a href="#"> Fogot password?</a>
@@ -92,3 +92,7 @@ if (isset($_POST['staff_login'])) {
 </body>
 
 </html>
+<?php
+// close database connection
+mysqli_close($con);
+?>
