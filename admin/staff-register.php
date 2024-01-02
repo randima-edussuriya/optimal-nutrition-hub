@@ -9,6 +9,35 @@ $resultStaffType = mysqli_query($con, $staffTypeSelectQuery);
 // Fetch staff types from database
 
 // Check if the form is submitt
+if (isset($_POST['staffRegister'])) {
+    // add user inputs
+  
+    $fName = $_POST['fName'];
+    $lName = $_POST['lName'];
+    $userName = $_POST['userName'];
+    $password = $_POST['password'];
+
+    $staffType = $_POST['resultStaffType'];
+
+    $email = $_POST['email'];
+    $contactNo = $_POST['contactNo'];
+    $nic = $_POST['nic'];
+    $addressLine1 = $_POST['addressLine1'];
+    $addressLine2 = $_POST['addressLine2'];
+    $addressLine3 = $_POST['addressLine3'];
+    $city = $_POST['city'];
+  
+    //check field not empty
+    if ($fName != '' and $lName != '' and $userName != '' and $password != '' and $staffType != '' and $email != '' and $contactNo != '' and $nic != '' and $addressLine1 != '' and $addressLine2 != '' and $addressLine3 != '' and $city != '') {
+  
+      $staffInsertQuiry = " INSERT INTO staff(staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_is_active, staff_phone, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4) VALUES ('$fName' , '$lName' , '$userName' , '$password' , '$email' , '$staffType' , '$contactNo' , '$nic' , '$addressLine1' , '$addressLine2' , '$addressLine3' , '$city' ) ";
+  
+      //insert user details into database 
+      if (mysqli_query($con, $staffInsertQuiry)) {
+        echo "<script>alert('Staff Registration is succefully');</script>";
+      }
+    }
+  }
 
 // Close the database connection
 mysqli_close($con);
