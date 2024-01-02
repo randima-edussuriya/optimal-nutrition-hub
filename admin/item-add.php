@@ -86,11 +86,9 @@ if (isset($_POST['itemAdd'])) {
                         // Execute the query and store the result
                         $result = mysqli_query($con, $categorySelectQuery);
                         // Fetch Category from database
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                // Display category
-                                echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
-                            }
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            // Display category
+                            echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
                         }
                         ?>
                     </select>
