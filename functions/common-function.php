@@ -22,10 +22,10 @@ function getItemCard($itemSelectQuery)
             // item availabiity status handling
             if ($itemRow['item_stock_qty'] == '0') {
                 $availabiliy = 'Out of Stock';
-                $AvailabiliyColor = 'text-danger';
+                $AvailabiliyColor = 'text-danger'; // apply bootstrap class
             } else {
                 $availabiliy = 'In Stock';
-                $AvailabiliyColor = 'text-success';
+                $AvailabiliyColor = 'text-success'; // apply bootstrap class
             }
 
             // display item card
