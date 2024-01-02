@@ -1,3 +1,33 @@
+<?php
+// Include the database configuration file
+include('database/config.php');
+
+//check if the form is subbmited or not
+if (isset($_POST['staff_login'])) {
+
+  //add user inputs
+  $username = $_POST['username'];
+  $password = $_POST['password'];
+
+  //verifi if password store in DB in corect username
+  $select_quirey = " SELECT * FROM staff WHERE staff_username= '$username'";
+
+  $result = mysqli_query($con, $select_quirey);
+  $row_count = mysqli_num_rows($result);
+  $row_data = mysqli_fetch_assoc($result);
+  if ($row_count > 0) {
+    //check user input password and DB store password are maching or not 
+    if ($password == $row_data['staff_pwd']) {
+      echo "<script>alert('Login succefully');</script>";
+    } else {
+      echo "<script>alert('Invalid Password');</script>";
+    }
+  } else {
+    echo "<script>alert('Invalid Credentials');</script>";
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,16 +58,16 @@
             <form action="#" method="post" style="margin: 4%;">
                 <h1>Login-Optimal Nutrition Hub</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" name="username" id="username" placeholder="Username" required>
                 </div>
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="username" id="username" placeholder="Password" required>
                 </div>
                 <div class="remember-frogot">
                     <a href="#"> Fogot password?</a>
                 </div>
 
-                <button type="submit" class="btn text-bg-secondary"> Login</button>
+                <button type="submit" class="btn text-bg-secondary" name="staff_login"> Login</button>
             </form>
         </div>
     </div>
