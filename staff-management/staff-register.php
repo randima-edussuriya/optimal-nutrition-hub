@@ -43,6 +43,7 @@ if (isset($_POST['staffRegister'])) {
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/sign-up.css">
+    <link rel="stylesheet" href="../css/staff-management.css">
 
     <title>Staff Register Form-Optimal Nutrition Hub</title>
 </head>
@@ -53,6 +54,12 @@ if (isset($_POST['staffRegister'])) {
     include('../includes/admin-navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
+
+    <!-- BACK button start -->
+    <div class="back-button-container">
+        <a href="../admin/admin-home.php" class="back-button">Back</a>
+    </div>
+    <!-- BACK button end -->
 
     <!-- Staff Register form section start -->
     <div class="container  row my-5 mx-auto">
