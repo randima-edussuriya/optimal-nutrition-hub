@@ -26,15 +26,15 @@ tr:hover {
 /* ----------------------------------
     |Action Button
     |-------------------------------- */
-.action-buttons {
+.action-links {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.view-button,
-.update-button,
-.deactivate-button {
+.view,
+.update,
+.deactivate {
     padding: 8px 16px;
     cursor: pointer;
     color: white;
@@ -47,26 +47,26 @@ tr:hover {
     margin-right: 5px;
 }
 
-.view-button {
+.view {
     background-color: #1316b1;
 }
 
-.view-button:hover {
+.view:hover {
     background-color: #050663;
 }
 
-.update-button {
+.update {
     background-color: #4CAF50;
 }
 
-.update-button:hover {
+.update:hover {
     background-color: #044206;
 }
 
-.deactivate-button {
+.deactivate {
     background-color: #ff6b60;
 }
 
-.deactivate-button:hover {
+.deactivate:hover {
     background-color: rgb(138, 5, 5);
 }

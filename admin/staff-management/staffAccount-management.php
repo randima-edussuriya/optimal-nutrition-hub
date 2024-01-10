@@ -66,22 +66,26 @@ include('../../database/config.php');
                 $staff_is_active = $row_data['staff_is_active'];
                 $number++;
 
-                //check the user is active or deactive
-                $status = "Deactivate"; //defoult value should be deactivate
-                if ($staff_is_active == 1) {
-                    $status = "Active";
-                }
-                echo "<tr>
+                    //check the user is active or deactive
+
+                    $status = "Deactivate"; //defoult value should be deactivate
+                    if ($staff_is_active == 1) {
+                        $status = "Active";
+                    }
+                    echo "<tr>
                     <td>$staff_id</td>
                     <td>$staff_fname</td>
                     <td>$staff_email</td>
                     <td>$staff_username</td>
                     <td>$staff_type_name</td>
                     <td>$status</td>
-                    <td class='action-buttons'>
-                        <button class='view-button'>View</button>
-                        <button class='update-button'>Update</button>
-                        <button class='deactivate-button'>Deactivate</button>
+                    <td class='action-links'>
+                    <a href='staff-view.php' class='view'>View</a>
+                    <a href='#' class='update'>Update</a>
+                    <a href='#' class='deactivate'>Deactivate</a>
+
+
+
                     </td>
                 </tr>
                     ";
