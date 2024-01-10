@@ -21,14 +21,14 @@
     <!-- Navigation bar end -->
 
 
-   
+
 
     <!-- BACK & Register button start -->
     <div class="back-button-container">
-        <a href="staff-register.php" class="Registertion">Register</a>
+        <a href="staff-register.php" class="Registration">Register</a>
         <a href="../home-pages/admin-home.php" class="back-button">Back</a>
     </div>
-    <!-- BACk button end -->
+    <!--  BACK & Register button end -->
 
     <!-- Staff details  section start -->
     <h2 class="text-center ">Staff Management</h2>
