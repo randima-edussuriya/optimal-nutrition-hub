@@ -46,6 +46,6 @@ tr:hover {
     background-color: #f44336;
 }
 
-button :hover {
+button:hover {
     background-color: rgb(121, 121, 121);
 }
