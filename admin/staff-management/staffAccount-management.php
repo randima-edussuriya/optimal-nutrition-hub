@@ -1,3 +1,8 @@
+<?php
+// Include the database configuration file
+include('../../database/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,31 +39,60 @@
     <h2 class="text-center ">Staff Management</h2>
     <table>
         <thead>
-            <tr>
-                <th>Staff ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Username</th>
-                <th>Staff Type</th>
-                <th>Status</th>
-                <th>Action</th>
-            </tr>
+            <?php 
+            $get_userdetails="SELECT staff_id, staff_fname, staff_email, staff_username, staff_type_name, staff_is_active FROM staff 
+            INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id";
+            $result=mysqli_query($con,$get_userdetails);
+            $row_count=mysqli_num_rows($result);
+            echo " <tr>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Staff Type</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+            ";
+
+            if($row_count==0){
+                    echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
+            
+            }else{
+                $number=0;
+                while($row_data=mysqli_fetch_assoc($result)){
+                    $staff_id=$row_data['staff_id'];
+                    $staff_fname=$row_data['staff_fname'];
+                    $staff_email=$row_data['staff_email'];
+                    $staff_username=$row_data['staff_username'];
+                    $staff_type_name=$row_data['staff_type_name'];
+                    $staff_is_active=$row_data['staff_is_active'];
+                    $number++;
+                    echo "<tr>
+                    <td>$staff_id</td>
+                    <td>$staff_fname</td>
+                    <td>$staff_email</td>
+                    <td>$staff_username</td>
+                    <td>$staff_type_name</td>
+                    <td>$staff_is_active</td>
+                    <td class='action-buttons'>
+                        <button class='view-button'>View</button>
+                        <button class='update-button'>Update</button>
+                        <button class='deactivate-button'>Deactivate</button>
+                    </td>
+                </tr>
+                    ";
+
+                }
+            }
+
+
+?>
+           
         </thead>
         <tbody>
             <!-- Example Data (Replace with actual data from your backend) -->
-            <tr>
-                <td>1</td>
-                <td>name</td>
-                <td>@gmail.com</td>
-                <td>admin_user</td>
-                <td>Admin</td>
-                <td>Active</td>
-                <td class="action-buttons">
-                    <button class="view-button">View</button>
-                    <button class="update-button">Update</button>
-                    <button class="deactivate-button">Deactivate</button>
-                </td>
-            </tr>
+            
         </tbody>
     </table>
     <!-- Staff details section ende -->
@@ -84,3 +118,7 @@
 </body>
 
 </html>
+<?php
+// Close the database connection
+mysqli_close($con);
+?>
