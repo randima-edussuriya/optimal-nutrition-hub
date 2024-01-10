@@ -1,6 +1,6 @@
 <?php
 // Include the database configuration file
-include('../database/config.php');
+include('../../database/config.php');
 
 // Check if the form is submitted
 if (isset($_POST['categoryAdd'])) {
@@ -36,11 +36,11 @@ mysqli_close($con);
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- CSS link -->
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/sign-up.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/sign-up.css?v=<?php echo time(); ?>">
     <!-- JS link -->
-    <script src="../scripts/formValidationScript.js" defer></script>
+    <script src="../../scripts/formValidationScript.js" defer></script>
 
     <title>Category Add Form-Optimal Nutrition Hub</title>
 </head>
@@ -48,7 +48,7 @@ mysqli_close($con);
 <body style="background-color: lightgray;">
     <!-- Navigation bar start -->
     <?php
-    include('../includes/admin-navigation-bar.php');
+    include('../../includes/admin-navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
 

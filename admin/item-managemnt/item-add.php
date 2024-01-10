@@ -1,18 +1,18 @@
 <?php
 // Include the database configuration file
-include('../database/config.php');
+include('../../database/config.php');
 
 // Check if form is submitted
 if (isset($_POST['itemAdd'])) {
-    // remove spaces and escape special characters
-    $itemName = mysqli_real_escape_string($con, trim($_POST['itemName']));
+    // Assign user input
+    $itemName = $_POST['itemName'];
     $categoryId = $_POST['category'];
-    $brand = mysqli_real_escape_string($con, trim($_POST['brand']));
-    $description = mysqli_real_escape_string($con, trim($_POST['description']));
-    $costPrice = mysqli_real_escape_string($con, trim($_POST['costPrice']));
-    $sellPrice = mysqli_real_escape_string($con, trim($_POST['sellPrice']));
-    $discount = mysqli_real_escape_string($con, trim($_POST['discount']));
-    $stockQty = mysqli_real_escape_string($con, trim($_POST['stockQty']));
+    $brand = $_POST['brand'];
+    $description = $_POST['description'];
+    $costPrice = $_POST['costPrice'];
+    $sellPrice = $_POST['sellPrice'];
+    $discount = $_POST['discount'];
+    $stockQty = $_POST['stockQty'];
 
     // Access image name
     $image1 = $_FILES['image1']['name'];
@@ -23,8 +23,8 @@ if (isset($_POST['itemAdd'])) {
 
     // check if not empty
     if ($itemName != '' and $categoryId != '' and $brand != '' and $description != '' and $costPrice != '' and $sellPrice != '' and $discount != '' and $stockQty != '' and $image1 != '' and $image2 != '') {
-        move_uploaded_file($tmp_image1, "../Images/products/$image1");
-        move_uploaded_file($tmp_image2, "../Images/products/$image2");
+        move_uploaded_file($tmp_image1, "../../Images/products/$image1");
+        move_uploaded_file($tmp_image2, "../../Images/products/$image2");
 
         $itemInsertQuery = "INSERT INTO item (item_name, item_image1, item_image2, item_brand, item_description, item_sell_price, item_cost_price, item_stock_qty, item_discount, item_date_added, fk_category_id) VALUES ('$itemName', '$image1', '$image2', '$brand', '$description', '$sellPrice', '$costPrice', '$stockQty', '$discount', NOW(), $categoryId)";
         // insert new item to database
@@ -44,9 +44,9 @@ if (isset($_POST['itemAdd'])) {
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- CSS link -->
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/sign-up.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/sign-up.css">
 
     <title>Item Add Form-Optimal Nutrition Hub</title>
 </head>
@@ -54,7 +54,7 @@ if (isset($_POST['itemAdd'])) {
 <body style="background-color: lightgray;">
     <!-- Navigation bar start -->
     <?php
-    include('../includes/admin-navigation-bar.php');
+    include('../../includes/admin-navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
 
@@ -86,14 +86,9 @@ if (isset($_POST['itemAdd'])) {
                         // Execute the query and store the result
                         $result = mysqli_query($con, $categorySelectQuery);
                         // Fetch Category from database
-                        if (mysqli_num_rows($result) > 0) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                // Display category
-                                echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
-                            }
-                        } else {
-                            // display Not available Category
-                            echo "<option value=''>Not available Category</option>";
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            // Display category
+                            echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
                         }
                         ?>
                     </select>
