@@ -32,7 +32,6 @@
 
     <!-- Staff details  section start -->
     <h2 class="text-center ">Staff Management</h2>
-
     <table>
         <thead>
             <tr>
@@ -43,7 +42,6 @@
                 <th>Staff Type</th>
                 <th>Status</th>
                 <th>Action</th>
-
             </tr>
         </thead>
         <tbody>
@@ -61,7 +59,6 @@
                     <button class="deactivate-button">Deactivate</button>
                 </td>
             </tr>
-
             <!-- Staff details section ende -->
 
             <!-- Footer section start -->
