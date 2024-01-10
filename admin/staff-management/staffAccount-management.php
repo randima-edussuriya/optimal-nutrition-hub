@@ -5,6 +5,7 @@ include('../../database/config.php');
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,10 +35,11 @@ include('../../database/config.php');
     <!-- Staff details  section start -->
     <h2 class="text-center ">Staff Management</h2>
     <table>
-        <thead>
+        
+            <!-- get value from staff table and staff type table -->
             <?php
             $get_userdetails = "SELECT staff_id, staff_fname, staff_email, staff_username, staff_type_name, staff_is_active FROM staff 
-            INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id";
+            INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id";  //get user possition from staff type table 
             $result = mysqli_query($con, $get_userdetails);
             $row_count = mysqli_num_rows($result);
             echo " <tr>
@@ -48,14 +50,15 @@ include('../../database/config.php');
             <th>Staff Type</th>
             <th>Status</th>
             <th>Action</th>
-        </tr>
-            ";
+            </tr>";
 
+            // check the table row count 
             if ($row_count == 0) {
                 echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
             } else {
                 $number = 0;
-                while ($row_data = mysqli_fetch_assoc($result)) {
+                while ($row_data = mysqli_fetch_assoc($result)) { //fetch a single row of result data as an associative array
+                    //asign to database valuwe to variables 
                     $staff_id = $row_data['staff_id'];
                     $staff_fname = $row_data['staff_fname'];
                     $staff_email = $row_data['staff_email'];
@@ -63,13 +66,20 @@ include('../../database/config.php');
                     $staff_type_name = $row_data['staff_type_name'];
                     $staff_is_active = $row_data['staff_is_active'];
                     $number++;
+
+                    //check the user is active or deactive
+
+                    $status = "Deactivate"; //defoult value should be deactivate
+                    if ($staff_is_active == 1) {
+                        $status = "Active";
+                    }
                     echo "<tr>
                     <td>$staff_id</td>
                     <td>$staff_fname</td>
                     <td>$staff_email</td>
                     <td>$staff_username</td>
                     <td>$staff_type_name</td>
-                    <td>$staff_is_active</td>
+                    <td>$status</td>
                     <td class='action-buttons'>
                         <button class='view-button'>View</button>
                         <button class='update-button'>Update</button>
@@ -80,9 +90,8 @@ include('../../database/config.php');
                 }
             }
             ?>
-        </thead>
-        <tbody>
-        </tbody>
+        
+    
     </table>
     <!-- Staff details section ende -->
 
