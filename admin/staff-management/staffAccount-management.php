@@ -39,11 +39,11 @@ include('../../database/config.php');
     <h2 class="text-center ">Staff Management</h2>
     <table>
         <thead>
-            <?php 
-            $get_userdetails="SELECT staff_id, staff_fname, staff_email, staff_username, staff_type_name, staff_is_active FROM staff 
+            <?php
+            $get_userdetails = "SELECT staff_id, staff_fname, staff_email, staff_username, staff_type_name, staff_is_active FROM staff 
             INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id";
-            $result=mysqli_query($con,$get_userdetails);
-            $row_count=mysqli_num_rows($result);
+            $result = mysqli_query($con, $get_userdetails);
+            $row_count = mysqli_num_rows($result);
             echo " <tr>
             <th>Staff ID</th>
             <th>Name</th>
@@ -55,18 +55,17 @@ include('../../database/config.php');
         </tr>
             ";
 
-            if($row_count==0){
-                    echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
-            
-            }else{
-                $number=0;
-                while($row_data=mysqli_fetch_assoc($result)){
-                    $staff_id=$row_data['staff_id'];
-                    $staff_fname=$row_data['staff_fname'];
-                    $staff_email=$row_data['staff_email'];
-                    $staff_username=$row_data['staff_username'];
-                    $staff_type_name=$row_data['staff_type_name'];
-                    $staff_is_active=$row_data['staff_is_active'];
+            if ($row_count == 0) {
+                echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
+            } else {
+                $number = 0;
+                while ($row_data = mysqli_fetch_assoc($result)) {
+                    $staff_id = $row_data['staff_id'];
+                    $staff_fname = $row_data['staff_fname'];
+                    $staff_email = $row_data['staff_email'];
+                    $staff_username = $row_data['staff_username'];
+                    $staff_type_name = $row_data['staff_type_name'];
+                    $staff_is_active = $row_data['staff_is_active'];
                     $number++;
                     echo "<tr>
                     <td>$staff_id</td>
@@ -82,17 +81,16 @@ include('../../database/config.php');
                     </td>
                 </tr>
                     ";
-
                 }
             }
 
 
-?>
-           
+            ?>
+
         </thead>
         <tbody>
             <!-- Example Data (Replace with actual data from your backend) -->
-            
+
         </tbody>
     </table>
     <!-- Staff details section ende -->
