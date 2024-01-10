@@ -5,7 +5,6 @@ include('../../database/config.php');
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,9 +23,6 @@ include('../../database/config.php');
     include('../../includes/admin-navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
-
-
-
 
     <!-- BACK & Register button start -->
     <div class="back-button-container">
@@ -83,14 +79,9 @@ include('../../database/config.php');
                     ";
                 }
             }
-
-
             ?>
-
         </thead>
         <tbody>
-            <!-- Example Data (Replace with actual data from your backend) -->
-
         </tbody>
     </table>
     <!-- Staff details section ende -->
