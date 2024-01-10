@@ -27,6 +27,7 @@ tr:hover {
     align-items: center;
 }
 
+.view,
 .update-button,
 .deactivate-button {
     padding: 8px 16px;
@@ -39,11 +40,19 @@ tr:hover {
     text-decoration: none;
     display: inline-block;
     font-size: 14px;
-    margin-right: 7px;
+    margin-right: 5px;
 }
 
 .deactivate-button {
     background-color: #ff6b60;
+}
+
+.view {
+    background-color: #1316b1;
+}
+
+.view:hover{
+    background-color: #050663;
 }
 
 .deactivate-button:hover {

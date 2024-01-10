@@ -37,18 +37,26 @@
         <thead>
             <tr>
                 <th>Staff ID</th>
+                <th>Name</th>
+                <th>Email</th>
                 <th>Username</th>
                 <th>Staff Type</th>
+                <th>Status</th>
                 <th>Action</th>
+
             </tr>
         </thead>
         <tbody>
             <!-- Example Data (Replace with actual data from your backend) -->
             <tr>
                 <td>1</td>
+                <td>name</td>
+                <td>@gmail.com</td>
                 <td>admin_user</td>
                 <td>Admin</td>
+                <td>Active</td>
                 <td class="action-buttons">
+                    <button class="view">View</button>
                     <button class="update-button">Update</button>
                     <button class="deactivate-button">Deactivate</button>
                 </td>
