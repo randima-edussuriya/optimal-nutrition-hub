@@ -5,6 +5,7 @@ include('../../database/config.php');
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +35,6 @@ include('../../database/config.php');
     <!-- Staff details  section start -->
     <h2 class="text-center ">Staff Management</h2>
     <table>
-
         <!-- get value from staff table and staff type table -->
         <?php
         $get_userdetails = "SELECT staff_id, staff_fname, staff_email, staff_username, staff_type_name, staff_is_active FROM staff 
@@ -66,13 +66,12 @@ include('../../database/config.php');
                 $staff_is_active = $row_data['staff_is_active'];
                 $number++;
 
-                    //check the user is active or deactive
-
-                    $status = "Deactivate"; //defoult value should be deactivate
-                    if ($staff_is_active == 1) {
-                        $status = "Active";
-                    }
-                    echo "<tr>
+                //check the user is active or deactive
+                $status = "Deactivate"; //defoult value should be deactivate
+                if ($staff_is_active == 1) {
+                    $status = "Active";
+                }
+                echo "<tr>
                     <td>$staff_id</td>
                     <td>$staff_fname</td>
                     <td>$staff_email</td>
@@ -83,9 +82,6 @@ include('../../database/config.php');
                     <a href='staff-view.php' class='view'>View</a>
                     <a href='#' class='update'>Update</a>
                     <a href='#' class='deactivate'>Deactivate</a>
-
-
-
                     </td>
                 </tr>
                     ";
