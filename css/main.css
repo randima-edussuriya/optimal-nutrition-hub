@@ -15,3 +15,27 @@
     margin-left: 7px;
     margin-right: 7px;
 }
+
+/* ---------------------------------------
+    |   Back button
+    |------------------------------------- */
+.back-button-container {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 6px 18px;
+    margin-right: 20px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #0c0c0c;
+    color: white;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #504f4f;
+}

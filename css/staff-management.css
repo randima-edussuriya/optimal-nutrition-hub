@@ -1,15 +1,12 @@
 /* table */
-body {
-    font-family: Arial, sans-serif;
-}
-
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 10px;
     text-align: left;
@@ -26,11 +23,12 @@ tr:hover {
 /* button */
 .action-buttons {
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-.update-button, .deactivate-button {
+.update-button,
+.deactivate-button {
     padding: 8px 16px;
     cursor: pointer;
     background-color: #4CAF50;
@@ -48,29 +46,6 @@ tr:hover {
     background-color: #f44336;
 }
 
-button :hover{
+button :hover {
     background-color: rgb(121, 121, 121);
-}
-
-/* Back button */
-
-.back-button-container {
-    text-align: right;
-    margin-top: 10px;
-}
-
-.back-button {
-    display: inline-block;
-    padding: 6px 18px;
-    margin-right: 20px;
-    font-size: 16px;
-    text-decoration: none;
-    background-color: #0c0c0c;
-    color: white;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-}
-
-.back-button:hover {
-    background-color: #504f4f;
 }

@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/admin-home.css">
-    <link rel="stylesheet" href="../../css/staff-management.css">
 
     <title>Deliver Home-Optimal Nutrition Hub</title>
 </head>
@@ -23,8 +22,8 @@
     ?>
     <!-- Navigation bar end -->
 
-     <!-- BACK button start -->
-     <div class="back-button-container">
+    <!-- BACK button start -->
+    <div class="back-button-container">
         <a href="../Home-pages/admin-home.php" class="back-button">Back</a>
     </div>
     <!-- BACK button end -->
