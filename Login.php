@@ -37,7 +37,7 @@ if (isset($_POST['custom_login'])) {
   <!-- Bootstrap CSS link -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/login.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="css/login.css">
   <link rel="stylesheet" href="css/footer.css">
 
   <title>Login-Optimal Nutrition Hub</title>
