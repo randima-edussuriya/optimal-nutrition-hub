@@ -20,9 +20,13 @@
     ?>
     <!-- Navigation bar end -->
 
-    <!-- BACK button start -->
+
+   
+
+    <!-- BACK & Register button start -->
     <div class="back-button-container">
-        <a href="../admin/admin-home.php" class="back-button">Back</a>
+        <a href="staff-register.php" class="Registertion">Register</a>
+        <a href="../home-pages/admin-home.php" class="back-button">Back</a>
     </div>
     <!-- BACk button end -->
 
