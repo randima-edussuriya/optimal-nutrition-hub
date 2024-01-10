@@ -28,7 +28,7 @@
             <h2>Admin Panel</h2>
         </div>
         <div class="row align-items-center justify-content-center py-3 mx-auto bg-body-secondary     ">
-            <a href="../staff-management/staff-management-dashboard.php" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../staff-management/staffAccount-management.php" class="nav-link col-lg-2 btn-module btn btn-dark">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">group_add</i></div>
                     <div>Staff Management</div>
