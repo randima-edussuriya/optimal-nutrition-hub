@@ -25,7 +25,7 @@
 
     <!-- BACK & Register button start -->
     <div class="back-button-container">
-        <a href="staff-register.php" class="Registertion">Register</a>
+        <a href="staff-register.php" class="Registration">Register</a>
         <a href="../home-pages/admin-home.php" class="back-button">Back</a>
     </div>
     <!--  BACK & Register button end -->
