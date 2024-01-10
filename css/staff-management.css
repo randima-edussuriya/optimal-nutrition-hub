@@ -43,9 +43,12 @@ tr:hover {
 }
 
 .deactivate-button {
-    background-color: #f44336;
+    background-color: #ff6b60;
 }
 
-button:hover {
-    background-color: rgb(121, 121, 121);
+.deactivate-button:hover {
+    background-color: rgb(138, 5, 5);
+}
+.update-button:hover{
+    background-color: #044206;
 }
