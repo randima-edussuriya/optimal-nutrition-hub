@@ -57,7 +57,7 @@ if (isset($_POST['staffRegister'])) {
 
     <!-- BACK button start -->
     <div class="back-button-container">
-        <a href="staff-management.php" class="back-button">Back</a>
+        <a href="staff-management-dashboard.php" class="back-button">Back</a>
     </div>
     <!-- BACK button end -->
 
