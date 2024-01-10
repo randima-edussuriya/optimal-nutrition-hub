@@ -1,4 +1,6 @@
-/* table */
+/* ----------------------------------
+    |Table
+    |-------------------------------- */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -18,21 +20,23 @@ th {
 
 tr:hover {
     background-color: #dbdada;
+    color: black;
 }
 
-/* button */
+/* ----------------------------------
+    |Action Button
+    |-------------------------------- */
 .action-buttons {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.view,
+.view-button,
 .update-button,
 .deactivate-button {
     padding: 8px 16px;
     cursor: pointer;
-    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
@@ -43,21 +47,26 @@ tr:hover {
     margin-right: 5px;
 }
 
+.view-button {
+    background-color: #1316b1;
+}
+
+.view-button:hover {
+    background-color: #050663;
+}
+
+.update-button {
+    background-color: #4CAF50;
+}
+
+.update-button:hover {
+    background-color: #044206;
+}
+
 .deactivate-button {
     background-color: #ff6b60;
 }
 
-.view {
-    background-color: #1316b1;
-}
-
-.view:hover{
-    background-color: #050663;
-}
-
 .deactivate-button:hover {
     background-color: rgb(138, 5, 5);
-}
-.update-button:hover{
-    background-color: #044206;
 }
