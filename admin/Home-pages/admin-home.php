@@ -8,9 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Google Material icons CSS link -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/admin-home.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <link rel="stylesheet" href="../../css/admin-home.css?v=<?php echo time(); ?>">
 
     <title>Admin Home-Optimal Nutrition Hub</title>
 </head>
@@ -18,7 +18,7 @@
 <body>
     <!-- Navigation bar start -->
     <?php
-    include('../includes/admin-navigation-bar.php');
+    include('../../includes/admin-navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
 
@@ -28,7 +28,7 @@
             <h2>Admin Panel</h2>
         </div>
         <div class="row align-items-center justify-content-center py-3 mx-auto bg-body-secondary     ">
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../staff-management/staff-management.php" class="nav-link col-lg-2 btn-module btn btn-dark">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">group_add</i></div>
                     <div>Staff Management</div>

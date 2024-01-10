@@ -51,13 +51,13 @@ if (isset($_POST['staffRegister'])) {
 <body style="background-color: lightgray;">
     <!-- Navigation bar start -->
     <?php
-    include('../../includes/function-navigation-bar.php');
+    include('../../includes/admin-navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
 
     <!-- BACK button start -->
     <div class="back-button-container">
-        <a href="../admin-home.php" class="back-button">Back</a>
+        <a href="staff-management.php" class="back-button">Back</a>
     </div>
     <!-- BACK button end -->
 
