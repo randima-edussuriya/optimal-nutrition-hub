@@ -1,5 +1,5 @@
 <?php
-
+// get item card
 function getItemCard($itemSelectQuery)
 {
     global $con;
