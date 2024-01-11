@@ -39,9 +39,8 @@ include('../../database/config.php');
         <!-- get value from staff table and staff type table -->
         <?php
 
-        if (isset($_GET['staff_id'])) {
-            $view_staff = $_GET['staff_id'];
-
+        if (isset($_GET['staff'])) {
+            $view_staff = $_GET['staff'];
 
             $get_userdetails = "SELECT staff_id, staff_fname, staff_lname, staff_email, staff_username, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, staff_type_name, staff_is_active FROM staff 
             INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id
@@ -61,36 +60,35 @@ include('../../database/config.php');
             <th>Staff Type</th>
             <th>Status</th>
             </tr>";
-        }
-        // check the table row count 
-        if ($row_count == 0) {
-            echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
-        } else {
-            $number = 0;
-            while ($row_data = mysqli_fetch_assoc($result)) { //fetch a single row of result data as an associative array
-                //asign to database valuwe to variables 
-                $staff_id = $row_data['staff_id'];
-                $staff_fname = $row_data['staff_fname'];
-                $staff_lname = $row_data['staff_lname'];
-                $staff_email = $row_data['staff_email'];
-                $staff_username = $row_data['staff_username'];
-                $staff_contact = $row_data['staff_phone'];
-                $staff_hire_date = $row_data['staff_hire_date'];
-                $staff_nic = $row_data['staff_nic'];
-                $staff_Address = $row_data['staff_add_line1'] . ' ' . $row_data['staff_add_line2'] . ' ' . $row_data['staff_add_line3'] . ' ' . $row_data['staff_add_line4'];
-                $staff_type_name = $row_data['staff_type_name'];
-                $staff_is_active = $row_data['staff_is_active'];
-                $number++;
 
-                //check the user is active or deactive
+            // check the table row count 
+            if ($row_count == 0) {
+                echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
+            } else {
+                $number = 0;
+                while ($row_data = mysqli_fetch_assoc($result)) { //fetch a single row of result data as an associative array
+                    //asign to database valuwe to variables 
+                    $staff_id = $row_data['staff_id'];
+                    $staff_fname = $row_data['staff_fname'];
+                    $staff_lname = $row_data['staff_lname'];
+                    $staff_email = $row_data['staff_email'];
+                    $staff_username = $row_data['staff_username'];
+                    $staff_contact = $row_data['staff_phone'];
+                    $staff_hire_date = $row_data['staff_hire_date'];
+                    $staff_nic = $row_data['staff_nic'];
+                    $staff_Address = $row_data['staff_add_line1'] . ', ' . $row_data['staff_add_line2'] . ', ' . $row_data['staff_add_line3'] . ', ' . $row_data['staff_add_line4'];
+                    $staff_type_name = $row_data['staff_type_name'];
+                    $staff_is_active = $row_data['staff_is_active'];
+                    $number++;
 
-                $status = "Deactivate"; //defoult value should be deactivate
-                if ($staff_is_active == 1) {
-                    $status = "Active";
-                }
+                    //check the user is active or deactive
 
+                    $status = "Deactivate"; //defoult value should be deactivate
+                    if ($staff_is_active == 1) {
+                        $status = "Active";
+                    }
 
-                echo "<tr>
+                    echo "<tr>
                     <td>$staff_id</td>
                     <td>$staff_fname</td>
                     <td>$staff_lname</td>
@@ -102,14 +100,12 @@ include('../../database/config.php');
                     <td>$staff_Address</td>
                     <td>$staff_type_name</td>
                     <td>$status</td>
-                    
                 </tr>
                     ";
+                }
             }
         }
         ?>
-
-
     </table>
     <!-- Staff details section ende -->
 
