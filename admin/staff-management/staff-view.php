@@ -35,19 +35,7 @@ include('../../database/config.php');
     <!-- Staff details  section start -->
     <h2 class="text-center ">Staff Management-View user derails</h2>
     <table>
-
-        <!-- get value from staff table and staff type table -->
-        <?php
-
-        if (isset($_GET['staff'])) {
-            $view_staff = $_GET['staff'];
-
-            $get_userdetails = "SELECT staff_id, staff_fname, staff_lname, staff_email, staff_username, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, staff_type_name, staff_is_active FROM staff 
-            INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id
-            WHERE staff.staff_id = $view_staff";  //get user possition from staff type table 
-            $result = mysqli_query($con, $get_userdetails);
-            $row_count = mysqli_num_rows($result);
-            echo " <tr>
+        <tr>
             <th>Staff ID</th>
             <th>First Name</th>
             <th>Last Name</th>
@@ -59,7 +47,18 @@ include('../../database/config.php');
             <th>Address</th>
             <th>Staff Type</th>
             <th>Status</th>
-            </tr>";
+        </tr>
+        <!-- get value from staff table and staff type table -->
+        <?php
+
+        if (isset($_GET['staffId'])) {
+            $view_staff = $_GET['staffId'];
+
+            $get_userdetails = "SELECT staff_id, staff_fname, staff_lname, staff_email, staff_username, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, staff_type_name, staff_is_active FROM staff 
+            INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id
+            WHERE staff.staff_id = $view_staff";  //get user possition from staff type table 
+            $result = mysqli_query($con, $get_userdetails);
+            $row_count = mysqli_num_rows($result);
 
             // check the table row count 
             if ($row_count == 0) {
@@ -82,7 +81,6 @@ include('../../database/config.php');
                     $number++;
 
                     //check the user is active or deactive
-
                     $status = "Deactivate"; //defoult value should be deactivate
                     if ($staff_is_active == 1) {
                         $status = "Active";

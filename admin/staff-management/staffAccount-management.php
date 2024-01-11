@@ -35,14 +35,7 @@ include('../../database/config.php');
     <!-- Staff details  section start -->
     <h2 class="text-center ">Staff Management</h2>
     <table>
-
-        <!-- get value from staff table and staff type table -->
-        <?php
-        $get_userdetails = "SELECT staff_id, staff_fname, staff_email, staff_username, staff_type_name, staff_is_active FROM staff 
-            INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id";  //get user possition from staff type table 
-        $result = mysqli_query($con, $get_userdetails);
-        $row_count = mysqli_num_rows($result);
-        echo " <tr>
+        <tr>
             <th>Staff ID</th>
             <th>Name</th>
             <th>Email</th>
@@ -50,7 +43,13 @@ include('../../database/config.php');
             <th>Staff Type</th>
             <th>Status</th>
             <th>Action</th>
-            </tr>";
+        </tr>
+        <!-- get value from staff table and staff type table -->
+        <?php
+        $get_userdetails = "SELECT staff_id, staff_fname, staff_email, staff_username, staff_type_name, staff_is_active FROM staff 
+            INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id";  //get user possition from staff type table 
+        $result = mysqli_query($con, $get_userdetails);
+        $row_count = mysqli_num_rows($result);
 
         // check the table row count 
         if ($row_count == 0) {
@@ -68,10 +67,12 @@ include('../../database/config.php');
                 $number++;
 
                 //check the user is active or deactive
-
-                $status = "Deactivate"; //defoult value should be deactivate
                 if ($staff_is_active == 1) {
                     $status = "Active";
+                    $invisible = "";
+                } else {
+                    $status = "Deactivate"; //defoult value should be deactivate
+                    $invisible = "invisible";
                 }
                 echo "<tr>
                     <td>$staff_id</td>
@@ -81,24 +82,16 @@ include('../../database/config.php');
                     <td>$staff_type_name</td>
                     <td>$status</td>
 
-
                     <td class='action-links'>
-                    <a href='staff-view.php?staff=$staff_id' class='view'>View</a>
-                    <a href='edit-account.php?edit=$staff_id' class='update'>Update</a>
-                    <a href='#' class='deactivate'>Deactivate</a>
-
-
-
+                    <a href='staff-view.php?staffId=$staff_id' class='view'>View</a>
+                    <a href='edit-account.php?edit=$staff_id' class='$invisible update'>Update</a>
+                    <a href='#' class='$invisible deactivate'>Deactivate</a>
                     </td>
                 </tr>
                     ";
             }
         }
-    
         ?>
-
-
-
     </table>
     <!-- Staff details section ende -->
 
