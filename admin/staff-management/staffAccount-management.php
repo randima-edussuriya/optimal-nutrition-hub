@@ -81,7 +81,7 @@ include('../../database/config.php');
                     <td>$staff_type_name</td>
                     <td>$status</td>
                     <td class='action-links'>
-                    <a href='staff-view.php' class='view'>View</a>
+                    <a href='staff-view.php?staff=$staff_id' class='view'>View</a>
                     <a href='#' class='update'>Update</a>
                     <a href='#' class='deactivate'>Deactivate</a>
 
@@ -93,6 +93,7 @@ include('../../database/config.php');
             }
         }
         ?>
+
 
 
     </table>
