@@ -13,6 +13,7 @@ include('database/config.php');
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/about.css">
 
   <title>About Us-Optimal Nutrition Hub</title>
 </head>
@@ -57,6 +58,60 @@ include('database/config.php');
       </form>
     </div>
     <!-- About Us section end -->
+
+    <!-- About Us Icons start -->
+    <div class="container mt-5">
+      <div class="row">
+        <div class ="col-lg-3 col-md-6 mb-4 px-4">
+          <div class="bg-white rounded shadow p-4 border-top border-4 text-center">
+           <div>
+             <img scr="Images/about/customer.png" width="70px">
+             <h4 class="mt-3">1000+ CUSTOMERS</h4>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class ="col-lg-3 col-md-6 mb-4 px-4">
+          <div class="bg-white rounded shadow p-4 border-top border-4 text-center">
+           <div>
+             <img scr="Images/about/products.png" width="70px">
+             <h4 class="mt-3">100+ PRODUCTS</h4>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class ="col-lg-3 col-md-6 mb-4 px-4">
+          <div class="bg-white rounded shadow p-4 border-top border-4 text-center">
+           <div>
+             <img scr="Images/about/review.png" width="70px">
+             <h4 class="mt-3">200+ REVIEWS</h4>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class ="col-lg-3 col-md-6 mb-4 px-4">
+          <div class="bg-white rounded shadow p-4 border-top border-4 text-center">
+           <div>
+             <img scr="Images/about/delivery.png" width="70px">
+             <h4 class="mt-3">FAST DELIVERY</h4>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About Us Icons end -->
 
     <!-- Footer section start -->
     <?php
