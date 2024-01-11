@@ -36,7 +36,7 @@ include('functions/common-function.php');
   <div class="container">
     <!-- all products start -->
     <?php
-    if (!isset($_GET['category'])) {
+    if (!isset($_GET['categoryId'])) {
       if (!isset($_GET['search'])) { ?>
         <div class="col-lg-6 m-auto text-center my-3">
           <h1>Products</h1>
@@ -54,8 +54,8 @@ include('functions/common-function.php');
 
     <!-- products in select category start -->
     <?php
-    if (isset($_GET['category'])) {
-      $categoryId = $_GET['category']; ?>
+    if (isset($_GET['categoryId'])) {
+      $categoryId = $_GET['categoryId']; ?>
       <div class="col-lg-6 m-auto text-center my-3">
         <h1><?php echo $_GET['categoryName']; ?></h1>
       </div>

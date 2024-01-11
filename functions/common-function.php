@@ -40,7 +40,7 @@ function getItemCard($itemSelectQuery)
             <h6 class='$displayNone text-decoration-line-through d-inline text-body-tertiary'>Rs. $discountedPrice</h6>
             <h6 class='d-inline'>Rs. $item_sell_price</h6>
             <h6 class='$AvailabiliyColor fw-bold '>$availabiliy</h6>
-            <a href='product-view.php?product={$itemRow['item_id']}' class='btn btn-outline-warning btn-view btn-sm'>View</a>
+            <a href='product-view.php?productId={$itemRow['item_id']}' class='btn btn-outline-warning btn-view btn-sm'>View</a>
           </div>
         </div>
       </div>";
