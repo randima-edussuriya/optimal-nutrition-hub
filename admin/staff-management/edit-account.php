@@ -66,17 +66,19 @@ if (isset($_POST['staffUpdate'])) {
 
         <?php
         // get staff user details
+        // Check if the 'staffId' parameter is set in the URL
         if (isset($_GET['staffId'])) {
-            $staffId = $_GET['staffId']; //get staff id form url
+            $staffId = $_GET['staffId']; //get staff id form URL
 
             $get_user_details = "SELECT staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_nic, staff_add_line1,staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id FROM staff WHERE staff_id = $staffId";
 
-            $result = mysqli_query($con, $get_user_details);
-            $row_count = mysqli_num_rows($result);
+            $result = mysqli_query($con, $get_user_details); // Execute query and get the result
 
-            if ($row_count == 0) {
+            $row_count = mysqli_num_rows($result);
+            if ($row_count !== 0) { // check if user not exist
                 echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
             } else {
+                // fetch user details
                 while ($row_data = mysqli_fetch_assoc($result)) {
                     $staff_fname = $row_data['staff_fname'];
                     $staff_lname = $row_data['staff_lname'];
@@ -90,84 +92,87 @@ if (isset($_POST['staffUpdate'])) {
                     $staff_add_line3 = $row_data['staff_add_line3'];
                     $staff_add_line4 = $row_data['staff_add_line4'];
                     $fk_staff_type_id = $row_data['fk_staff_type_id'];
-                }
-            }
-        }
         ?>
-        <div class="container  row my-5 mx-auto ">
-            <div class="wrapper col-md-6 mx-auto ">
-                <form action="#" method="post">
+                    <div class="container  row my-5 mx-auto ">
+                        <div class="wrapper col-md-6 mx-auto ">
+                            <form action="#" method="post">
 
-                    <!-- First name -->
-                    <div class="input-box">
-                        <input type="text" name="fName" value="<?php echo $staff_fname; ?>" required>
+                                <!-- First name -->
+                                <div class="input-box">
+                                    <input type="text" name="fName" value="<?php echo $staff_fname; ?>" required>
+                                </div>
+                                <!-- Last name -->
+                                <div class="input-box">
+                                    <input type="text" name="lName" value="<?php echo $staff_lname; ?>" required>
+                                </div>
+                                <!-- Username -->
+                                <div class="input-box">
+                                    <input type="text" name="userName" value="<?php echo $staff_username; ?>" required>
+                                </div>
+                                <!-- Password -->
+                                <div class="input-box">
+                                    <input type="password" name="password" value="<?php echo $staff_pwd; ?>" required>
+                                </div>
+                                <!-- staff type dropdown -->
+                                <div>
+                                    <select name="staffType" required>
+                                        <?php
+                                        $staffTypeSelectQuery = "SELECT * FROM staff_type";
+                                        // Execute query and get the result
+                                        $staffTypeResult = mysqli_query($con, $staffTypeSelectQuery);
+                                        // fetch staff types
+                                        while ($staffTypeRow = mysqli_fetch_assoc($staffTypeResult)) {
+                                            $staff_type_id = $staffTypeRow['staff_type_id'];
+                                            $staff_type_name = $staffTypeRow['staff_type_name'];
+
+                                            // select current user staff type from drop down menu
+                                            if ($fk_staff_type_id == $staff_type_id) {
+                                                $selected = "selected";
+                                            } else {
+                                                $selected = "";
+                                            }
+                                            // add staff types to dropdown menu
+                                            echo "<option $selected value='$staff_type_id'>$staff_type_name</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <!-- E-mail -->
+                                <div class="input-box">
+                                    <input type="text" name="email" value="<?php echo $staff_email; ?>" required>
+                                </div>
+                                <!-- Contact no -->
+                                <div class="input-box">
+                                    <input type="text" name="contactNo" value="<?php echo $staff_phone; ?>" required>
+                                </div>
+                                <!-- NIC -->
+                                <div class="input-box">
+                                    <input type="text" name="nic" value="<?php echo $staff_nic; ?>" required>
+                                </div>
+                                <!-- Address line1 -->
+                                <div class="input-box">
+                                    <input type="text" name="addressLine1" value="<?php echo $staff_add_line1; ?>" required>
+                                </div>
+                                <!-- Address line2 -->
+                                <div class="input-box">
+                                    <input type="text" name="addressLine2" value="<?php echo $staff_add_line2; ?>" required>
+                                </div>
+                                <!-- Address line3 -->
+                                <div class="input-box">
+                                    <input type="text" name="addressLine3" value="<?php echo $staff_add_line3; ?>">
+                                </div>
+                                <!-- City  -->
+                                <div class="input-box">
+                                    <input type="text" name="city" value="<?php echo $staff_add_line4; ?>" required>
+                                </div>
+                                <!-- Register button -->
+                                <button type="submit" class="btn text-bg-secondary" name="staffUpdate">Update</button>
+                            </form>
+                        </div>
                     </div>
-                    <!-- Last name -->
-                    <div class="input-box">
-                        <input type="text" name="lName" value="<?php echo $staff_lname; ?>" required>
-                    </div>
-                    <!-- Username -->
-                    <div class="input-box">
-                        <input type="text" name="userName" value="<?php echo $staff_username; ?>" required>
-                    </div>
-                    <!-- Password -->
-                    <div class="input-box">
-                        <input type="password" name="password" value="<?php echo $staff_pwd; ?>" required>
-                    </div>
-                    <!-- staff type dropdown -->
-                    <div>
-                        <select name="staffType" required>
-                            <?php
-                            $staffTypeSelectQuery = "SELECT * FROM staff_type";
-                            // Execute the query and store the result
-                            $staffTypeResult = mysqli_query($con, $staffTypeSelectQuery);
-                            // fetch staff types
-                            while ($staffTypeRow = mysqli_fetch_assoc($staffTypeResult)) {
-                                $staff_type_id = $staffTypeRow['staff_type_id'];
-                                // display staff types
-                                if ($fk_staff_type_id == $staff_type_id) {
-                                    $selected = "selected";
-                                } else {
-                                    $selected = "";
-                                }
-                                echo "<option $selected value='$staff_type_id'>{$staffTypeRow['staff_type_name']}</option>";
-                            }
-                            ?>
-                        </select>
-                    </div>
-                    <!-- E-mail -->
-                    <div class="input-box">
-                        <input type="text" name="email" value="<?php echo $staff_email; ?>" required>
-                    </div>
-                    <!-- Contact no -->
-                    <div class="input-box">
-                        <input type="text" name="contactNo" value="<?php echo $staff_phone; ?>" required>
-                    </div>
-                    <!-- NIC -->
-                    <div class="input-box">
-                        <input type="text" name="nic" value="<?php echo $staff_nic; ?>" required>
-                    </div>
-                    <!-- Address line1 -->
-                    <div class="input-box">
-                        <input type="text" name="addressLine1" value="<?php echo $staff_add_line1; ?>" required>
-                    </div>
-                    <!-- Address line2 -->
-                    <div class="input-box">
-                        <input type="text" name="addressLine2" value="<?php echo $staff_add_line2; ?>" required>
-                    </div>
-                    <!-- Address line3 -->
-                    <div class="input-box">
-                        <input type="text" name="addressLine3" value="<?php echo $staff_add_line3; ?>">
-                    </div>
-                    <!-- City  -->
-                    <div class="input-box">
-                        <input type="text" name="city" value="<?php echo $staff_add_line4; ?>" required>
-                    </div>
-                    <!-- Register button -->
-                    <button type="submit" class="btn text-bg-secondary" name="staffUpdate">Update</button>
-                </form>
-            </div>
-        </div>
+        <?php }
+            }
+        } ?>
         <!-- Staff Register form section end -->
 
         <!-- Footer section start -->
