@@ -43,7 +43,6 @@ if (isset($_POST['staffRegister'])) {
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/sign-up.css">
-    <link rel="stylesheet" href="../../css/staff-management.css">
 
     <title>Staff Register Form-Optimal Nutrition Hub</title>
 </head>

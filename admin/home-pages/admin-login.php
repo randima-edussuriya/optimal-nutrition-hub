@@ -18,18 +18,17 @@ if (isset($_POST['staff_login'])) {
     if ($row_count > 0) {
         //check user input password and DB store password are maching or not 
         if ($password == $row_data['staff_pwd']) {
-            $_SESSION['username'] = $row_data['staff_username'];
+            // $_SESSION['username'] = $row_data['staff_username'];
             $staff_type_id = ($row_data['fk_staff_type_id']);
 
             if ($staff_type_id == 1000) {
-                echo "<script>alert('Login succefully');</script>";
                 header("location:admin-home.php");
             } elseif ($staff_type_id == 1001) {
-                echo "ca";
+                header("location:cashier-home.php");
             } elseif ($staff_type_id == 1002) {
-                echo "im";
+                header("location:inventory-manager-home.php");
             } elseif ($staff_type_id == 1003) {
-                echo "d";
+                header("location:deliver-home.php");
             }
             // echo "<script>alert('Login succefully');</script>";
         } else {
