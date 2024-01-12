@@ -27,7 +27,7 @@ include('../../database/config.php');
 
     <!-- BACK & Register button start -->
     <div class="back-button-container">
-    <a href="category-add.php" class="Registration">ADD Category</a>
+        <a href="category-add.php" class="Registration">ADD Category</a>
         <a href="../home-pages/admin-home.php" class="back-button">Back</a>
     </div>
     <!--  BACK & Register button end -->
@@ -50,23 +50,22 @@ include('../../database/config.php');
         if ($row_count == 0) {
             echo "<h2 class='bg-danger text-center mt-5 '> No category yet </h2>";
         } else {
-            
+
             while ($row_data = mysqli_fetch_assoc($result)) { //fetch a single row of result data as an associative array
                 //asign to database valuwe to variables 
                 $category_id = $row_data['category_id'];
                 $category_name = $row_data['category_name'];
-            
+
                 echo "<tr>
                     <td>$category_id</td>
                     <td>$category_name</td>
                   
                     <td class='action-links'>
-                    <a href='#' class='deactivate'>Delete</a>
-
+                    <a href='category-edit.php?categoryId=$category_id' class='update'>Update</a>
+                    <a href='category-view.php?categoryId=$category_id' class='deactivate'>Delete</a>
                     </td>
                 </tr> 
                     ";
-                    
             }
         }
         ?>
