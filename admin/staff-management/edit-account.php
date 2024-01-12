@@ -3,9 +3,8 @@
 include('../../database/config.php');
 
 // Check if the form is submitt
-if (isset($_POST['staffRegister'])) {
-    // add user inputs
-
+if (isset($_POST['staffUpdate'])) {
+    // assign user inputs
     $fName = $_POST['fName'];
     $lName = $_POST['lName'];
     $userName = $_POST['userName'];
@@ -26,7 +25,7 @@ if (isset($_POST['staffRegister'])) {
 
         //insert user details into database 
         if (mysqli_query($con, $staffInsertQuiry)) {
-            echo "<script>alert('Staff Registration is succefully');</script>";
+            echo "<script>alert('Staff Update is succefully');</script>";
         }
     }
 }
@@ -64,127 +63,128 @@ if (isset($_POST['staffRegister'])) {
     <!-- Staff Register form section start -->
     <h1 class="text-center mb-5 mt-auto fw-bold">Edit Account</h>
 
-        <!-- get value from staff table and staff type table -->
         <?php
-    if (isset($_GET['staffId'])) {
-            $view_staff = $_SESSION['staffId'];
-            if (isset($view_staff)) {
+        // get staff user details
+        if (isset($_GET['staffId'])) {
+            $staffId = $_GET['staffId'];
 
-            $get_user_details="SELECT staff_id, staff_fname, staff_lname, staff_username, staff_pwd, staff_type_name, staff_email, staff_phone, staff_nic, staff_add_line1, staff_add_line2 ,staff_add_line3, staff_add_line4  FROM staff
-            INNER JOIN staff_type ON staff.fk_staff_type_id=staff_type.staff_type_id
-            WHERE staff.staff_id=$view_staff";
+            $get_user_details = "SELECT staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_nic, staff_add_line1,staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id FROM staff WHERE staff_id = $staffId";
 
-            $result=mysqli_query($con,$get_user_details);
-            $row_count= mysqli_num_rows($result);
+            $result = mysqli_query($con, $get_user_details);
+            $row_count = mysqli_num_rows($result);
 
-            if($row_count==0){
+            if ($row_count == 0) {
                 echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
-            }else{
-                while($row_data= mysqli_fetch_assoc($result)){
-                    $staff_fname=$row_data['staff_fname'];
-                    $staff_lname=$row_data['staff_lname'];
-                    $staff_username=$row_data['staff_username'];
-                    $staff_password=$row_data['staff_pwd'];
-                    $staff_type=$row_data['staff_type_name'];
-                    $staff_email=$row_data['staff_email'];
-                    $staff_contact=$row_data['staff_phone'];
-                    $staff_nic=$row_data['staff_nic'];
-                    $staff_addressl1=$row_data['staff_add_line1'];
-                    $staff_addressl2=$row_data['staff_add_line2'];
-                    $staff_addressl3=$row_data['staff_add_line3'];
-                    $staff_city=$row_data['staff_add_line4'];
+            } else {
+                while ($row_data = mysqli_fetch_assoc($result)) {
+                    $staff_fname = $row_data['staff_fname'];
+                    $staff_lname = $row_data['staff_lname'];
+                    $staff_username = $row_data['staff_username'];
+                    $staff_pwd = $row_data['staff_pwd'];
+                    $staff_email = $row_data['staff_email'];
+                    $staff_phone = $row_data['staff_phone'];
+                    $staff_nic = $row_data['staff_nic'];
+                    $staff_add_line1 = $row_data['staff_add_line1'];
+                    $staff_add_line2 = $row_data['staff_add_line2'];
+                    $staff_add_line3 = $row_data['staff_add_line3'];
+                    $staff_add_line4 = $row_data['staff_add_line4'];
+                    $fk_staff_type_id = $row_data['fk_staff_type_id'];
                 }
             }
         }
-    }
-            ?>
-    <div class="container  row my-5 mx-auto " >
-        <div class="wrapper col-md-6 mx-auto ">
-            <form action="#" method="post">
+        ?>
+        <div class="container  row my-5 mx-auto ">
+            <div class="wrapper col-md-6 mx-auto ">
+                <form action="#" method="post">
 
-                <!-- First name -->
-                <div class="input-box">
-                    <input type="text" name="fName" value="<?php echo $staff_fname?>" required>
-                </div>
-                <!-- Last name -->
-                <div class="input-box">
-                    <input type="text" name="lName" value="<?php echo $staff_lname?>" required>
-                </div>
-                <!-- Username -->
-                <div class="input-box">
-                    <input type="text" name="userName"value="<?php echo $staff_username?>" required>
-                </div>
-                <!-- Password -->
-                <div class="input-box">
-                    <input type="password" name="password" value="<?php echo $staff_password?>" required>
-                </div>
-                <!-- staff type dropdown -->
-                <div>
-                    <select name="staffType" required >
-                        <option selected value=''><?php echo $staff_type?></option>
-                        <?php
-                        $staffTypeSelectQuery = "SELECT * FROM staff_type";
-                        // Execute the query and store the result
-                        $staffTypeResult = mysqli_query($con, $staffTypeSelectQuery);
-                        // fetch staff types
-                        while ($staffTypeRow = mysqli_fetch_assoc($staffTypeResult)) {
-                            // display staff types
-                            echo "<option value='{$staffTypeRow['staff_type_id']}'>{$staffTypeRow['staff_type_name']}</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <!-- E-mail -->
-                <div class="input-box">
-                    <input type="text" name="email" value="<?php echo $staff_email?>" required>
-                </div>
-                <!-- Contact no -->
-                <div class="input-box">
-                    <input type="text" name="contactNo" value="<?php echo $staff_contact?>" required>
-                </div>
-                <!-- NIC -->
-                <div class="input-box">
-                    <input type="text" name="nic" value="<?php echo $staff_nic?>" required>
-                </div>
-                <!-- Address line1 -->
-                <div class="input-box">
-                    <input type="text" name="addressLine1" value="<?php echo $staff_addressl1?>" required>
-                </div>
-                <!-- Address line2 -->
-                <div class="input-box">
-                    <input type="text" name="addressLine2" value="<?php echo $staff_addressl2?>" required>
-                </div>
-                <!-- Address line3 -->
-                <div class="input-box">
-                    <input type="text" name="addressLine3" value="<?php echo $staff_addressl3?>" >
-                </div>
-                <!-- City  -->
-                <div class="input-box">
-                    <input type="text" name="city" value="<?php echo $staff_city?>" required>
-                </div>
-                <!-- Register button -->
-                <button type="submit" class="btn text-bg-secondary" name="staffRegister">Update</button>
-            </form>
-        </div>
-    </div>
-    <!-- Staff Register form section end -->
-
-    <!-- Footer section start -->
-    <footer class="bettle">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-sm-6 col-xs-12">
-                    <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
-                        <a href="#"> BattleShip</a>
-                    </p>
-                </div>
+                    <!-- First name -->
+                    <div class="input-box">
+                        <input type="text" name="fName" value="<?php echo $staff_fname; ?>" required>
+                    </div>
+                    <!-- Last name -->
+                    <div class="input-box">
+                        <input type="text" name="lName" value="<?php echo $staff_lname; ?>" required>
+                    </div>
+                    <!-- Username -->
+                    <div class="input-box">
+                        <input type="text" name="userName" value="<?php echo $staff_username; ?>" required>
+                    </div>
+                    <!-- Password -->
+                    <div class="input-box">
+                        <input type="password" name="password" value="<?php echo $staff_pwd; ?>" required>
+                    </div>
+                    <!-- staff type dropdown -->
+                    <div>
+                        <select name="staffType" required>
+                            <?php
+                            $staffTypeSelectQuery = "SELECT * FROM staff_type";
+                            // Execute the query and store the result
+                            $staffTypeResult = mysqli_query($con, $staffTypeSelectQuery);
+                            // fetch staff types
+                            while ($staffTypeRow = mysqli_fetch_assoc($staffTypeResult)) {
+                                $staff_type_id = $staffTypeRow['staff_type_id'];
+                                // display staff types
+                                if ($fk_staff_type_id == $staff_type_id) {
+                                    $selected = "selected";
+                                } else {
+                                    $selected = "";
+                                }
+                                echo "<option $selected value='$staff_type_id'>{$staffTypeRow['staff_type_name']}</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <!-- E-mail -->
+                    <div class="input-box">
+                        <input type="text" name="email" value="<?php echo $staff_email; ?>" required>
+                    </div>
+                    <!-- Contact no -->
+                    <div class="input-box">
+                        <input type="text" name="contactNo" value="<?php echo $staff_phone; ?>" required>
+                    </div>
+                    <!-- NIC -->
+                    <div class="input-box">
+                        <input type="text" name="nic" value="<?php echo $staff_nic; ?>" required>
+                    </div>
+                    <!-- Address line1 -->
+                    <div class="input-box">
+                        <input type="text" name="addressLine1" value="<?php echo $staff_add_line1; ?>" required>
+                    </div>
+                    <!-- Address line2 -->
+                    <div class="input-box">
+                        <input type="text" name="addressLine2" value="<?php echo $staff_add_line2; ?>" required>
+                    </div>
+                    <!-- Address line3 -->
+                    <div class="input-box">
+                        <input type="text" name="addressLine3" value="<?php echo $staff_add_line3; ?>">
+                    </div>
+                    <!-- City  -->
+                    <div class="input-box">
+                        <input type="text" name="city" value="<?php echo $staff_add_line4; ?>" required>
+                    </div>
+                    <!-- Register button -->
+                    <button type="submit" class="btn text-bg-secondary" name="staffUpdate">Update</button>
+                </form>
             </div>
         </div>
-    </footer>
-    <!-- Footer section end -->
+        <!-- Staff Register form section end -->
 
-    <!--Bootstrap JS link -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!-- Footer section start -->
+        <footer class="bettle fixed-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-6 col-xs-12">
+                        <p class="copyright-text">Copyright &copy; 2023 Optimal Nutrition Hub | Devoloped by -
+                            <a href="#"> BattleShip</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer section end -->
+
+        <!--Bootstrap JS link -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
