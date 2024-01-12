@@ -41,6 +41,7 @@ include('../../database/config.php');
             <th>Last Name</th>
             <th>Email</th>
             <th>Username</th>
+            <th>Password</th>
             <th>Contact</th>
             <th>Hire date</th>
             <th>NIC</th>
@@ -54,7 +55,7 @@ include('../../database/config.php');
         if (isset($_GET['staffId'])) {
             $view_staff = $_GET['staffId'];
 
-            $get_userdetails = "SELECT staff_id, staff_fname, staff_lname, staff_email, staff_username, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, staff_type_name, staff_is_active FROM staff 
+            $get_userdetails = "SELECT staff_id, staff_fname, staff_lname, staff_email, staff_username, staff_pwd, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, staff_type_name, staff_is_active FROM staff 
             INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id
             WHERE staff.staff_id = $view_staff";  //get user possition from staff type table 
             $result = mysqli_query($con, $get_userdetails);
@@ -72,6 +73,7 @@ include('../../database/config.php');
                     $staff_lname = $row_data['staff_lname'];
                     $staff_email = $row_data['staff_email'];
                     $staff_username = $row_data['staff_username'];
+                    $Staff_password= $row_data['staff_pwd'];
                     $staff_contact = $row_data['staff_phone'];
                     $staff_hire_date = $row_data['staff_hire_date'];
                     $staff_nic = $row_data['staff_nic'];
@@ -92,6 +94,7 @@ include('../../database/config.php');
                     <td>$staff_lname</td>
                     <td>$staff_email</td>
                     <td>$staff_username</td>
+                    <td>$Staff_password</td>
                     <td>$staff_contact</td>
                     <td>$staff_hire_date</td>
                     <td>$staff_nic</td>
