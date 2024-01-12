@@ -42,7 +42,7 @@ include('../../database/config.php');
             <th>Contact</th>
             <th>Address</th>
             <th>Status</th>
-            <th>Action</th>
+            
         </tr>
         <!-- get value from staff table and staff type table -->
         <?php
@@ -82,10 +82,6 @@ include('../../database/config.php');
                     <td>$cust_contact</td>
                     <td>$cust_Address</td>
                     <td>$status</td>
-
-                    <td class='action-links'>
-                    <a href='#' class='$invisible deactivate'>Deactivate</a>
-                    </td>
                 </tr> 
                     ";
                     
