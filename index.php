@@ -1,6 +1,7 @@
 <?php
 // Include the database configuration file
 include('database/config.php');
+include('functions/common-function.php');
 ?>
 
 <!DOCTYPE html>
@@ -46,126 +47,10 @@ include('database/config.php');
       <h1>Latest Products</h1>
     </div>
     <div class="row">
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 col-md-4 col-lg-3 text-center mb-4">
-        <div class="card border-0 bg-light">
-          <img src="images/GAT NITRAFLEX 30 SERVING.jpg" class="card-img-top p-2 position-relative" alt="...">
-          <span class="position-absolute top-0 start-0 rounded-end-pill badge bg-success p-2">
-            -12%
-          </span>
-          <div class="card-body p-0 pb-2">
-            <h6 class="product-name" class="product-name">GAT NITRAFLEX 30 SERVING GAT NITRAFLEX 30 SERVING</h6>
-            <h6 class="text-decoration-line-through d-inline text-body-tertiary">Rs. 7500</h6>
-            <h6 class="d-inline">Rs. 7500</h6>
-            <h6 class="text-success fw-bold ">In Stock</h6>
-            <a href="#" class="btn btn-outline-warning btn-view btn-sm">View</a>
-          </div>
-        </div>
-      </div>
+      <?php
+      $itemSelectQuery = "SELECT * FROM item ORDER BY item_date_added DESC LIMIT 0, 8";
+      getItemCard($con, $itemSelectQuery); //call function
+      ?>
     </div>
   </div>
   <!-- Latest product section end -->
