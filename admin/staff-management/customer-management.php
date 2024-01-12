@@ -42,7 +42,7 @@ include('../../database/config.php');
             <th>Contact</th>
             <th>Address</th>
             <th>Status</th>
-            
+
         </tr>
         <!-- get value from staff table and staff type table -->
         <?php
@@ -69,10 +69,8 @@ include('../../database/config.php');
                 //check the user is active or deactive
                 if ($cust_is_active == 1) {
                     $status = "Active";
-                    $invisible = "";
                 } else {
-                    $status = "Deactivate"; //defoult value should be deactivate
-                    $invisible = "invisible";
+                    $status = "Deactivate";
                 }
                 echo "<tr>
                     <td>$cust_id</td>
@@ -84,7 +82,6 @@ include('../../database/config.php');
                     <td>$status</td>
                 </tr> 
                     ";
-                    
             }
         }
         ?>
