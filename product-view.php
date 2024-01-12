@@ -30,8 +30,8 @@ include('database/config.php');
     <div class="container my-5 px-0 mx-auto">
         <div class="row d-flex mx-auto bg-dark-subtle rounded-4">
             <?php
-            if (isset($_GET['product'])) {
-                $itemId = $_GET['product'];
+            if (isset($_GET['productId'])) {
+                $itemId = $_GET['productId'];
 
                 $itemSelectQuery = "SELECT * FROM item WHERE item_id = $itemId";
                 $itemResult = mysqli_query($con, $itemSelectQuery); //execute query and store result
