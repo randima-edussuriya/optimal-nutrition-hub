@@ -1,8 +1,7 @@
 <?php
 // get item card
-function getItemCard($itemSelectQuery)
+function getItemCard($con, $itemSelectQuery)
 {
-    global $con;
     // execute query and store result
     $itemResult = mysqli_query($con, $itemSelectQuery);
     if (mysqli_num_rows($itemResult) > 0) {
