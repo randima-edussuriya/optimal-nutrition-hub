@@ -2,7 +2,7 @@
 // Include the database configuration file
 include('../../database/config.php');
 
-// delete category
+// delete category if click on delete button
 if (isset($_GET['categoryId'])) {
     $categoryId = $_GET['categoryId'];
     $categoryDeleteQuery = "DELETE FROM category WHERE category_id = $categoryId";
