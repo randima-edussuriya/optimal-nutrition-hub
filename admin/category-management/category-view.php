@@ -48,7 +48,7 @@ include('../../database/config.php');
 
         // check the table row count 
         if ($row_count == 0) {
-            echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
+            echo "<h2 class='bg-danger text-center mt-5 '> No category yet </h2>";
         } else {
             
             while ($row_data = mysqli_fetch_assoc($result)) { //fetch a single row of result data as an associative array
