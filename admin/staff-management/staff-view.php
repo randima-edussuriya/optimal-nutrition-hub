@@ -54,6 +54,7 @@ include('../../database/config.php');
 
         if (isset($_GET['staffId'])) {
             $view_staff = $_GET['staffId'];
+            
 
             $get_userdetails = "SELECT staff_id, staff_fname, staff_lname, staff_email, staff_username, staff_pwd, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, staff_type_name, staff_is_active FROM staff 
             INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id
@@ -65,7 +66,7 @@ include('../../database/config.php');
             if ($row_count == 0) {
                 echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
             } else {
-                $number = 0;
+              
                 while ($row_data = mysqli_fetch_assoc($result)) { //fetch a single row of result data as an associative array
                     //asign to database valuwe to variables 
                     $staff_id = $row_data['staff_id'];
@@ -80,7 +81,7 @@ include('../../database/config.php');
                     $staff_Address = $row_data['staff_add_line1'] . ', ' . $row_data['staff_add_line2'] . ', ' . $row_data['staff_add_line3'] . ', ' . $row_data['staff_add_line4'];
                     $staff_type_name = $row_data['staff_type_name'];
                     $staff_is_active = $row_data['staff_is_active'];
-                    $number++;
+                    
 
                     //check the user is active or deactive
                     $status = "Deactivate"; //defoult value should be deactivate
