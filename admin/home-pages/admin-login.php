@@ -66,8 +66,12 @@ if (isset($_POST['staff_login'])) {
                 <div class="remember-frogot">
                     <a href="#"> Fogot password?</a>
                 </div>
-
+                <!-- login button -->
                 <button type="submit" class="btn text-bg-secondary" name="staff_login"> Login</button>
+                <!-- staff register link -->
+                <div class="register-link">
+                    <p> Don't have an account? <a href="../staff-management/staff-register.php"> Sign-up </a></p>
+                </div>
             </form>
         </div>
     </div>
