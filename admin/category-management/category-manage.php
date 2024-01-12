@@ -1,6 +1,15 @@
 <?php
 // Include the database configuration file
 include('../../database/config.php');
+
+// delete category
+if (isset($_GET['categoryId'])) {
+    $categoryId = $_GET['categoryId'];
+    $categoryDeleteQuery = "DELETE FROM category WHERE category_id = $categoryId";
+    if (mysqli_query($con, $categoryDeleteQuery)) {
+        echo "<script>alert('Category is deleted successfully');</script>";
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +71,7 @@ include('../../database/config.php');
                   
                     <td class='action-links'>
                     <a href='category-edit.php?categoryId=$category_id' class='update'>Update</a>
-                    <a href='category-view.php?categoryId=$category_id' class='deactivate'>Delete</a>
+                    <a href='category-manage.php?categoryId=$category_id' class='deactivate'>Delete</a>
                     </td>
                 </tr> 
                     ";

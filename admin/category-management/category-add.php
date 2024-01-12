@@ -52,9 +52,9 @@ mysqli_close($con);
     ?>
     <!-- Navigation bar end -->
 
-     <!-- BACK & Register button start -->
-     <div class="back-button-container">
-        <a href="category-view.php" class="back-button">Back</a>
+    <!-- BACK & Register button start -->
+    <div class="back-button-container">
+        <a href="category-manage.php" class="back-button">Back</a>
     </div>
     <!--  BACK & Register button end -->
 
