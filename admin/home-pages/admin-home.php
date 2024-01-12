@@ -1,7 +1,10 @@
 <?php
 session_start();
-if (!isset($_SESSION['username'])) {
+
+// Redirect to the login page if user is not login
+if (!isset($_SESSION['staffId'])) {
     header("location:admin-login.php");
+    exit();
 }
 ?>
 
