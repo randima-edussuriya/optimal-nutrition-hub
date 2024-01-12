@@ -1,9 +1,9 @@
 <?php
 // Include the database configuration file
 include('../../database/config.php');
-
 //check if the form is subbmited or not
 if (isset($_POST['staff_login'])) {
+    session_start();
 
     //add user inputs
     $username = $_POST['username'];
@@ -18,7 +18,20 @@ if (isset($_POST['staff_login'])) {
     if ($row_count > 0) {
         //check user input password and DB store password are maching or not 
         if ($password == $row_data['staff_pwd']) {
-            echo "<script>alert('Login succefully');</script>";
+            $_SESSION['username'] = $row_data['staff_username'];
+            $staff_type_id = ($row_data['fk_staff_type_id']);
+
+            if ($staff_type_id == 1000) {
+                echo "<script>alert('Login succefully');</script>";
+                header("location:admin-home.php");
+            } elseif ($staff_type_id == 1001) {
+                echo "ca";
+            } elseif ($staff_type_id == 1002) {
+                echo "im";
+            } elseif ($staff_type_id == 1003) {
+                echo "d";
+            }
+            // echo "<script>alert('Login succefully');</script>";
         } else {
             echo "<script>alert('Invalid Password');</script>";
         }
