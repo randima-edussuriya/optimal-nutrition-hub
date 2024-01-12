@@ -18,7 +18,11 @@ if (isset($_POST['custom_login'])) {
   if ($row_count > 0) {
     //check user input password and DB store password are maching or not 
     if ($password == $row_data['cust_pwd']) {
-      echo "<script>alert('Login succefully');</script>";
+      if ($row_data['cust_is_active'] == 1) { //check if user is active
+        echo "<script>alert('Login succefully');</script>";
+      } else {
+        echo "<script>alert('User is Deactive');</script>";
+      }
     } else {
       echo "<script>alert('Invalid Password');</script>";
     }
