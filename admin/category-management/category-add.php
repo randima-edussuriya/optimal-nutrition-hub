@@ -54,7 +54,7 @@ mysqli_close($con);
 
      <!-- BACK & Register button start -->
      <div class="back-button-container">
-        <a href="../home-pages/admin-home.php" class="back-button">Back</a>
+        <a href="category-view.php" class="back-button">Back</a>
     </div>
     <!--  BACK & Register button end -->
 

@@ -40,7 +40,7 @@
                     <div>Customer Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../category-management/category-view.php" class="nav-link col-lg-2 btn-module btn btn-dark">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">category</i></div>
                     <div>Category Management</div>
