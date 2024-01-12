@@ -2,9 +2,9 @@
 // Include the database configuration file
 include('../../database/config.php');
 
-// Check if the form is submitt
+// Check if the form is submitted using Update button
 if (isset($_POST['staffUpdate'])) {
-    // assign user inputs
+    // get user inputs from the form fields
     $fName = $_POST['fName'];
     $lName = $_POST['lName'];
     $userName = $_POST['userName'];
@@ -18,13 +18,15 @@ if (isset($_POST['staffUpdate'])) {
     $addressLine3 = $_POST['addressLine3'];
     $city = $_POST['city'];
 
-    //check field not empty
+    $staffId = $_GET['staffId']; //get staff id form url
+
+    //check fields are not empty
     if ($fName != '' and $lName != '' and $userName != '' and $password != '' and $staffType != '' and $email != '' and $contactNo != '' and $nic != '' and $addressLine1 != '' and $addressLine2 != '' and $city != '') {
 
-        $staffInsertQuiry = " INSERT INTO staff (staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id) VALUES ('$fName', '$lName', '$userName', '$password', '$email', '$contactNo', CURDATE(), '$nic', '$addressLine1', '$addressLine2', '$addressLine3', '$city', $staffType ) ";
+        $staffUpdateQuiry = "UPDATE staff SET staff_fname = '$fName', staff_lname = '$lName', staff_username = '$userName', staff_pwd = '$password', staff_email = '$email', staff_phone = '$contactNo', staff_nic = '$nic', staff_add_line1 = '$addressLine1', staff_add_line2 = '$addressLine2', staff_add_line3 = '$addressLine3', staff_add_line4 = '$city', fk_staff_type_id = '$staffType' WHERE staff_id = $staffId";
 
-        //insert user details into database 
-        if (mysqli_query($con, $staffInsertQuiry)) {
+        //update user details 
+        if (mysqli_query($con, $staffUpdateQuiry)) {
             echo "<script>alert('Staff Update is succefully');</script>";
         }
     }
@@ -42,7 +44,6 @@ if (isset($_POST['staffUpdate'])) {
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/sign-up.css">
-    <link rel="stylesheet" href="../../css/staff-management.css">
 
     <title>Staff Register Form-Optimal Nutrition Hub</title>
 </head>
@@ -66,7 +67,7 @@ if (isset($_POST['staffUpdate'])) {
         <?php
         // get staff user details
         if (isset($_GET['staffId'])) {
-            $staffId = $_GET['staffId'];
+            $staffId = $_GET['staffId']; //get staff id form url
 
             $get_user_details = "SELECT staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_nic, staff_add_line1,staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id FROM staff WHERE staff_id = $staffId";
 
