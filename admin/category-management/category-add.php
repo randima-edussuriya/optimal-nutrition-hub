@@ -52,6 +52,12 @@ mysqli_close($con);
     ?>
     <!-- Navigation bar end -->
 
+     <!-- BACK & Register button start -->
+     <div class="back-button-container">
+        <a href="../home-pages/admin-home.php" class="back-button">Back</a>
+    </div>
+    <!--  BACK & Register button end -->
+
     <!-- Category add form section start -->
     <div class="container row my-5 mx-auto py-5 ">
         <div class="wrapper col-md-6 mx-auto">
