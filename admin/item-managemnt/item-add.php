@@ -83,11 +83,11 @@ if (isset($_POST['itemAdd'])) {
                         <option selected value=''>Select Category</option>
                         <?php
                         $categorySelectQuery = "SELECT * FROM category ORDER BY category_name";
-                        // Execute the query and store the result
+                        // Execute query and get the result
                         $result = mysqli_query($con, $categorySelectQuery);
                         // Fetch Category from database
                         while ($row = mysqli_fetch_assoc($result)) {
-                            // Display category
+                            // add category to dropdown menu
                             echo "<option value='{$row['category_id']}'>{$row['category_name']}</option>";
                         }
                         ?>

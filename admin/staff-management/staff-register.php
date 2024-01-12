@@ -89,11 +89,11 @@ if (isset($_POST['staffRegister'])) {
                         <option selected value=''>Select Staff Type</option>
                         <?php
                         $staffTypeSelectQuery = "SELECT * FROM staff_type";
-                        // Execute the query and store the result
+                        // Execute query and get the result
                         $staffTypeResult = mysqli_query($con, $staffTypeSelectQuery);
                         // fetch staff types
                         while ($staffTypeRow = mysqli_fetch_assoc($staffTypeResult)) {
-                            // display staff types
+                            //add staff types to dropdown menu
                             echo "<option value='{$staffTypeRow['staff_type_id']}'>{$staffTypeRow['staff_type_name']}</option>";
                         }
                         ?>

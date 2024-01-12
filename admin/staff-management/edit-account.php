@@ -18,7 +18,7 @@ if (isset($_POST['staffUpdate'])) {
     $addressLine3 = $_POST['addressLine3'];
     $city = $_POST['city'];
 
-    $staffId = $_GET['staffId']; //get staff id form url
+    $staffId = $_GET['staffId']; //get staff id form URL
 
     //check fields are not empty
     if ($fName != '' and $lName != '' and $userName != '' and $password != '' and $staffType != '' and $email != '' and $contactNo != '' and $nic != '' and $addressLine1 != '' and $addressLine2 != '' and $city != '') {

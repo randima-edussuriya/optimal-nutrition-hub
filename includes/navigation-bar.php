@@ -20,7 +20,7 @@
                         <?php
 
                         $categorySelectQuery = "SELECT * FROM category ORDER BY category_name;";
-                        // Execute the query and store the result
+                        //Execute query and get the result
                         $result = mysqli_query($con, $categorySelectQuery);
 
                         // Fetch Category from database
@@ -36,7 +36,7 @@
                                         $textBgDark = "";   // remove background class
                                     }
                                 }
-                                // Display category
+                                //add category to dropdown menu
                                 echo "<li><a class='dropdown-item $textBgDark' href='product.php?categoryId={$row['category_id']}&categoryName={$row['category_name']}'>{$row['category_name']}</a></li>";
                             }
                         } else {
