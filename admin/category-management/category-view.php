@@ -15,7 +15,7 @@ include('../../database/config.php');
     <link rel="stylesheet" href="../../css/footer.css">
     <link rel="stylesheet" href="../../css/staff-management.css?v=<?php echo time(); ?>">
 
-    <title>Customer Account Manegement-Optimal Nutrition Hub</title>
+    <title>Category Manegement-Optimal Nutrition Hub</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@ include('../../database/config.php');
     <!--  BACK & Register button end -->
 
     <!-- Staff details  section start -->
-    <h2 class="text-center ">Customer Details</h2>
+    <h2 class="text-center ">Category Details</h2>
     <table>
         <tr>
             <th>Category ID</th>
