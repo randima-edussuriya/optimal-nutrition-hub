@@ -129,6 +129,10 @@ if (isset($_POST['staffRegister'])) {
                 </div>
                 <!-- Register button -->
                 <button type="submit" class="btn text-bg-secondary" name="staffRegister">Register</button>
+                <!-- Admin logon link -->
+                <div class="login-link">
+                    <p> Have an account? <a href="../home-pages/admin-login.php"> Login </a></p>
+                </div>
             </form>
         </div>
     </div>
