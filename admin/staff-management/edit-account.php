@@ -75,7 +75,7 @@ if (isset($_POST['staffUpdate'])) {
             $result = mysqli_query($con, $get_user_details); // Execute query and get the result
 
             $row_count = mysqli_num_rows($result);
-            if ($row_count !== 0) { // check if user not exist
+            if ($row_count == 0) { // check if user not exist
                 echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
             } else {
                 // fetch user details
