@@ -34,7 +34,7 @@
                     <div>Staff Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../staff-management/customer-management.php" class="nav-link col-lg-2 btn-module btn btn-dark">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">support_agent</i></div>
                     <div>Customer Management</div>
