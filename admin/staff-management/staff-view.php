@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// Redirect to the login page if user is not login
+if (!isset($_SESSION['staffId'])) {
+    header("location:../home-pages/admin-login.php");
+    exit();
+}
+
 // Include the database configuration file
 include('../../database/config.php');
 ?>
@@ -54,7 +62,7 @@ include('../../database/config.php');
 
         if (isset($_GET['staffId'])) {
             $view_staff = $_GET['staffId'];
-            
+
 
             $get_userdetails = "SELECT staff_id, staff_fname, staff_lname, staff_email, staff_username, staff_pwd, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, staff_type_name, staff_is_active FROM staff 
             INNER JOIN staff_type ON staff.fk_staff_type_id = staff_type.staff_type_id
@@ -66,7 +74,7 @@ include('../../database/config.php');
             if ($row_count == 0) {
                 echo "<h2 class='bg-danger text-center mt-5 '> No users yet </h2>";
             } else {
-              
+
                 while ($row_data = mysqli_fetch_assoc($result)) { //fetch a single row of result data as an associative array
                     //asign to database valuwe to variables 
                     $staff_id = $row_data['staff_id'];
@@ -74,14 +82,14 @@ include('../../database/config.php');
                     $staff_lname = $row_data['staff_lname'];
                     $staff_email = $row_data['staff_email'];
                     $staff_username = $row_data['staff_username'];
-                    $Staff_password= $row_data['staff_pwd'];
+                    $Staff_password = $row_data['staff_pwd'];
                     $staff_contact = $row_data['staff_phone'];
                     $staff_hire_date = $row_data['staff_hire_date'];
                     $staff_nic = $row_data['staff_nic'];
                     $staff_Address = $row_data['staff_add_line1'] . ', ' . $row_data['staff_add_line2'] . ', ' . $row_data['staff_add_line3'] . ', ' . $row_data['staff_add_line4'];
                     $staff_type_name = $row_data['staff_type_name'];
                     $staff_is_active = $row_data['staff_is_active'];
-                    
+
 
                     //check the user is active or deactive
                     $status = "Deactivate"; //defoult value should be deactivate
