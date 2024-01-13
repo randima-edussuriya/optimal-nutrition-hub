@@ -26,6 +26,7 @@ if (isset($_POST['customersing'])) {
     $customerInsertQuiry = " INSERT INTO customer(cust_fname, cust_lname, cust_username, cust_pwd, cust_email, cust_phone, cust_add_line1, cust_add_line2, cust_add_line3, cust_add_line4) VALUES ('$firstName' , '$lastName' , '$username' , '$password' , '$email', '$phoneNumber' , '$addressLine1' , '$addressLine2' , '$addressLine3' , '$city' ) ";
 
     //insert user details into database 
+    // this code checks if the execution of the SQL query 
     if (mysqli_query($con, $customerInsertQuiry)) {
       echo "<script>alert('sign-UP is succefully');</script>";
     }
