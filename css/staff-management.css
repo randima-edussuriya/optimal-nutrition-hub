@@ -13,6 +13,11 @@ td {
     padding: 10px;
     text-align: left;
 }
+.item-name{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+}
 
 th {
     background-color: #f2f2f2;
@@ -49,6 +54,7 @@ tr:hover {
 
 .view {
     background-color: #1316b1;
+    
 }
 
 .view:hover {
