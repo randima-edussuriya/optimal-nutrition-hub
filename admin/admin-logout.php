@@ -55,6 +55,12 @@ if (isset($_POST['logout'])) {
         </div>
     </nav>
     <!-- Navigation bar end -->
+        
+    <!-- back button start -->
+    <div class="back-button-container">
+            <a href="../admin/home-pages/admin-home.php" class="back-button"> BACK</a>
+        </div>
+    <!-- back button end -->
 
     <!-- Admin logout section start -->
     <div class="container row my-5 mx-auto p-5">
