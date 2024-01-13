@@ -107,6 +107,7 @@ session_start();
         // Redirect to the login page if not logged in
         if (!isset($_SESSION['custId'])) {
             header("location:Login.php");
+            exit();
         }
 
         $custId = $_SESSION['custId'];
