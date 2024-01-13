@@ -1,6 +1,15 @@
 <?php
+session_start();
+
+// Redirect to the login page if not logged in
+if (!isset($_SESSION['custId'])) {
+    header("location:Login.php");
+    exit();
+}
+
 // Include the database configuration file
 include('database/config.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +38,8 @@ include('database/config.php');
     <!-- cart section start -->
 
     <!-- cart section end -->
+    <?php
+    ?>
     <div class="container my-5 px-0">
         <div class="row">
             <table>

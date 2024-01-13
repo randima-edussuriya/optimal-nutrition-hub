@@ -1,7 +1,8 @@
 <?php
+session_start();
+
 // Include the database configuration file
 include('database/config.php');
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -106,7 +107,7 @@ session_start();
     if (isset($_POST['addToCart'])) {
         // Redirect to the login page if not logged in
         if (!isset($_SESSION['custId'])) {
-            header("location:Login.php");
+            echo "<script>window.open('Login.php', '_self');</script>";
             exit();
         }
 

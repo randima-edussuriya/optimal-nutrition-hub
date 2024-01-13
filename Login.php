@@ -1,7 +1,8 @@
 <?php
+session_start();
+
 // Include the database configuration file
 include('database/config.php');
-session_start();
 
 //check if the form is subbmited or not
 if (isset($_POST['custom_login'])) {
@@ -21,7 +22,8 @@ if (isset($_POST['custom_login'])) {
     if ($password == $row_data['cust_pwd']) {
       if ($row_data['cust_is_active'] == 1) { //check if user is active
         $_SESSION['custId'] = $row_data['cust_id']; //store customer id in session
-        echo "<script>alert('Login succefully');</script>";
+        header("location:index.php");
+        exit();
       } else {
         echo "<script>alert('User is Deactive');</script>";
       }

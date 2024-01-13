@@ -59,21 +59,28 @@
             <!-- Left item end -->
             <!-- Right item start -->
             <ul class="navbar-nav ms-auto ">
-                <li class="nav-item">
+                <?php
+                if (!isset($_SESSION['custId'])) {
+                    $displayNone = "";
+                } else {
+                    $displayNone = "d-none";
+                }
+                ?>
+                <li class="<?php echo $displayNone; ?> nav-item">
                     <a class="nav-link" href="sign-up.php">Sign up</a>
                 </li>
-                <li class="nav-item">
+                <li class="<?php echo $displayNone; ?> nav-item">
                     <a class="nav-link" href="Login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link position-relative " href="cart.php"><img src="icons/cart-2-line.svg" alt="" style="width: 32px;">
+                    <a class="nav-link position-relative " href="cart.php"><img src="icons/cart-2-line.svg" style="width: 32px;">
                         <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             0
                         </span> -->
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><img src="icons/profile-line.svg" alt="" style="width: 32px;"></a>
+                    <a class="nav-link" href="profile.php"><img src="icons/profile-line.svg" style="width: 32px;"></a>
                 </li>
             </ul>
             <!-- Right item end -->
