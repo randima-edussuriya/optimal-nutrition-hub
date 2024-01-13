@@ -20,7 +20,7 @@ if (!isset($_SESSION['staffId'])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/admin-home.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../css/admin-home.css">
 
     <title>Admin Home-Optimal Nutrition Hub</title>
 </head>
