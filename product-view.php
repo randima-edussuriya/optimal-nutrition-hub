@@ -1,6 +1,7 @@
 <?php
 // Include the database configuration file
 include('database/config.php');
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -99,6 +100,47 @@ include('database/config.php');
     </div>
     </div>
     <!-- product view section end -->
+
+    <?php
+    // add to cart
+    if (isset($_POST['addToCart'])) {
+        // Redirect to the login page if not logged in
+        if (!isset($_SESSION['custId'])) {
+            header("location:Login.php");
+            exit();
+        }
+
+        $custId = $_SESSION['custId'];
+        $addingItemQty = $_POST['cartQty'];
+
+        $cartSelectQuery = "SELECT * FROM cart WHERE fk_item_id = $itemId and fk_cust_id = $custId";
+        $cartResult = mysqli_query($con, $cartSelectQuery);
+        // update the quantity if the item is already in the cart
+        if (mysqli_num_rows($cartResult) > 0) {
+            $cartRow = mysqli_fetch_assoc($cartResult);
+            $totalItemQty = $addingItemQty + $cartRow['cart_item_qty'];
+            $cartUpdateQuery = "UPDATE cart SET cart_item_qty = $totalItemQty WHERE cart_id = {$cartRow['cart_id']}";
+            if (mysqli_query($con, $cartUpdateQuery)) {
+                echo "<script>alert('update cart successfully');</script>";
+            }
+        } else {
+            //insert a new record If the item is not in the cart
+            $cartInsertQuery = "INSERT INTO cart (cart_item_qty, fk_item_id, fk_cust_id) VALUES ($addingItemQty, $itemId, $custId)";
+            if (mysqli_query($con, $cartInsertQuery)) {
+                echo "<script>alert('add new item to cart successfully');</script>";
+            }
+        }
+
+        // Update the stock quantity of the item after add to cart
+        $newStockQty = $item_stock_qty - $addingItemQty;
+        $itemUpdateQuery = "UPDATE item SET item_stock_qty = $newStockQty WHERE item_id = $itemId";
+        if (mysqli_query($con, $itemUpdateQuery)) {
+            echo "<script>alert('update item quantity successfully');</script>";
+            echo "<script>window.open('product.php', '_self');</script>";
+            exit();
+        }
+    }
+    ?>
 
     <!-- Footer section start -->
     <?php
