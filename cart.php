@@ -5,10 +5,14 @@ session_start();
 if (!isset($_SESSION['custId'])) {
     header("location:Login.php");
     exit();
+} else {
+    $custId = $_SESSION['custId'];
 }
 
 // Include the database configuration file
 include('database/config.php');
+
+
 
 ?>
 
@@ -37,50 +41,84 @@ include('database/config.php');
 
     <!-- cart section start -->
 
-    <!-- cart section end -->
-    <?php
-    ?>
+
+
     <div class="container my-5 px-0">
         <div class="row">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Product Image</th>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img class="object-fit-contain " src="images/GAT NITRAFLEX 30 SERVING.jpg" width="80" height="100%"></td>
-                        <td>REDCON1 ISOTOPE WHEY ISOLATE 5 LBS</td>
-                        <td>Rs. 29000</td>
-                        <td class="col-1">
-                            <input class="form-control" type="number" min="1" max="50" value="1" name="cartQty" required>
-                        </td>
-                        <td>Rs. 58000</td>
-                        <td>
-                            <a href="#"><button class="deactivate">Remove</button></a>
-                            <a href="#"><button class="update">Update</button></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <?php
+            $itemSelectQuery = "SELECT i.item_image1, i.item_name, i.item_sell_price, i.item_discount, i.item_stock_qty, c.cart_id, c.cart_item_qty
+            FROM item i
+            INNER JOIN cart c ON i.item_id = c.fk_item_id
+            INNER JOIN customer cu ON c.fk_cust_id = cu.cust_id
+            WHERE cu.cust_id=$custId";
 
+            $itemResult = mysqli_query($con, $itemSelectQuery);
+            $totalPrice = 0;
+            if (mysqli_num_rows($itemResult) > 0) {
+            ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product Image</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Subtotal</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+
+                        while ($itemRow = mysqli_fetch_assoc($itemResult)) {
+                            $cart_id = $itemRow['cart_id'];
+                            $item_discount = (float)$itemRow['item_discount'];
+                            $item_sell_price = (float)$itemRow['item_sell_price'];
+                            $cart_item_qty = (int)$itemRow['cart_item_qty'];
+                            $discountedPrice = $item_sell_price * (100 - $item_discount) / 100; // discount claculation
+                            $subTotal = $discountedPrice * $cart_item_qty;
+                            $totalPrice = $totalPrice + $subTotal;
+                        ?>
+
+                            <tr>
+                                <td><img class="object-fit-contain " src="images/products/<?php echo $itemRow['item_image1']; ?>" width="80" height="100%"></td>
+                                <td><?php echo $itemRow['item_name']; ?></td>
+                                <td>Rs. <?php echo $discountedPrice; ?></td>
+                                <td class="col-1">
+                                    <input class="form-control" type="number" min="1" max="<?php echo $itemRow['item_stock_qty']; ?>" value="<?php echo $cart_item_qty; ?>" name="cartQty" required>
+                                </td>
+                                <td>Rs. <?php echo $subTotal; ?></td>
+                                <td>
+                                    <a href="cart.php?cartId=<?php echo $cart_id; ?>"><Button class="deactivate">Remove</Button></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            <?php } else {
+                echo "<h2 class='bg-danger text-center mt-5 '> Not added item in cart </h2>";
+            } ?>
         </div>
-        <div class="row col-md-12">
-            <div class="col-6 text-start  ">
-                <a href="#"><button class="btn btn-dark ">Keep Shopping</button></a>
-                <a href="#"><button class="btn btn-outline-secondary btn-orange ">Place Order</button></a>
-            </div>
-            <div class="col-6 text-end ">
-                <h3>Total Price: Rs. 30000</h3>
-            </div>
+        <div class="row col-md-12 text-end">
+            <h3>Total Price: Rs. <?php echo $totalPrice; ?></h3>
         </div>
     </div>
+    <!-- cart section end -->
+
+    <?php
+    //remove item in cart
+    if (isset($_GET['cartId'])) {
+        $itemDeleteQuery = "DELETE FROM cart WHERE cart_id = {$_GET['cartId']}";
+        if (mysqli_query($con, $itemDeleteQuery)) {
+            echo "<script>alert('item removed from cart successfully');</script>";
+            echo "<script>window.open('cart.php', '_self')</script>";
+        }
+    }
+
+    //update cart item
+
+    ?>
+
     <!-- Footer section start -->
     <?php
     include('includes/footer.php');
