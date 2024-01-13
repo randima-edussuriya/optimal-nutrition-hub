@@ -12,7 +12,6 @@ include('../../database/config.php');
 
 // Check if the form is submitted
 if (isset($_POST['categoryAdd'])) {
-    // remove spaces and escape special characters
     $categoryName = $_POST['categoryName'];
 
     // Check if the category name is not empty
@@ -31,8 +30,6 @@ if (isset($_POST['categoryAdd'])) {
         }
     }
 }
-// Close the database connection
-mysqli_close($con);
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +43,7 @@ mysqli_close($con);
     <!-- CSS link -->
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/footer.css">
-    <link rel="stylesheet" href="../../css/sign-up.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../../css/sign-up.css">
     <!-- JS link -->
     <script src="../../scripts/formValidationScript.js" defer></script>
 
@@ -100,3 +97,7 @@ mysqli_close($con);
 </body>
 
 </html>
+<?php
+// Close the database connection
+mysqli_close($con);
+?>
