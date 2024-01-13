@@ -114,7 +114,7 @@ session_start();
 
         $cartSelectQuery = "SELECT * FROM cart WHERE fk_item_id = $itemId and fk_cust_id = $custId";
         $cartResult = mysqli_query($con, $cartSelectQuery);
-        // Check if the item is already in the cart
+        // update the quantity if the item is already in the cart
         if (mysqli_num_rows($cartResult) > 0) {
             $cartRow = mysqli_fetch_assoc($cartResult);
             $totalItemQty = $addingItemQty + $cartRow['cart_item_qty'];
@@ -123,12 +123,14 @@ session_start();
                 echo "<script>alert('update cart successfully');</script>";
             }
         } else {
+            //insert a new record If the item is not in the cart
             $cartInsertQuery = "INSERT INTO cart (cart_item_qty, fk_item_id, fk_cust_id) VALUES ($addingItemQty, $itemId, $custId)";
             if (mysqli_query($con, $cartInsertQuery)) {
                 echo "<script>alert('add new item to cart successfully');</script>";
             }
         }
 
+        // Update the stock quantity of the item after add to cart
         $newStockQty = $item_stock_qty - $addingItemQty;
         $itemUpdateQuery = "UPDATE item SET item_stock_qty = $newStockQty WHERE item_id = $itemId";
         if (mysqli_query($con, $itemUpdateQuery)) {
