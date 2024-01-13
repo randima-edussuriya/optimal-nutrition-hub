@@ -8,13 +8,14 @@ include('../../database/config.php')
 if (isset($_GET['ItemId'])) {
     $item_id = $_GET['ItemId'];
 
-    $getitemdelete = " DELETE * FROM item WHERE item_id = $item_id";
-    if (mysqli_query($con, $get_itemdetails)) {
+    $getitemdelete = " DELETE FROM item WHERE item_id = $item_id";
+    if (mysqli_query($con, $getitemdelete)) {
         echo "<script>alert('item is deleted successfully');</script>";
     }
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +91,7 @@ if (isset($_GET['ItemId'])) {
                 <td class='action-link'>
                     <a href='#.php?itemID=$item_id' class='view'>View</a> 
                     <a href='#.php?ItemID=$item_id' class='update'>Update</a>
-                    <a href='#.php?ItemId=$item_id' class='deactivate'>Delete</a>
+                    <a href='item-manage.php?ItemId=$item_id' class='deactivate'>Delete</a>
                 </td> 
             </tr>
                 ";
