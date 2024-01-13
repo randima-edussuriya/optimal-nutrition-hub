@@ -52,7 +52,7 @@ if (isset($_GET['ItemId'])) {
     <!-- back & item add button start -->
 
     <div class="back-button-container">
-        <a href="item-add-modified.php" class="Registration">ADD Item</a>
+        <a href="item-add.php" class="Registration">ADD Item</a>
         <a href="../home-pages/admin-home.php" class="back-button">BACK</a>
     </div>
 
