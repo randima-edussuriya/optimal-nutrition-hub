@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2024 at 06:07 AM
+-- Generation Time: Jan 18, 2024 at 09:43 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -118,7 +118,8 @@ INSERT INTO `customer` (`cust_id`, `cust_fname`, `cust_lname`, `cust_username`, 
 CREATE TABLE `customer_notification` (
   `cust_notifi_id` int(11) NOT NULL,
   `fk_notifi_id` int(11) DEFAULT NULL,
-  `fk_cust_id` int(11) DEFAULT NULL
+  `fk_cust_id` int(11) DEFAULT NULL,
+  `is_read` tinyint(1) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -226,6 +227,7 @@ CREATE TABLE `notification` (
   `notifi_id` int(11) NOT NULL,
   `notifi_msg` text DEFAULT NULL,
   `notifi_date` datetime DEFAULT NULL,
+  `notifi_is_global` tinyint(1) DEFAULT 0,
   `fk_staff_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -310,6 +312,10 @@ CREATE TABLE `staff_type` (
 --
 
 INSERT INTO `staff_type` (`staff_type_id`, `staff_type_name`) VALUES
+(1, 'Admin'),
+(2, 'Cashier'),
+(3, 'Inventory Manager'),
+(4, 'Deliver Person'),
 (1000, 'Admin'),
 (1001, 'Cashier'),
 (1002, 'Inventory Manager'),
@@ -436,7 +442,7 @@ ALTER TABLE `staff_type`
 -- AUTO_INCREMENT for table `cancellation`
 --
 ALTER TABLE `cancellation`
-  MODIFY `cancel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5501;
+  MODIFY `cancel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5500;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -448,7 +454,7 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2006;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2005;
 
 --
 -- AUTO_INCREMENT for table `customer`
@@ -484,7 +490,7 @@ ALTER TABLE `inquiry`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2513;
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2511;
 
 --
 -- AUTO_INCREMENT for table `news`
