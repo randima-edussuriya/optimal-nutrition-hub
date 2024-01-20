@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2024 at 09:43 AM
+-- Generation Time: Jan 20, 2024 at 01:50 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -117,9 +117,9 @@ INSERT INTO `customer` (`cust_id`, `cust_fname`, `cust_lname`, `cust_username`, 
 
 CREATE TABLE `customer_notification` (
   `cust_notifi_id` int(11) NOT NULL,
+  `cust_notifi_is_read` tinyint(1) DEFAULT 0,
   `fk_notifi_id` int(11) DEFAULT NULL,
-  `fk_cust_id` int(11) DEFAULT NULL,
-  `is_read` tinyint(1) DEFAULT 0
+  `fk_cust_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -257,6 +257,7 @@ CREATE TABLE `order_table` (
   `order_total` decimal(10,2) DEFAULT NULL,
   `order_status` varchar(20) DEFAULT NULL,
   `order_deliver_option` varchar(50) DEFAULT NULL,
+  `order_address` varchar(255) DEFAULT NULL,
   `fk_cust_id` int(11) DEFAULT NULL,
   `fk_deliver_area_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -276,7 +277,7 @@ CREATE TABLE `staff` (
   `staff_email` varchar(100) DEFAULT NULL,
   `staff_is_active` tinyint(1) DEFAULT 1,
   `staff_phone` varchar(15) DEFAULT NULL,
-  `staff_hire_date` date DEFAULT NULL,
+  `staff_hire_date` datetime DEFAULT NULL,
   `staff_nic` varchar(15) DEFAULT NULL,
   `staff_add_line1` varchar(255) DEFAULT NULL,
   `staff_add_line2` varchar(255) DEFAULT NULL,
@@ -290,11 +291,11 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`staff_id`, `staff_fname`, `staff_lname`, `staff_username`, `staff_pwd`, `staff_email`, `staff_is_active`, `staff_phone`, `staff_hire_date`, `staff_nic`, `staff_add_line1`, `staff_add_line2`, `staff_add_line3`, `staff_add_line4`, `fk_staff_type_id`) VALUES
-(1504, 'Dinuka', 'Randima', 'dinuka', 'dinuka123', 'dinuka@gmail.com', 0, '071-2581425', '2024-01-02', '200001514765', 'No 12', 'Meda Panagoda', 'Galpatha', 'Kalutara', 1000),
-(1505, 'Malindu', 'Dilakshna', 'dila', 'dila123', 'dilakshna@gmail.com', 1, '076-5842752', '2024-01-10', '200005233365', 'No 12', 'Batagoda', 'Balapitiya', 'Galle', 1000),
-(1506, 'Amesh', 'Silva', 'amesh', 'amesh123', 'amesh@gmail.com', 1, '071-5842752', '2024-01-10', '200005233365', 'No 20', 'Katubedda', 'Moratuwa', 'Colombo', 1001),
-(1509, 'Kalana', 'Sandaruwan', 'kalana', 'kalana123', 'kalana@gmail.com', 1, '071-8523145', '2024-01-13', '200012578681', 'No 15', 'Yala', 'Ballapitiya', 'Kalutara', 1002),
-(1510, 'Nuwan', 'Kumara', 'nuwan', 'nuwan123', 'nuwan@gmail.com', 1, '076-2569258', '2024-01-13', '200001425896', 'No 54', 'Rilaulla', 'Kapuwaththa', 'Gampaha', 1003);
+(1504, 'Dinuka', 'Randima', 'dinuka', 'dinuka123', 'dinuka@gmail.com', 0, '071-2581425', '2024-01-02 18:29:56', '200001514765', 'No 12', 'Meda Panagoda', 'Galpatha', 'Kalutara', 1000),
+(1505, 'Malindu', 'Dilakshna', 'dila', 'dila123', 'dilakshna@gmail.com', 1, '076-5842752', '2024-01-10 18:19:40', '200005233365', 'No 12', 'Batagoda', 'Balapitiya', 'Galle', 1000),
+(1506, 'Amesh', 'Silva', 'amesh', 'amesh123', 'amesh@gmail.com', 1, '071-5842752', '2024-01-10 20:15:17', '200005233365', 'No 20', 'Katubedda', 'Moratuwa', 'Colombo', 1001),
+(1509, 'Kalana', 'Sandaruwan', 'kalana', 'kalana123', 'kalana@gmail.com', 1, '071-8523145', '2024-01-13 10:29:56', '200012578681', 'No 15', 'Yala', 'Ballapitiya', 'Kalutara', 1002),
+(1510, 'Nuwan', 'Kumara', 'nuwan', 'nuwan123', 'nuwan@gmail.com', 1, '076-2569258', '2024-01-13 13:29:56', '200001425896', 'No 54', 'Rilaulla', 'Kapuwaththa', 'Gampaha', 1003);
 
 -- --------------------------------------------------------
 
@@ -312,10 +313,6 @@ CREATE TABLE `staff_type` (
 --
 
 INSERT INTO `staff_type` (`staff_type_id`, `staff_type_name`) VALUES
-(1, 'Admin'),
-(2, 'Cashier'),
-(3, 'Inventory Manager'),
-(4, 'Deliver Person'),
 (1000, 'Admin'),
 (1001, 'Cashier'),
 (1002, 'Inventory Manager'),
