@@ -30,7 +30,7 @@ if (isset($_POST['staffRegister'])) {
     //check field not empty
     if ($fName != '' and $lName != '' and $userName != '' and $password != '' and $staffType != '' and $email != '' and $contactNo != '' and $nic != '' and $addressLine1 != '' and $addressLine2 != '' and $city != '') {
 
-        $staffInsertQuiry = " INSERT INTO staff (staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id) VALUES ('$fName', '$lName', '$userName', '$password', '$email', '$contactNo', CURDATE(), '$nic', '$addressLine1', '$addressLine2', '$addressLine3', '$city', $staffType ) ";
+        $staffInsertQuiry = " INSERT INTO staff (staff_fname, staff_lname, staff_username, staff_pwd, staff_email, staff_phone, staff_hire_date, staff_nic, staff_add_line1, staff_add_line2, staff_add_line3, staff_add_line4, fk_staff_type_id) VALUES ('$fName', '$lName', '$userName', '$password', '$email', '$contactNo', NOW(), '$nic', '$addressLine1', '$addressLine2', '$addressLine3', '$city', $staffType ) ";
 
         //insert user details into database 
         if (mysqli_query($con, $staffInsertQuiry)) {
