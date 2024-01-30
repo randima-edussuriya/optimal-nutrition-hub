@@ -122,13 +122,13 @@ include('database/config.php');
             $totalItemQty = $addingItemQty + $cartRow['cart_item_qty'];
             $cartUpdateQuery = "UPDATE cart SET cart_item_qty = $totalItemQty WHERE cart_id = {$cartRow['cart_id']}";
             if (mysqli_query($con, $cartUpdateQuery)) {
-                echo "<script>alert('update cart successfully');</script>";
+                echo "<script>alert('update exist item in cart successfully');</script>";
             }
         } else {
             //insert a new record If the item is not in the cart
             $cartInsertQuery = "INSERT INTO cart (cart_item_qty, fk_item_id, fk_cust_id) VALUES ($addingItemQty, $itemId, $custId)";
             if (mysqli_query($con, $cartInsertQuery)) {
-                echo "<script>alert('add new item to cart successfully');</script>";
+                echo "<script>alert('Add new item to cart successfully');</script>";
             }
         }
 
@@ -136,7 +136,7 @@ include('database/config.php');
         $newStockQty = $item_stock_qty - $addingItemQty;
         $itemUpdateQuery = "UPDATE item SET item_stock_qty = $newStockQty WHERE item_id = $itemId";
         if (mysqli_query($con, $itemUpdateQuery)) {
-            echo "<script>alert('update item quantity successfully');</script>";
+            // echo "<script>alert('update item quantity successfully');</script>";
             echo "<script>window.open('product.php', '_self');</script>";
             exit();
         }
