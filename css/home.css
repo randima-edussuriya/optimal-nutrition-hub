@@ -18,10 +18,11 @@
 .card:hover {
     .card-img-top {
         scale: 110% !important;
+        transition: 0.2s;
     }
-
     background-color: rgb(255, 226, 216) !important;
     color: black;
+    transition: 0.3s;
 }
 
 .btn-view {
