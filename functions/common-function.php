@@ -36,7 +36,10 @@ function getItemCard($con, $itemSelectQuery)
             -<?php echo $item_discount; ?>%
           </span>
           <div class="card-body p-0 pb-2">
-            <h6 class="product-name"><?php echo $itemRow['item_name']; ?></h6>
+            <div class="tool-tip">
+              <span class="tool-tip-text"><?php echo $itemRow['item_name']; ?></span>
+              <h6 class="product-name"><?php echo $itemRow['item_name']; ?></h6>
+            </div>
             <!-- item prices-->
             <h6 class="<?php echo $displayNone; ?> text-decoration-line-through d-inline text-body-tertiary">Rs. <?php echo number_format($item_sell_price, 2); ?></h6>
             <h6 class="d-inline">Rs. <?php echo number_format($discountedPrice, 2); ?></h6>
