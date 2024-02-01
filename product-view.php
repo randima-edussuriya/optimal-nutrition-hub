@@ -74,13 +74,16 @@ include('database/config.php');
                     </div>
                 </div>
                 <!-- image section end -->
+
                 <!-- item details section start -->
                 <div class="col-md-6 p-3 bg-body-secondary  rounded-4">
                     <h5 class=' '><?php echo $itemRow['item_name']; ?></h5>
                     <h5 class='text-body-secondary'><?php echo $itemRow['item_brand']; ?></h5>
-                    <h5 class='<?php echo $displayNoneForDiscount; ?> text-decoration-line-through text-body-tertiary'>Rs. <?php echo $item_sell_price; ?><span class="badge bg-success ms-2">-<?php echo $item_discount; ?>%</span>
+                    <!-- item sell price, discount, discounted price -->
+                    <h5 class='<?php echo $displayNoneForDiscount; ?> text-decoration-line-through text-body-tertiary'>Rs. <?php echo number_format($item_sell_price, 2); ?><span class="badge bg-success ms-2">-<?php echo $item_discount; ?>%</span>
                     </h5>
-                    <h5 class='fw-bold'>Rs. <?php echo $discountedPrice; ?></h5>
+                    <h5 class='fw-bold'>Rs. <?php echo number_format($discountedPrice, 2); ?></h5>
+                    <!-- availability text -->
                     <h5 class='<?php echo $AvailabiliyColor; ?> fw-bold'><?php echo $availabiliy; ?></h5>
                     <form action="#" method="post">
                         <div class="<?php echo $displayNoneForAvailabiity; ?> d-flex mt-3">
@@ -116,20 +119,17 @@ include('database/config.php');
 
         $cartSelectQuery = "SELECT * FROM cart WHERE fk_item_id = $itemId and fk_cust_id = $custId";
         $cartResult = mysqli_query($con, $cartSelectQuery);
-        // update the quantity if the item is already in the cart
+        // check if the item already exists
         if (mysqli_num_rows($cartResult) > 0) {
-            $cartRow = mysqli_fetch_assoc($cartResult);
-            $totalItemQty = $addingItemQty + $cartRow['cart_item_qty'];
-            $cartUpdateQuery = "UPDATE cart SET cart_item_qty = $totalItemQty WHERE cart_id = {$cartRow['cart_id']}";
-            if (mysqli_query($con, $cartUpdateQuery)) {
-                echo "<script>alert('update exist item in cart successfully');</script>";
-            }
-        } else {
-            //insert a new record If the item is not in the cart
-            $cartInsertQuery = "INSERT INTO cart (cart_item_qty, fk_item_id, fk_cust_id) VALUES ($addingItemQty, $itemId, $custId)";
-            if (mysqli_query($con, $cartInsertQuery)) {
-                echo "<script>alert('Add new item to cart successfully');</script>";
-            }
+            echo "<script>alert('This item already exists in your cart.');</script>";
+            echo "<script>window.open('cart.php', '_self')</script>";
+            exit();
+        }
+
+        //add item to the cart
+        $cartInsertQuery = "INSERT INTO cart (cart_item_qty, fk_item_id, fk_cust_id) VALUES ($addingItemQty, $itemId, $custId)";
+        if (mysqli_query($con, $cartInsertQuery)) {
+            echo "<script>alert('Add item to cart successfully');</script>";
         }
 
         // Update the stock quantity of the item after add to cart
