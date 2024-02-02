@@ -38,32 +38,32 @@ if (!isset($_SESSION['staffId'])) {
             <h2>Cashier Panel</h2>
         </div>
         <div class="row align-items-center  mx-auto bg-body-secondary   justify-content-center py-3  ">
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">group_add</i></div>
                     <div>Staff Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">category</i></div>
                     <div>Category Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">inventory_2</i></div>
                     <div>Item Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">shopping_cart_checkout</i>
                     </div>
                     <div>Cart & Checkout Handling</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">notifications_active</i>
                     </div>

@@ -38,64 +38,64 @@ if (!isset($_SESSION['staffId'])) {
             <h2>Admin Panel</h2>
         </div>
         <div class="row align-items-center justify-content-center py-3 mx-auto bg-body-secondary     ">
-            <a href="../staff-management/staffAccount-management.php" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../staff-management/staffAccount-management.php" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">group_add</i></div>
                     <div>Staff Management</div>
                 </div>
             </a>
-            <a href="../staff-management/customer-management.php" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../staff-management/customer-management.php" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">support_agent</i></div>
                     <div>Customer Management</div>
                 </div>
             </a>
-            <a href="../category-management/category-manage.php" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../category-management/category-manage.php" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">category</i></div>
                     <div>Category Management</div>
                 </div>
             </a>
-            <a href="../item-managemnt/item-manage.php" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="../item-managemnt/item-manage.php" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">inventory_2</i></div>
                     <div>Item Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">shopping_cart_checkout</i>
                     </div>
                     <div>Cart & Checkout Handling</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">local_shipping</i></div>
                     <div>Delivery Handling</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">free_cancellation</i>
                     </div>
                     <div>Order Cancellation</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">contact_support</i>
                     </div>
                     <div>Inquiry Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">comment</i></div>
                     <div>Feedback Management</div>
                 </div>
             </a>
-            <a href="" class="nav-link col-lg-2 btn-module btn btn-dark">
+            <a href="" class="nav-link col-lg-2 btn-module">
                 <div class="module-content">
                     <div><i class="material-icons" style="font-size: 40px;color:white;">notifications_active</i>
                     </div>
