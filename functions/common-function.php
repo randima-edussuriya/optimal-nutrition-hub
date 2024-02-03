@@ -54,3 +54,11 @@ function getItemCard($con, $itemSelectQuery)
     echo "<h2>Not available products</h2>";
   }
 }
+
+// get no of item in cart
+function getNoOfCartItem($con)
+{
+  $cartSelectQuery = "SELECT * FROM cart WHERE fk_cust_id={$_SESSION['custId']}";
+  $cartResult = mysqli_query($con, $cartSelectQuery);
+  return mysqli_num_rows($cartResult);
+}

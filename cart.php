@@ -11,9 +11,6 @@ if (!isset($_SESSION['custId'])) {
 
 // Include the database configuration file
 include('database/config.php');
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -28,21 +25,17 @@ include('database/config.php');
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/staff-management.css">
 
-
     <title>Cart-Optimal Nutrition Hub</title>
 </head>
 
-<body>
+<body class="text-bg-dark">
     <!-- Navigation bar start -->
     <?php
     include('includes/navigation-bar.php');
     ?>
     <!-- Navigation bar end -->
 
-    <!-- cart section start -->
-
-
-
+    <!-- cart table section start -->
     <div class="container my-5 px-0">
         <div class="row">
             <?php
@@ -54,7 +47,7 @@ include('database/config.php');
 
             $itemResult = mysqli_query($con, $itemSelectQuery);
             $totalPrice = 0;
-            if (mysqli_num_rows($itemResult) > 0) {
+            if (mysqli_num_rows($itemResult) > 0) { // check if cart is not empty
             ?>
                 <table>
                     <thead>
@@ -69,27 +62,26 @@ include('database/config.php');
                     </thead>
                     <tbody>
                         <?php
-
                         while ($itemRow = mysqli_fetch_assoc($itemResult)) {
                             $cart_id = $itemRow['cart_id'];
                             $item_discount = (float)$itemRow['item_discount'];
                             $item_sell_price = (float)$itemRow['item_sell_price'];
-                            $cart_item_qty = (int)$itemRow['cart_item_qty'];
                             $discountedPrice = $item_sell_price * (100 - $item_discount) / 100; // discount claculation
+
+                            $cart_item_qty = (int)$itemRow['cart_item_qty'];
                             $subTotal = $discountedPrice * $cart_item_qty;
                             $totalPrice = $totalPrice + $subTotal;
                         ?>
-
                             <tr>
-                                <td><img class="object-fit-contain " src="images/products/<?php echo $itemRow['item_image1']; ?>" width="80" height="100%"></td>
+                                <td class="text-center"><img class="object-fit-contain" src="images/products/<?php echo $itemRow['item_image1']; ?>" width="80" height="100%"></td>
                                 <td><?php echo $itemRow['item_name']; ?></td>
-                                <td>Rs. <?php echo $discountedPrice; ?></td>
+                                <td>Rs. <?php echo number_format($discountedPrice, 2); ?></td>
                                 <td class="col-1">
                                     <input class="form-control" type="number" min="1" max="<?php echo $itemRow['item_stock_qty']; ?>" value="<?php echo $cart_item_qty; ?>" name="cartQty" required>
                                 </td>
-                                <td>Rs. <?php echo $subTotal; ?></td>
-                                <td>
-                                    <a href="cart.php?cartId=<?php echo $cart_id; ?>"><Button class="deactivate">Remove</Button></a>
+                                <td>Rs. <?php echo number_format($subTotal, 2); ?></td>
+                                <td class="text-center">
+                                    <a href="cart.php?cartId=<?php echo $cart_id; ?>"><Button class="deactivate me-0">Remove</Button></a>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -99,11 +91,11 @@ include('database/config.php');
                 echo "<h2 class='bg-danger text-center mt-5 '> Not added item in cart </h2>";
             } ?>
         </div>
-        <div class="row col-md-12 text-end">
-            <h3>Total Price: Rs. <?php echo $totalPrice; ?></h3>
+        <div class="text-end">
+            <h3>Total Price: Rs. <?php echo number_format($totalPrice, 2); ?></h3>
         </div>
     </div>
-    <!-- cart section end -->
+    <!-- cart table section end -->
 
     <?php
     //remove item in cart
@@ -112,6 +104,7 @@ include('database/config.php');
         if (mysqli_query($con, $itemDeleteQuery)) {
             echo "<script>alert('item removed from cart successfully');</script>";
             echo "<script>window.open('cart.php', '_self')</script>";
+            exit();
         }
     }
 

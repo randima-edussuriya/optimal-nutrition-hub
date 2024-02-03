@@ -1,3 +1,7 @@
+<?php
+include('functions/common-function.php');
+?>
+
 <nav class="navbar navbar-expand-lg bg-body-secondary  sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand ms-5 me-auto " href="index.php">
@@ -73,10 +77,13 @@
                     <a class="nav-link" href="Login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link position-relative " href="cart.php"><img src="icons/cart-2-line.svg" style="width: 32px;">
-                        <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            0
-                        </span> -->
+                    <a class="nav-link position-relative pe-0 me-2" href="cart.php"><img src="icons/cart-2-line.svg" style="width: 32px;">
+                        <!-- display no of cart item when user login -->
+                        <?php if (isset($_SESSION['custId'])) { ?>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                <?php echo getNoOfCartItem($con); ?>
+                            </span>
+                        <?php } ?>
                     </a>
                 </li>
                 <li class="nav-item">
