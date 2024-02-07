@@ -28,7 +28,7 @@ include('database/config.php');
     <title>Cart-Optimal Nutrition Hub</title>
 </head>
 
-<body class="text-bg-dark">
+<body>
     <!-- Navigation bar start -->
     <?php
     include('includes/navigation-bar.php');
@@ -39,7 +39,7 @@ include('database/config.php');
     <div class="container my-5 px-0">
         <div class="row">
             <?php
-            $itemSelectQuery = "SELECT i.item_image1, i.item_name, i.item_sell_price, i.item_discount, i.item_stock_qty, c.cart_id, c.cart_item_qty
+            $itemSelectQuery = "SELECT i.item_id, i.item_image1, i.item_name, i.item_sell_price, i.item_discount, i.item_stock_qty, c.cart_id, c.cart_item_qty
             FROM item i
             INNER JOIN cart c ON i.item_id = c.fk_item_id
             INNER JOIN customer cu ON c.fk_cust_id = cu.cust_id
@@ -49,7 +49,8 @@ include('database/config.php');
             $totalPrice = 0;
             if (mysqli_num_rows($itemResult) > 0) { // check if cart is not empty
             ?>
-                <table>
+
+                <table class="">
                     <thead>
                         <tr>
                             <th>Product Image</th>
@@ -63,54 +64,79 @@ include('database/config.php');
                     <tbody>
                         <?php
                         while ($itemRow = mysqli_fetch_assoc($itemResult)) {
+                            $item_id = $itemRow['item_id'];
                             $cart_id = $itemRow['cart_id'];
                             $item_discount = (float)$itemRow['item_discount'];
                             $item_sell_price = (float)$itemRow['item_sell_price'];
                             $discountedPrice = $item_sell_price * (100 - $item_discount) / 100; // discount claculation
 
-                            $cart_item_qty = (int)$itemRow['cart_item_qty'];
-                            $subTotal = $discountedPrice * $cart_item_qty;
-                            $totalPrice = $totalPrice + $subTotal;
+                            $existCartItemQty = (int)$itemRow['cart_item_qty'];
+                            $existItemStockQty = (int)$itemRow['item_stock_qty'];
+                            $subTotal = $discountedPrice * $existCartItemQty;
+                            $totalPrice += $subTotal;
                         ?>
+
                             <tr>
-                                <td class="text-center"><img class="object-fit-contain" src="images/products/<?php echo $itemRow['item_image1']; ?>" width="80" height="100%"></td>
-                                <td><?php echo $itemRow['item_name']; ?></td>
-                                <td>Rs. <?php echo number_format($discountedPrice, 2); ?></td>
-                                <td class="col-1">
-                                    <input class="form-control" type="number" min="1" max="<?php echo $itemRow['item_stock_qty']; ?>" value="<?php echo $cart_item_qty; ?>" name="cartQty" required>
-                                </td>
-                                <td>Rs. <?php echo number_format($subTotal, 2); ?></td>
+                                <!-- Product Image -->
                                 <td class="text-center">
-                                    <a href="cart.php?cartId=<?php echo $cart_id; ?>"><Button class="deactivate me-0">Remove</Button></a>
+                                    <a href="product-view.php?productId=<?= $item_id ?>">
+                                        <img class="object-fit-contain" src="images/products/<?= $itemRow['item_image1'] ?>" width="80" height="100%">
+                                    </a>
+                                </td>
+                                <!-- Product name -->
+                                <td>
+                                    <a class="text-decoration-none " href="product-view.php?productId=<?= $item_id ?>">
+                                        <?= $itemRow['item_name'] ?>
+                                    </a>
+                                </td>
+                                <td>Rs. <?= number_format($discountedPrice, 2) ?></td>
+                                <td class="col-1">
+                                    <form action="#" method="post">
+                                        <input class="form-control" type="number" min="1" max="<?= $existItemStockQty + $existCartItemQty ?>" value="<?= $existCartItemQty ?>" name="cartQty" required>
+                                </td>
+                                <td>Rs. <?= number_format($subTotal, 2) ?></td>
+                                <td class="text-center px-0 ">
+                                    <input type="submit" value="Update" name="updateCartItem<?= $cart_id ?>" class="update mx-0 d-inline ">
+                                    </form>
+                                    <!-- hidden form start-->
+                                    <form action="#" method="get" class="d-inline">
+                                        <input type="hidden" name="cartId" value="<?= $cart_id ?>">
+                                        <input type="hidden" name="itemId" value="<?= $item_id ?>">
+                                        <input type="hidden" name="existCartItemQty" value="<?= $existCartItemQty ?>">
+                                        <input type="hidden" name="existItemStockQty" value="<?= $existItemStockQty ?>">
+                                        <!-- hidden form end-->
+                                        <input type="submit" value="Remove" name="removeCartItem<?= $cart_id ?>" class="deactivate mx-0 d-inline mt-1 mt-lg-0">
+                                    </form>
+                                    <!-- <a href="cart.php?"><Button class="deactivate mx-0">Remove</Button></a> -->
                                 </td>
                             </tr>
+
+                            <?php
+                            // update cart item
+                            updateCartItem($con, $cart_id, $item_id, $existCartItemQty, $existItemStockQty);
+
+                            // remove cart item
+                            removeCartItem($con, $cart_id, $item_id, $existCartItemQty, $existItemStockQty);
+                            ?>
                         <?php } ?>
                     </tbody>
                 </table>
+
             <?php } else {
                 echo "<h2 class='bg-danger text-center mt-5 '> Not added item in cart </h2>";
             } ?>
         </div>
-        <div class="text-end">
-            <h3>Total Price: Rs. <?php echo number_format($totalPrice, 2); ?></h3>
+        <div class="row">
+            <div class="col-md-6 ps-0">
+                <a href="product.php"><button class="back-button">Keep Shopping</button></a>
+                <a href="order-place.php"><button class="Registration">Place Order</button></a>
+            </div>
+            <div class="col-md-6 text-md-end mt-2 mt-md-0 pe-0">
+                <h3>Total Price: Rs. <?= number_format($totalPrice, 2) ?></h3>
+            </div>
         </div>
     </div>
     <!-- cart table section end -->
-
-    <?php
-    //remove item in cart
-    if (isset($_GET['cartId'])) {
-        $itemDeleteQuery = "DELETE FROM cart WHERE cart_id = {$_GET['cartId']}";
-        if (mysqli_query($con, $itemDeleteQuery)) {
-            echo "<script>alert('item removed from cart successfully');</script>";
-            echo "<script>window.open('cart.php', '_self')</script>";
-            exit();
-        }
-    }
-
-    //update cart item
-
-    ?>
 
     <!-- Footer section start -->
     <?php
