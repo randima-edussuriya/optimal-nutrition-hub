@@ -99,7 +99,7 @@ include('database/config.php');
                                     <input type="submit" value="Update" name="updateCartItem<?= $cart_id ?>" class="update mx-0 d-inline ">
                                     </form>
                                     <!-- hidden form start-->
-                                    <form action="#" method="get" class="d-inline">
+                                    <form action="#" method="post" class="d-inline">
                                         <input type="hidden" name="cartId" value="<?= $cart_id ?>">
                                         <input type="hidden" name="itemId" value="<?= $item_id ?>">
                                         <input type="hidden" name="existCartItemQty" value="<?= $existCartItemQty ?>">

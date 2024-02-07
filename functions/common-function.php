@@ -96,7 +96,7 @@ function updateCartItem($con, $cart_id, $item_id, $existCartItemQty,  $existItem
 // remove cart item
 function removeCartItem($con, $cart_id, $item_id, $existCartItemQty,  $existItemStockQty)
 {
-  if (isset($_GET['removeCartItem' . $cart_id])) {
+  if (isset($_POST['removeCartItem' . $cart_id])) {
     //delete cart item from cart
     $cartDeleteQuery = "DELETE FROM cart WHERE cart_id=$cart_id";
     if (mysqli_query($con, $cartDeleteQuery)) {
