@@ -75,7 +75,7 @@ include('database/config.php');
     if (isset($_GET['search'])) {
       $itemName = $_GET['searchName']; ?>
       <div class="col-lg-6 m-auto text-center my-3">
-        <h1><?php echo "Searching result for \"$itemName\""; ?></h1>
+        <h1><?php echo "Searching result for $itemName"; ?></h1>
       </div>
       <div class="row">
         <?php
