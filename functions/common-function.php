@@ -64,9 +64,13 @@ function getNoOfCartItem($con)
 }
 
 // update cart item
-function updateCartItem($con, $cart_id, $item_id, $existCartItemQty,  $existItemStockQty)
+function updateCartItem($con)
 {
-  if (isset($_POST['updateCartItem' . $cart_id])) {
+  if (isset($_POST['updateCartItem'])) {
+    $cart_id = $_POST['updateCartItem'];
+    $existItemStockQty = $_POST['existItemStockQty'];
+    $existCartItemQty = $_POST['existCartItemQty'];
+    $item_id = $_POST['itemId'];
     $updatedCartItemQty = (int)$_POST['cartQty'];
 
     if ($updatedCartItemQty != $existCartItemQty) {
@@ -94,9 +98,36 @@ function updateCartItem($con, $cart_id, $item_id, $existCartItemQty,  $existItem
 }
 
 // remove cart item
-function removeCartItem($con, $cart_id, $item_id, $existCartItemQty,  $existItemStockQty)
+// function removeCartItem($con)
+// {
+//   if (isset($_POST['removeCartItem'])) {
+//     $cart_id = $_POST['removeCartItem'];
+//     $existItemStockQty = $_POST['existItemStockQty'];
+//     $existCartItemQty = $_POST['existCartItemQty'];
+//     $item_id = $_POST['itemId'];
+
+//     //delete cart item from cart
+//     $cartDeleteQuery = "DELETE FROM cart WHERE cart_id=$cart_id";
+//     if (mysqli_query($con, $cartDeleteQuery)) {
+//       // add delete item to stock
+//       $updatedItemStockQty = $existItemStockQty + $existCartItemQty;
+//       $itemUpdateQuery = "UPDATE item SET item_stock_qty=$updatedItemStockQty WHERE item_id=$item_id";
+//       if (mysqli_query($con, $itemUpdateQuery)) {
+//         echo "<script>alert('Delete item from cart successfully');</script>";
+//         echo "<script>window.open('cart.php', '_self');</script>";
+//       }
+//     }
+//   }
+// }
+
+function removeCartItem($con)
 {
-  if (isset($_POST['removeCartItem' . $cart_id])) {
+  if (isset($_POST['removeCartItem'])) {
+    $cart_id = $_POST['removeCartItem'];
+    $existItemStockQty = $_POST['existItemStockQty'];
+    $existCartItemQty = $_POST['existCartItemQty'];
+    $item_id = $_POST['itemId'];
+
     //delete cart item from cart
     $cartDeleteQuery = "DELETE FROM cart WHERE cart_id=$cart_id";
     if (mysqli_query($con, $cartDeleteQuery)) {

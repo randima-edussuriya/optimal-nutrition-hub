@@ -49,8 +49,7 @@ include('database/config.php');
             $totalPrice = 0;
             if (mysqli_num_rows($itemResult) > 0) { // check if cart is not empty
             ?>
-
-                <table class="">
+                <table>
                     <thead>
                         <tr>
                             <th>Product Image</th>
@@ -75,7 +74,6 @@ include('database/config.php');
                             $subTotal = $discountedPrice * $existCartItemQty;
                             $totalPrice += $subTotal;
                         ?>
-
                             <tr>
                                 <!-- Product Image -->
                                 <td class="text-center">
@@ -89,43 +87,44 @@ include('database/config.php');
                                         <?= $itemRow['item_name'] ?>
                                     </a>
                                 </td>
+                                <!-- Price -->
                                 <td>Rs. <?= number_format($discountedPrice, 2) ?></td>
-                                <td class="col-1">
-                                    <form action="#" method="post">
+                                <form action="#" method="post" class="d-inline">
+                                    <!-- Quantity -->
+                                    <td class="col-1">
                                         <input class="form-control" type="number" min="1" max="<?= $existItemStockQty + $existCartItemQty ?>" value="<?= $existCartItemQty ?>" name="cartQty" required>
-                                </td>
-                                <td>Rs. <?= number_format($subTotal, 2) ?></td>
-                                <td class="text-center px-0 ">
-                                    <input type="submit" value="Update" name="updateCartItem<?= $cart_id ?>" class="update mx-0 d-inline ">
-                                    </form>
-                                    <!-- hidden form start-->
-                                    <form action="#" method="post" class="d-inline">
-                                        <input type="hidden" name="cartId" value="<?= $cart_id ?>">
-                                        <input type="hidden" name="itemId" value="<?= $item_id ?>">
-                                        <input type="hidden" name="existCartItemQty" value="<?= $existCartItemQty ?>">
-                                        <input type="hidden" name="existItemStockQty" value="<?= $existItemStockQty ?>">
-                                        <!-- hidden form end-->
-                                        <input type="submit" value="Remove" name="removeCartItem<?= $cart_id ?>" class="deactivate mx-0 d-inline mt-1 mt-lg-0">
-                                    </form>
-                                    <!-- <a href="cart.php?"><Button class="deactivate mx-0">Remove</Button></a> -->
-                                </td>
+                                    </td>
+                                    <!-- Subtotal -->
+                                    <td>Rs. <?= number_format($subTotal, 2) ?></td>
+
+                                    <!-- hidden form field start-->
+                                    <input type="hidden" name="itemId" value="<?= $item_id ?>">
+                                    <input type="hidden" name="existCartItemQty" value="<?= $existCartItemQty ?>">
+                                    <input type="hidden" name="existItemStockQty" value="<?= $existItemStockQty ?>">
+                                    <!-- hidden form field end-->
+
+                                    <!-- Action button -->
+                                    <td class="text-center px-0 ">
+                                        <button type="submit" value="<?= $cart_id ?>" name="updateCartItem" class="update mx-0 d-inline ">Update</button>
+                                        <button onclick="return confirm('Are sure to remove the item');" type="submit" value="<?= $cart_id ?>" name="removeCartItem" class="deactivate mx-0 d-inline mt-1 mt-lg-0">Remove</button>
+                                    </td>
+                                </form>
                             </tr>
-
-                            <?php
-                            // update cart item
-                            updateCartItem($con, $cart_id, $item_id, $existCartItemQty, $existItemStockQty);
-
-                            // remove cart item
-                            removeCartItem($con, $cart_id, $item_id, $existCartItemQty, $existItemStockQty);
-                            ?>
                         <?php } ?>
                     </tbody>
                 </table>
+                <?php
+                // update cart item
+                updateCartItem($con);
 
+                // remove cart item
+                removeCartItem($con);
+                ?>
             <?php } else {
                 echo "<h2 class='bg-danger text-center mt-5 '> Not added item in cart </h2>";
             } ?>
         </div>
+
         <div class="row">
             <div class="col-md-6 ps-0">
                 <a href="product.php"><button class="back-button">Keep Shopping</button></a>
