@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 20, 2024 at 01:50 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Sep 26, 2024 at 10:43 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,10 +52,10 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cart_id`, `cart_item_qty`, `fk_item_id`, `fk_cust_id`) VALUES
-(3505, 1, 2506, 3002),
-(3506, 2, 2501, 3002),
-(3507, 1, 2507, 3002),
-(3508, 1, 2505, 3002);
+(3510, 1, 2501, 3002),
+(3511, 2, 2507, 3002),
+(3512, 2, 2505, 3002),
+(3513, 1, 2509, 3002);
 
 -- --------------------------------------------------------
 
@@ -192,15 +192,15 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`item_id`, `item_name`, `item_image1`, `item_image2`, `item_brand`, `item_description`, `item_sell_price`, `item_cost_price`, `item_stock_qty`, `item_discount`, `item_date_added`, `fk_category_id`) VALUES
-(2501, 'API CREATINE 300G', 'API-Creatine-300g.jpg', 'Nutrex-Creatine-Drive-300g-Facts.jpg', 'API', 'API’s CREATINE MONOHYDRATE is pure, uncut Creatine Monohydrate. With no added fillers, flow agents or sugars – this is the real deal. All Creatine may look the same, but buyer beware. The selection and handling of raw materials along with production conditions determine the quality of Creatine Monohydrate. Our single source of Creatine is tested for purity and stability so you get the same, consistent product each and every time.', 6500.00, 6250.00, 8, 10.02, '2023-12-28 13:36:07', 2004),
+(2501, 'API CREATINE 300G', 'API-Creatine-300g.jpg', 'Nutrex-Creatine-Drive-300g-Facts.jpg', 'API', 'API’s CREATINE MONOHYDRATE is pure, uncut Creatine Monohydrate. With no added fillers, flow agents or sugars – this is the real deal. All Creatine may look the same, but buyer beware. The selection and handling of raw materials along with production conditions determine the quality of Creatine Monohydrate. Our single source of Creatine is tested for purity and stability so you get the same, consistent product each and every time.', 6500.00, 6250.00, 9, 10.02, '2023-12-28 13:36:07', 2004),
 (2502, 'OPTIMUM NUTRITION MICRONIZED CREATINE POWDER 300G', 'Optimum-Creatine-300g.jpg', 'ON-Creatine-300g.jpg', 'OPTIMUM NUTRITION', '99.9% Pure Unflavored Creatine with No Fillers or Additives to Support Strength and Power. Creatine for Building Muscle. Creapure Creatine Monohydrate. 5 Grams of Creatine Monohydrate per Rounded Teaspoon Serving. 99.9% Pure Creatine Monohydrat. Zero Added Sugar. Zero Calories. Ideal Usage Ocasions. Stacked Into Post-Workout Shake. Mixed Into a Flavored Beverage.', 12000.00, 11500.00, 0, 20.00, '2023-12-28 13:48:12', 2004),
 (2503, 'HYDROXYCUT HARDCORE® ELITE 100 CAPSULES', 'Muscletech-Hydroxycut-Elite-100-Caps.jpg', 'Muscletech-Hydroxycut-Elite-100-Caps-NEW.jpg', 'MUSCLETECH', 'Hydroxycut Hardcore® Elite provides a thermogenic and energy experience with unrivaled intensity. Fuel the most intense workouts and tackle your jam-packed days with a scientifically researched dose of caffeine anhydrous that boosts energy and mental focus. Combined with other potent ingredients, the formula delivers a one-of-a-kind sensory experience.', 7500.00, 7300.00, 0, 0.00, '2023-12-28 14:10:09', 2003),
 (2504, 'LIPO-6 BLACK ULTRA INTENSE 60 CAPSULES', 'Lipo-6-Ultra-intense-60-Caps.jpg', 'Lipo-6-Black-Intense-facts.jpg', 'Nutrex research', 'LIPO-6 BLACK INTENSE is a red hot thermogenic fat burner, that packs an extra energy kick, which will knock your socks off. If you’re after a fat burner that helps ramp up your metabolism, makes you sweat and gives you a serious kick-in the butt jolt of energy, you need to try LIPO-6 BLACK INTENSE. LIPO-6 BLACK INTENSE is not for the faint-hearted and it’s definitely not a beginner’s choice. It’s for those, who have tried them all, and are stuck.', 8300.00, 8000.00, 0, 0.00, '2023-12-28 14:15:15', 2003),
-(2505, 'USN ANABOLIC MASS CHOCOLATE 6 LBS', 'USN-Anabolic-Mass-6-lbs.jpg', 'USN-Anabolic-Mass-6-lbs-Facts.jpg', 'USN', 'Enhanced with a scientifically validated musclebuilding compound (creatine) to help build more muscle\r\nsize and strength, and help accelerate muscle recovery. PACKED WITH HIGH-QUANTITY, PREMIUM QUALITY CALORIES. Power-packed with over 1,280 calories, including 55 grams of high-quality protein, 252 grams of energy-providing carbs, BCAAs, glutamine, essential minerals, and more, in every serving.', 13500.00, 13200.00, 4, 0.00, '2023-12-28 14:23:23', 2002),
-(2506, 'MASS INFUSION 12 LBS', 'Nutrex-Mass-Infusion-12-lbs-1.jpg', 'Nutrex-Mass-Infusion-12-lbs.jpg', 'Nutrex research', 'MASS INFUSION is an advanced weight gain formula supplying your body with 50 grams of high-quality protein per serving, over 1120 calories, along with 200 grams of carbohydrates. Its nutrient dense formula is ideal for those athletes that are seeking to gain weight fast and become bigger and stronger. MASS INFUSION is packed with three different proteins.', 22500.00, 22300.00, 9, 0.00, '2023-12-28 14:25:51', 2002),
-(2507, 'THE SHADOW! PRE-WORKOUT 30 SERVINGS', 'JNX-The-Shadow-30-Serv.jpg', 'JNX-The-Shadow-30-Serv-1.jpg', 'THE SHADOW', 'The Shadow! is a full powered pre-workout for hardcore users only…those of us who were born to disrupt the status quo, who hit their PB and then go at it again, who live a life of no excuses. Whatever your goals, The Shadow! is going to help you smash them sooner.* With 350mg of caffeine per serving, and 2000mg of Beta Alanine, The Shadow! delivers unsurpassed energy, hypnotic intensity and hard hitting strength like no other pre-workout on the market.', 8800.00, 8500.00, 11, 0.00, '2023-12-28 17:51:29', 2000),
+(2505, 'USN ANABOLIC MASS CHOCOLATE 6 LBS', 'USN-Anabolic-Mass-6-lbs.jpg', 'USN-Anabolic-Mass-6-lbs-Facts.jpg', 'USN', 'Enhanced with a scientifically validated musclebuilding compound (creatine) to help build more muscle\r\nsize and strength, and help accelerate muscle recovery. PACKED WITH HIGH-QUANTITY, PREMIUM QUALITY CALORIES. Power-packed with over 1,280 calories, including 55 grams of high-quality protein, 252 grams of energy-providing carbs, BCAAs, glutamine, essential minerals, and more, in every serving.', 13500.00, 13200.00, 3, 0.00, '2023-12-28 14:23:23', 2002),
+(2506, 'MASS INFUSION 12 LBS', 'Nutrex-Mass-Infusion-12-lbs-1.jpg', 'Nutrex-Mass-Infusion-12-lbs.jpg', 'Nutrex research', 'MASS INFUSION is an advanced weight gain formula supplying your body with 50 grams of high-quality protein per serving, over 1120 calories, along with 200 grams of carbohydrates. Its nutrient dense formula is ideal for those athletes that are seeking to gain weight fast and become bigger and stronger. MASS INFUSION is packed with three different proteins.', 22500.00, 22300.00, 10, 0.00, '2023-12-28 14:25:51', 2002),
+(2507, 'THE SHADOW! PRE-WORKOUT 30 SERVINGS', 'JNX-The-Shadow-30-Serv.jpg', 'JNX-The-Shadow-30-Serv-1.jpg', 'THE SHADOW', 'The Shadow! is a full powered pre-workout for hardcore users only…those of us who were born to disrupt the status quo, who hit their PB and then go at it again, who live a life of no excuses. Whatever your goals, The Shadow! is going to help you smash them sooner.* With 350mg of caffeine per serving, and 2000mg of Beta Alanine, The Shadow! delivers unsurpassed energy, hypnotic intensity and hard hitting strength like no other pre-workout on the market.', 8800.00, 8500.00, 10, 0.00, '2023-12-28 17:51:29', 2000),
 (2508, 'PSYCHOTIC RED 35 SERVS', 'Insane-Labz-Psychotic-35-Serv-2jpg.jpg', 'Insane-Labz-Psychotic-35-Serv1.jpg', 'INSANE LABZ', 'Pre-workout supplements aren’t a luxury; they’re a requirement if you want to hit your peak levels of performance during each and every workout. When it comes to amping up your focus, performance, and results, the pre-workout, Psychotic is packed with the right combination of scientifically proven ingredients to ensure you go above and beyond.', 8500.00, 8300.00, 9, 0.00, '2023-12-28 17:55:44', 2000),
-(2509, 'CRITICAL WHEY PROTEIN 2KG', 'Applied-Critical-Whey-2kg.jpg', 'Applied-Critical-Whey-2kg-1.jpg', 'APPLIED NUTRITION', 'Critical Whey Protein has been developed using a unique blend of Whey Protein Concentrate, Whey Protein Isolate & Hydrolysed Whey Protein. Whey Protein Concentrate is produced by Ultra-Filtration Technology containing high levels of Protein and Branched Chain Amino Acids (BCAAs). A convenient source of high-quality protein. Delicious taste and mixes instantly. Delivering high levels of protein & BCAAs.', 23000.00, 22000.00, 5, 0.00, '2023-12-28 18:01:41', 2001),
+(2509, 'CRITICAL WHEY PROTEIN 2KG', 'Applied-Critical-Whey-2kg.jpg', 'Applied-Critical-Whey-2kg-1.jpg', 'APPLIED NUTRITION', 'Critical Whey Protein has been developed using a unique blend of Whey Protein Concentrate, Whey Protein Isolate & Hydrolysed Whey Protein. Whey Protein Concentrate is produced by Ultra-Filtration Technology containing high levels of Protein and Branched Chain Amino Acids (BCAAs). A convenient source of high-quality protein. Delicious taste and mixes instantly. Delivering high levels of protein & BCAAs.', 23000.00, 22000.00, 4, 0.00, '2023-12-28 18:01:41', 2001),
 (2510, 'REDCON1 ISOTOPE WHEY ISOLATE 5 LBS', 'Redcon1-Isotope-5lbs.jpg', 'Redcon1-Isotope-5lbs-facts.jpg', 'REDCON1', '100% Whey Isolate Protein Powder Post workout or throughout the day you won\'t find a better whey isolate than isotope. Build and repair muscle with a smooth, delicious and easy to digest protein. Easy digestibility. 100% whey isolate. 71 servings', 29000.00, 28500.00, 6, 0.00, '2023-12-28 18:04:01', 2001);
 
 -- --------------------------------------------------------
@@ -295,7 +295,23 @@ INSERT INTO `staff` (`staff_id`, `staff_fname`, `staff_lname`, `staff_username`,
 (1505, 'Malindu', 'Dilakshna', 'dila', 'dila123', 'dilakshna@gmail.com', 1, '076-5842752', '2024-01-10 18:19:40', '200005233365', 'No 12', 'Batagoda', 'Balapitiya', 'Galle', 1000),
 (1506, 'Amesh', 'Silva', 'amesh', 'amesh123', 'amesh@gmail.com', 1, '071-5842752', '2024-01-10 20:15:17', '200005233365', 'No 20', 'Katubedda', 'Moratuwa', 'Colombo', 1001),
 (1509, 'Kalana', 'Sandaruwan', 'kalana', 'kalana123', 'kalana@gmail.com', 1, '071-8523145', '2024-01-13 10:29:56', '200012578681', 'No 15', 'Yala', 'Ballapitiya', 'Kalutara', 1002),
-(1510, 'Nuwan', 'Kumara', 'nuwan', 'nuwan123', 'nuwan@gmail.com', 1, '076-2569258', '2024-01-13 13:29:56', '200001425896', 'No 54', 'Rilaulla', 'Kapuwaththa', 'Gampaha', 1003);
+(1510, 'Nuwan', 'Kumara', 'nuwan', 'nuwan123', 'nuwan@gmail.com', 1, '076-2569258', '2024-01-13 13:29:56', '200001425896', 'No 54', 'Rilaulla', 'Kapuwaththa', 'Gampaha', 1003),
+(1511, 'John', 'Doe', 'johndoe', 'johndoe123', 'johndoe@example.com', 1, '0712345678', '2023-01-01 00:00:00', '987654321V', 'No. 123', 'Main Street', 'Colombo', 'Sri Lanka', 1003),
+(1512, 'Jane', 'Smith', 'janesmith', 'janesmith123', 'janesmith@example.com', 1, '0771234567', '2024-03-15 00:00:00', '876543210V', 'No. 456', 'High Street', 'Kandy', 'Sri Lanka', 1003),
+(1513, 'Michael', 'Johnson', 'michaeljohnson', 'michaeljohnson123', 'michaeljohnson@example.com', 1, '0751234567', '2022-11-20 00:00:00', '765432109V', 'No. 789', 'Beach Road', 'Galle', 'Sri Lanka', 1003),
+(1514, 'Emily', 'Brown', 'emilybrown', 'emilybrown123', 'emilybrown@example.com', 1, '0781234567', '2023-04-05 00:00:00', '654321098V', 'No. 101', 'Park Road', 'Negombo', 'Sri Lanka', 1003),
+(1515, 'David', 'Lee', 'davidlee', 'davidlee123', 'davidlee@example.com', 1, '0791234567', '2022-08-10 00:00:00', '543210987V', 'No. 202', 'Temple Road', 'Jaffna', 'Sri Lanka', 1003),
+(1516, 'Olivia', 'Taylor', 'oliviataylor', 'oliviataylor123', 'oliviataylor@example.com', 1, '0761234567', '2024-02-25 00:00:00', '432109876V', 'No. 303', 'Market Street', 'Kurunegala', 'Sri Lanka', 1003),
+(1517, 'Noah', 'Carter', 'noahcarter', 'noahcarter123', 'noahcarter@example.com', 1, '0751234567', '2023-07-15 00:00:00', '321098765V', 'No. 404', 'Railway Road', 'Matara', 'Sri Lanka', 1003),
+(1518, 'Ava', 'Johnson', 'avajohnson', 'avajohnson123', 'avajohnson@example.com', 1, '0741234567', '2022-12-20 00:00:00', '210987654V', 'No. 505', 'Beach Road', 'Batticaloa', 'Sri Lanka', 1003),
+(1519, 'Sarah', 'Garcia', 'sarahgarcia', 'sarahgarcia123', 'sarahgarcia@example.com', 1, '0723456789', '2023-05-12 00:00:00', '123456789X', 'No. 610', 'Maple Street', 'Puttalam', 'Sri Lanka', 1003),
+(1520, 'William', 'Chen', 'williamchen', 'williamchen123', 'williamchen@example.com', 1, '0734567890', '2024-08-21 00:00:00', '987654321Y', 'No. 721', 'Lake Avenue', 'Anuradhapura', 'Sri Lanka', 1002),
+(1521, 'Sophia', 'Nguyen', 'sophianguyen', 'sophianguyen123', 'sophianguyen@example.com', 1, '0745678901', '2022-09-25 00:00:00', '876543210Z', 'No. 832', 'Ocean Drive', 'Trincomalee', 'Sri Lanka', 1002),
+(1522, 'Alexander', 'Schmidt', 'alexanderschmidt', 'alexanderschmidt123', 'alexanderschmidt@example.com', 1, '0756789012', '2023-02-17 00:00:00', '765432109A', 'No. 943', 'Riverbank Road', 'Hambantota', 'Sri Lanka', 1002),
+(1523, 'Isabella', 'Kim', 'isabellakim', 'isabellakim123', 'isabellakim@example.com', 1, '0767890123', '2022-06-04 00:00:00', '654321098B', 'No. 1054', 'Hillside Lane', 'Ratnapura', 'Sri Lanka', 1002),
+(1524, 'Benjamin', 'Lopez', 'benjaminlopez', 'benjaminlopez123', 'benjaminlopez@example.com', 1, '0778901234', '2024-01-10 00:00:00', '543210987C', 'No. 1165', 'Forest Avenue', 'Badulla', 'Sri Lanka', 1001),
+(1525, 'Charlotte', 'Lee', 'charlottelee', 'charlottelee123', 'charlottelee@example.com', 1, '0789012345', '2023-08-08 00:00:00', '432109876D', 'No. 1276', 'Bayside Boulevard', 'Kalutara', 'Sri Lanka', 1001),
+(1526, 'Elijah', 'Wang', 'elijahwang', 'elijahwang123', 'elijahwang@example.com', 1, '0790123456', '2022-12-22 00:00:00', '321098765E', 'No. 1387', 'Mountain View Drive', 'Nuwara Eliya', 'Sri Lanka', 1001);
 
 -- --------------------------------------------------------
 
@@ -445,7 +461,7 @@ ALTER TABLE `cancellation`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3509;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3514;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -517,7 +533,7 @@ ALTER TABLE `order_table`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1511;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1527;
 
 --
 -- AUTO_INCREMENT for table `staff_type`
