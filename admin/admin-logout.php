@@ -23,8 +23,6 @@ if (isset($_POST['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS link -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <!-- Google Material icons CSS link -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/login.css">
@@ -55,11 +53,11 @@ if (isset($_POST['logout'])) {
         </div>
     </nav>
     <!-- Navigation bar end -->
-        
+
     <!-- back button start -->
     <div class="back-button-container">
-            <a href="../admin/home-pages/admin-home.php" class="back-button"> BACK</a>
-        </div>
+        <a href="../admin/home-pages/admin-home.php" class="back-button"> BACK</a>
+    </div>
     <!-- back button end -->
 
     <!-- Admin logout section start -->
