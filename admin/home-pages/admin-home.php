@@ -1,9 +1,8 @@
 <?php
-session_start();
+require_once('../auth/auth.php');
 
-// Redirect to the login page if user is not login
-if (!isset($_SESSION['staffId'])) {
-    header("location:admin-login.php");
+if ($_SESSION['staffTypeId'] != 1000) {
+    header('location:../auth/unauthorized.php');
     exit();
 }
 ?>

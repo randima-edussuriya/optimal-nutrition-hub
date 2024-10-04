@@ -1,15 +1,14 @@
 <?php
-session_start();
+require_once('../auth/auth.php');
 
-// Redirect to the login page if user is not login
-if (!isset($_SESSION['staffId'])) {
-    header("location:../home-pages/admin-login.php");
+// Allow access to Admin (1000), Cashier (1001), and Inventory Manager (1002)
+if ($_SESSION['staffTypeId'] != 1000 && $_SESSION['staffTypeId'] != 1001 && $_SESSION['staffTypeId'] != 1002) {
+    // Redirect to an unauthorized access page
+    header("Location: ../auth/unauthorized.php");
     exit();
 }
-?>
 
-<!-- include database connection -->
-<?php
+//include database connection
 include('../../database/config.php')
 ?>
 

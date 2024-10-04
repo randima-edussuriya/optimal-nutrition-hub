@@ -1,9 +1,10 @@
 <?php
-session_start();
+require_once('../auth/auth.php');
 
-// Redirect to the login page if user is not login
-if (!isset($_SESSION['staffId'])) {
-    header("location:../home-pages/admin-login.php");
+// Allow access to Admin (1000),
+if ($_SESSION['staffTypeId'] != 1000) {
+    // Redirect to an unauthorized access page
+    header("Location: ../auth/unauthorized.php");
     exit();
 }
 
@@ -93,7 +94,7 @@ include('../../database/config.php');
                     <td class='action-links'>
                     <a href='staff-view.php?staffId=$staff_id' class='view'>View</a> 
                     <a href='edit-account.php?staffId=$staff_id' class='$invisible update'>Update</a>
-                    <a href='#' class='$invisible deactivate'>Deactivate</a>
+                    <a onclick='return confirm(\"Are you sure to delete this\");' href='#' class='$invisible deactivate'>Deactivate</a>
                     </td>
                 </tr> 
                     ";
