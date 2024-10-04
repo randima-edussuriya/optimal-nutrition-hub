@@ -11,7 +11,7 @@
             <ul class="navbar-nav ms-auto ">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="../admin-logout.php"><img src="../../icons/profile-line.svg" style="width: 32px;"></a>
+                    <a class="nav-link" href="../auth/admin-logout.php"><img src="../../icons/profile-line.svg" style="width: 32px;"></a>
                 </li>
             </ul>
             <!-- Right item end -->
