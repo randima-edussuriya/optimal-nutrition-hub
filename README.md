@@ -1,13 +1,13 @@
-# 💪 Optimal Nutrition Hub
+# 💪 Optimal Nutrition Hub (Group Project)
 
-Optimal Nutrition Hub is a Web-Based Supplement Ordering System, developed as part of the 2nd year group project of the Bachelor of Information Technology (BIT) at the University of Moratuwa.
-
-The system streamlines the supplement ordering process while enabling staff profile management with role-based access control. It supports supplement organization through categories, a smooth shopping experience with cart operations, and secure operations powered by session handling, role-based access control, and unauthorized access redirection.
+A **full stack web application** developed to streamline the supplement ordering process with **category & item management**, **cart operations**, **order handling**, and **user management**. The system Secured application with **session handling**, **role-based access control**, and **restricted access**.
 
 ---
 
 ## 🖼️ Preview
 ![Optimal Nutrition Hub Preview](./Images/mockup.png)
+
+---
 
 ## 🛠️ Tech Stack
 <table>
@@ -48,5 +48,32 @@ The system streamlines the supplement ordering process while enabling staff prof
 
 ---
 
-## 📚 Acknowledgment
+## 🚀 Getting Started
+### Prerequisites
+- Install [XAMPP](https://www.apachefriends.org/) (Apache + MySQL)  
+- Install [Git](https://git-scm.com/) 
+
+### Installation  
+1. Clone the repository:  
+    ```
+    git clone https://github.com/randima-edussuriya/optimal-nutrition-hub.git
+    ```
+
+2. Move the project into the **htdocs** folder of your XAMPP installation:
+     ```
+     C:/xampp/htdocs/optimal-nutrition-hub
+     ```
+    
+  3. Import the database:
+      - Open phpMyAdmin at http://localhost/phpmyadmin
+      - Create a new database (optimal_nutrition_hub)
+      - Import the provided SQL file (in /database folder)
+
+4. Run the project in your browser:
+    - Client side - http://localhost/optimal-nutrition-hub
+    - Admin side - http://localhost/optimal-nutrition-hub/admin
+
+---
+
+## 📜 License
 This project was developed for academic purposes.
