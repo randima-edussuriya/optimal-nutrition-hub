@@ -5,7 +5,7 @@ A **full stack web application** developed to streamline the supplement ordering
 ---
 
 ## 🖼️ Preview
-![Optimal Nutrition Hub Preview](./Images/mockup.png)
+![Optimal Nutrition Hub Preview](./Images/mockup1.png)
 
 ---
 
