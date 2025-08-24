@@ -14,12 +14,12 @@ Collaborated in a team to develop a **full stack web application** that streamli
   <tr>
     <td><h4>Frontend:</h4></td>
     <td align="center">
-        <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" title="HTML"/></code><br/>
-        <sup>HTML</sup>
-    </td>
-    <td align="center">
         <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" title="Bootstrap"/></code><br/>
         <sup>Bootstrap</sup>
+    </td>
+    <td align="center">
+        <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML" title="HTML"/></code><br/>
+        <sup>HTML</sup>
     </td>
     <td align="center">
         <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" title="CSS"/></code><br/>
