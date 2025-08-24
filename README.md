@@ -1,6 +1,6 @@
 # 💪 Optimal Nutrition Hub (Group Project)
 
-A **full stack web application** developed to streamline the supplement ordering process with **category & item management**, **cart operations**, **order handling**, and **user management**. The system Secured application with **session handling**, **role-based access control**, and **restricted access**.
+Collaborated in a team to develop a **full stack web application** that streamlined the supplement ordering process. Designed and implemented core modules including user, category, item, cart, and order management. Strengthened system security by integrating **session handling** and **role-based access control** to ensure authorized access across different user roles.
 
 ---
 
@@ -18,16 +18,16 @@ A **full stack web application** developed to streamline the supplement ordering
         <sup>HTML</sup>
     </td>
     <td align="center">
+        <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" title="Bootstrap"/></code><br/>
+        <sup>Bootstrap</sup>
+    </td>
+    <td align="center">
         <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS" title="CSS"/></code><br/>
         <sup>CSS</sup>
     </td>
     <td align="center">
         <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript"/></code><br/>
         <sup>JavaScript</sup>
-    </td>
-    <td align="center">
-        <code><img width="35" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" title="Bootstrap"/></code><br/>
-        <sup>Bootstrap</sup>
     </td>
   </tr>
 </table>
